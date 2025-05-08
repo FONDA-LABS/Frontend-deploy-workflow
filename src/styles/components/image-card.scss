@@ -1,0 +1,120 @@
+.image-card {
+    padding: 0;
+    @include media(lg) {
+        padding: 0 $spacingxs $spacingsm $spacingxs;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-bottom: pxToRem(24px);
+        position: relative;
+        overflow: hidden;
+
+        @include media(lg) {
+            z-index: 1;
+        }
+
+        @include media(lg) {
+            picture {
+                img {
+                    transform: scale(1);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+
+        &:hover,
+        &:focus-within {
+            @include media(lg) {
+                .profile-link-abs {
+                    opacity: 1;
+                }
+                .animation-layer {
+                    opacity: 1;
+                }
+                picture {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-link-abs {
+        display: none;
+        opacity: 0;
+        z-index: 2;
+
+        @include media(lg) {
+            display: block;
+            transition: $globalAnimationDuration $globalAnimationTimingFunction;
+            position: absolute !important;
+            bottom: pxToRem(18px);
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: var(--color-white);
+
+            a {
+                color: var(--color-white);
+            }
+
+            @include animated-underline(var(--color-white));
+        }
+    }
+
+    .animation-layer {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        opacity: 0;
+        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+
+        @include media(lg) {
+            display: block;
+            background: linear-gradient(rgba(00, 00, 00, 0.00) 35%, var(--color-blue-14) 100%);
+            background-blend-mode: multiply;
+        }
+    }
+
+    .text-container {
+        width: 100%;
+
+        .headline-container {
+            padding-bottom: $spacingxxs;
+            @include media(lg) {
+                width: 100%;
+            }
+
+            .headline {
+                color: var(--color-black);
+            }
+
+            .title {
+                font-weight: $fontWeightBase;
+            }
+
+        }
+
+        .content-container {
+            padding-bottom: $spacingxxs;
+
+            @include media(lg) {
+                padding-bottom: 0;
+            }
+        }
+
+        .profile-link {
+            font-weight: $fontWeightBold;
+            font-size: pxToRem(14px);
+
+            @include media(lg) {
+                display: none;
+            }
+        }
+    }
+}

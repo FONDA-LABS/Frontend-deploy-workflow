@@ -1,0 +1,29 @@
+.facts-animated {
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-headline {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: $spacinglg;
+
+        @include media(md) {
+            margin-bottom: $spacingmd;
+        }
+
+        @include media(lg) {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+        }
+
+        .headline {
+            margin-bottom: $spacingxxs;
+
+            @include media(md) {
+                margin-bottom: $spacingxs;
+            }
+        }
+    }
+}

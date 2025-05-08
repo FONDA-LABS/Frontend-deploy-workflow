@@ -1,0 +1,10 @@
+{% extends "templates/templates/_base.twig" %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        content: '<h2>404</h2><br><h4>This page cannot be found.</h4><br><p>The page you were looking for does not exist or another error has occurred.</p><p>Start your navigation from here:</p>',
+        button: [
+            text: 'lol',
+        ],
+    } %}
+{% endblock %}

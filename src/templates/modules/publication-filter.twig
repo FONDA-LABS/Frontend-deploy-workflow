@@ -1,0 +1,14 @@
+<div class="publication-filter grid-full-width grid-inherit block-padding"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if filter is defined and filter is not empty %}
+            {% include "../components/filter.twig" with {
+                dropdowns: filter,
+            } %}
+        {% endif %}
+    </div>
+    {% if projectCards is defined and projectCards is not empty %}
+        {% include "../modules/tabs-centered.twig" with {
+            posts: projectCards,
+        } %}
+    {% endif %}
+</div>

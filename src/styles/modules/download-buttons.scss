@@ -1,0 +1,27 @@
+.download-buttons {
+    .headline-container {
+        padding-bottom: $spacingsm;
+
+        .headline {
+            text-align: center;
+            font-size: pxToRem(14px);
+            font-weight: $fontWeightSemiBold;
+            color: var(--color-grey-03);
+        }
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacingsm;
+
+        .button {
+            border: pxToRem(1px) solid var(--color-blue-06);
+
+            &:hover {
+                border: pxToRem(1px) solid var(--color-blue-06);
+            }
+        }
+    }
+}

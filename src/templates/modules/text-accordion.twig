@@ -1,0 +1,15 @@
+{% if accordionItems is defined and accordionItems is not empty %}
+<div class="text-accordion block-padding grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        <div class="centered-container">
+            <div class="text-button-container">
+                <div class="accordion-text-container">
+                    {% for accordionItem in accordionItems %}
+                        {% include '../elements/content-accordion-item.twig' with accordionItem %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

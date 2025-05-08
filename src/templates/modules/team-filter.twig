@@ -1,0 +1,28 @@
+<div class="grid-full-width grid-inherit block-padding"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    {% if filter is defined and filter is not empty %}
+        <div class="grid-teaser">
+            {% include "../components/filter.twig" with filter %}
+        </div>
+    {% endif %}
+    {% if contacts is defined and contacts is not empty %}
+        {% for singleContact in contacts %}
+            {% if singleContact.isHighlight is defined and singleContact.isHighlight == true %}
+                {% include "../modules/grid-three-columns-side.twig" with {
+                    headline: singleContact.headline,
+                    cards: singleContact.cardContent
+                } %}
+            {% else %}
+                {% include "../modules/grid-four-columns.twig" with {
+                    color: singleContact.color,
+                    headline: singleContact.headline,
+                    imageCard: singleContact.cardContent
+                } %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if empty_contacts is defined and empty_contacts is not empty %}
+        {% include "../blocks/text.twig" with {
+            content: empty_contacts.content
+        } %}
+    {% endif %}
+</div>

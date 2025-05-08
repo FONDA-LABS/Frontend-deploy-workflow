@@ -1,0 +1,39 @@
+.grid-area, .acf-block-preview {
+    --padding: clamp(1.25rem, 0.732rem + 2.21vw, 2.5rem);
+    --max-width: 1920px;
+    --teaser-width: calc(var(--max-width) - 2 * var(--padding));
+    --teaser-width-min: calc(100% - 2 * var(--padding));
+    @include media(xl) {
+        --padding: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+    }
+    display: grid;
+    grid-template-columns: [outer-start] minmax(0, 1fr) [full-width-start] var(--padding) [teaser-start] min(var(--teaser-width-min), var(--teaser-width)) [teaser-end] var(--padding) [full-width-end] minmax(0, 1fr) [outer-end];
+}
+
+.acf-block-preview .acf-block-preview {
+    display: block;
+}
+
+.grid {
+    &-outer {
+        grid-column: outer;
+    }
+
+    &-full-width {
+        grid-column: full-width;
+    }
+
+    &-teaser {
+        grid-column: teaser;
+    }
+
+    &-inherit {
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+
+    &-full-width-teaser {
+        grid-column-start: full-width;
+        grid-column-end: teaser;
+    }
+}

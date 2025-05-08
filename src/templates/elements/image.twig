@@ -1,0 +1,15 @@
+{% if disableLazyLoading == undefined %}
+    {% set disableLazyLoading = false %}
+{% endif %}
+
+{% if images is defined %}
+    <picture class="image">
+        {% for image in images %}
+            {% if loop.last == false %}
+                <source media="(min-width: {{ image.size ?? '1024' }}px)" srcset="{{ image.src }}">
+            {% else %}
+                <img class="{% if borderEffect is defined and borderEffect == true %}border-on-hover {% endif %}{% if image.imageRatio is defined %} aspect-ratio__{{ image.imageRatio }}{% endif %}" src="{{ image.src }}" alt="{{ image.alt }}" {% if image.disableLazyLoading != true %} loading="lazy" {% endif %}>
+            {% endif %}
+        {% endfor %}
+    </picture>
+{% endif %}

@@ -1,0 +1,11 @@
+{% include "background-headline.twig" with {
+    headline: headline,
+} %}
+{% for block in blocks %}
+    {% include "grid-four-columns.twig" with {
+        headline: block.headline,
+        cards: block.cards,
+        gradient: 'gradient' ~ loop.index,
+    } %}
+{% endfor %}
+

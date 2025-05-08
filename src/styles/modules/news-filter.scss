@@ -1,0 +1,23 @@
+.news-filter {
+    overflow-x: hidden;
+    .grid-container {
+        margin: pxToRem(24px) 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: $spacingxxs;
+        overflow: hidden;
+        @include media(md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @include media(lg) {
+            margin: $spacingmd 0;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: pxToRem(20px);
+        }
+        @include media(xxl) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: pxToRem(40px);
+            row-gap: $spacingsm;
+        }
+    }
+}

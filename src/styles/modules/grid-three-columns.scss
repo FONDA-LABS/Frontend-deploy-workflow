@@ -1,0 +1,73 @@
+.grid-three-columns {
+    overflow-x: hidden;
+    @include media(lg) {
+        padding: $spacingsm 0;
+    }
+
+    .headline-container {
+        padding-bottom: $spacingsm;
+        @include media(lg) {
+            padding-bottom: $spacingmd;
+        }
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: $spacingxxs;
+        overflow: hidden;
+        @include media(md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: pxToRem(40px) !important;
+        }
+        @include media(lg) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: pxToRem(20px);
+        }
+        @include media(xxl) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: pxToRem(40px);
+            row-gap: $spacingsm;
+        }
+
+        .headline-container {
+            padding-bottom: unset;
+        }
+    }
+
+    .gap-event-cards {
+        gap: 0;
+        @include media(lg) {
+            row-gap: pxToRem(30px);
+        }
+    }
+
+    .event-card {
+        padding: pxToRem(24px) pxToRem(0px);
+        position: relative;
+        max-width: unset;
+        @include media(md) {
+            padding: pxToRem(24px) pxToRem(20px);
+        }
+        @include media(lg) {
+            padding: pxToRem(24px) pxToRem(20px) pxToRem(54px);
+        }
+        @include media(xl) {
+            max-width: unset;
+        }
+    }
+
+    .event-card::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: var(--color-blue-04);
+    }
+
+    .hide-after::after {
+        content: none !important;
+    }
+}

@@ -1,0 +1,76 @@
+@mixin media($breakpoint, $direction: $breakpoint-direction) {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+        @media (#{$direction}-width: map-get($grid-breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @if unitless($breakpoint) {
+            $breakpoint: $breakpoint + 0;
+        }
+
+        @media (#{$direction}-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin container($breakpoint, $direction: $breakpoint-direction) {
+    @if map-has-key($grid-breakpoints, $breakpoint) {
+        @container (#{$direction}-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+            @content;
+        }
+    } @else {
+        @if unitless($breakpoint) {
+            $breakpoint: $breakpoint + 0;
+        }
+
+        @container (#{$direction}-width: #{$breakpoint}) {
+            @content;
+        }
+    }
+}
+
+@mixin animated-underline($color: $colorBlack, $height: 1.5px) {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: $height;
+        background: $color;
+        left: 0;
+        pointer-events: none;
+        transition: transform 0.3s;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        bottom: -2px;
+    }
+
+    &:hover, &:focus, &:active {
+        &:before {
+            transform-origin: 0 50%;
+            transform: scaleX(1);
+        }
+    }
+}
+
+@mixin word-wrap() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+@mixin hover {
+    &:focus-visible, &.active {
+        @content;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="article-preview">
+    <div class="text-wrapper">
+        <span class="date">{{ date }}</span>
+        <h3 class="article-header">{{ headline }}</h3>
+        <p class="text">{{ paragraph }}</p>
+        <div class="tag-wrapper">
+            {% include "../elements/tag.twig" with {
+                tags: [
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                ],
+            }%}
+        </div>
+    </div>
+    <div class="image-wrapper">
+        {% if images is defined and images is not empty %}
+            {% include "../elements/image.twig" with {
+                images: images,
+            } %}
+        {% endif %}
+
+    </div>
+</div>

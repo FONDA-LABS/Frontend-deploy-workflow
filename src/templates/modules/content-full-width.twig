@@ -1,0 +1,31 @@
+{% if content is defined and content is not empty %}
+<section class="content-full-width grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% for content in content %}
+            <div class="content-container">
+                {% if content.subheadline is defined and content.subheadline is not empty %}
+                    <div class="subheadline-container">
+                        <p class="subheadline">{{ content.subheadline }}</p>
+                    </div>
+                {% endif %}
+                {% if content.headline is defined and content.headline is not empty %}
+                    <div class="headline-container">
+                        {% if content.url is defined and content.url is not empty %}
+                        <a href="{{ content.url }}">
+                        {% endif %}
+                            <h2 class="headline {{ content.headlineType | default('h2') }}">{{ content.headline }}</h2>
+                            {% if content.url is defined and content.url is not empty %}
+                        </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% if content.content is defined and content.content is not empty %}
+                    <div class="content-area">
+                        {{ content.content }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

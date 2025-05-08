@@ -1,0 +1,79 @@
+<section class="background-headline grid-full-width grid-inherit background{% if breadCrumbs is defined and breadCrumbs is not empty %} no-padding-bottom {% endif %}"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser background-headline-container">
+        {% if backLink is defined and backLink is not empty %}
+            <div class="back-navigation-wrapper">
+                {% include "../elements/back-navigation.twig" with {
+                    backLink: backLink,
+                    backIconColor: 'blue',
+                    backTextColor: 'black',
+                } %}
+            </div>
+        {% endif %}
+        <div class="flex-container">
+            <div class="content">
+                {% if subheadline is defined and subheadline is not empty %}
+                    <div class="subheadline-container">
+                        <span class="subheadline">{{ subheadline }}</span>
+                    </div>
+                {% endif %}
+                {% if headline is defined and headline is not empty %}
+                    <div class="headline-container">
+                        <h1>{{ headline }}</h1>
+                    </div>
+                {% endif %}
+                {% if content is defined and content is not empty %}
+                    <div class="content-container">
+                        <div class="content-area">
+                            {{ content }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if button is defined and button is not empty %}
+                    {% include "../elements/button.twig" with {
+                        type: button.type,
+                        href: button.url,
+                        buttonText: button.text,
+                        iconPosition: "right",
+                        icon: 'arrow-right',
+                    } %}
+                {% endif %}
+            </div>
+            {% if image is defined and image is not empty %}
+                <div class="image-container">
+                    {% include "../elements/image.twig" with {
+                        images: image,
+                    } %}
+                </div>
+            {% endif %}
+        </div>
+        {% if breadCrumbs is defined and breadCrumbs is not empty %}
+            <div class="breadcrumb-container breadCrumbSwiper">
+                <div class="swiper-wrapper">
+                    {% for content in breadCrumbs %}
+                        <div class="swiper-slide">
+                            <a href="{{ content.link }}">
+                                <span class="breadcrumb">
+                                    {{ content.text }}
+                                </span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swipe-button-container">
+                    <div class="swiper-button-prev">
+                        {% include "../elements/button.twig" with {
+                            icon: 'arrow-left',
+                            buttonColor: 'transparent',
+                        } %}
+                    </div>
+                    <div class="swiper-button-next">
+                        {% include "../elements/button.twig" with {
+                            icon: 'arrow-right',
+                            buttonColor: 'transparent',
+                        } %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

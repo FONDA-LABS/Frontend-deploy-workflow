@@ -1,0 +1,427 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "templates/modules/hero-swiper.twig" with {
+        slides: [
+            {
+                headline: 'hgeadline 1',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                    {
+                        src: 'media/test.png',
+                        alt: 'Person Image',
+                        imageRatio: '1-33x1'
+                    },
+                ],
+            },
+            {
+                headline: 'All innovation are socially relevant 2',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },
+            {
+                headline: 'All innovation are socially relevant 3',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                    {
+                        src: 'media/test.png',
+                        alt: 'Person Image',
+                        imageRatio: '1-33x1'
+                    },
+                ],
+            },
+            {
+                headline: 'All innovation are socially relevant 4',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },
+        ],
+        endtext: 'Scroll down',
+    } %}
+    {% include "/templates/modules/swiper-two-columns.twig" with {
+        headline: 'Latest news',
+        eventCardsColumnOne: [
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+        ],
+        eventCardsColumnTwo: [
+            {
+                background: 'blue-03',
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tagShow: '2',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+        ],
+    } %}
+    {% include "/templates/modules/grid-four-columns.twig" with {
+        background: 'blue-03',
+        headline: 'Qualitative research methods',
+        iconCards: [
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+        ]
+    } %}
+    {% include "templates/modules/facts-animated.twig" with {
+        headline: {
+            text: 'Our Success Story.',
+            type: 'h2',
+        },
+        link : {
+            href: '#',
+            target: '_blank',
+            text:'More about our achievements',
+        },
+        factItems: [
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },{
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+        ]
+    } %}
+    {% include "templates/modules/timer-swiper.twig" with {
+        headline: {
+            text: 'Discover the latest projects from ZSI',
+            type: 'h2'
+        },
+        link: {
+            href: '#',
+            target: '_blank',
+            text:'View all projects',
+        },
+        slides: [
+            {
+                headline: 'Regionen für die Widerstandsfähigkeit gegen den Klimawandel durch Innovation, pWissenschaft und Technologie',
+                text: 'Ziel des Projekts ist die Demonstration innovativer, widerstandsfähiger Lösungen für die Probleme des Klimawandels in den
+                Bereichen Wasser/Luft/Land und die Förderung der nachhaltigen Verbreitung dieser neuen Lösungen bei den Endnutzern, um die
+                regionale Widerstandsfähigkeit gegenüber dem Klimawandel zu erhöhen, was zu ...',
+                buttonText: 'View Project',
+                buttonIcon: 'arrow-right',
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },
+            {
+                headline: 'Regionen für die Widerstandsfähigkeit gegen den Klimawandel durch Innovation, pWissenschaft und Technologie',
+                text: 'Ziel des Projekts ist die Demonstration innovativer, widerstandsfähiger Lösungen für die Probleme des Klimawandels in den
+                Bereichen Wasser/Luft/Land und die Förderung der nachhaltigen Verbreitung dieser neuen Lösungen bei den Endnutzern, um die
+                regionale Widerstandsfähigkeit gegenüber dem Klimawandel zu erhöhen, was zu ...',
+                buttonText: 'View Project',
+                buttonIcon: 'arrow-right',
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

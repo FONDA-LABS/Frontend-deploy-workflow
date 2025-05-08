@@ -1,0 +1,57 @@
+<section class="article-details grid-full-width grid-inherit background"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if backLink is defined and backLink is not empty %}
+            <div class="back-navigation-wrapper">
+                {% include "../elements/back-navigation.twig" with {
+                    backLink: backLink,
+                    backIconColor: 'white',
+                    backTextColor: 'white',
+                } %}
+            </div>
+        {% endif %}
+        {% if date is defined and date is not empty %}
+            <span class="date">{{ date }}</span>
+        {% elseif dateLocation is defined and dateLocation is not empty %}
+            <div class="date-location-wrapper date">
+                <div class="date-wrapper">
+                    <span class="icon-calendar" aria-hidden="true"></span>
+                    <span>{{ dateLocation.date }}</span>
+                </div>
+                <div class="location-wrapper">
+                    <span class="icon-pin" aria-hidden="true"></span>
+                    <span>{{ dateLocation.location }}</span>
+                </div>
+            </div>
+        {% elseif optionalHeadline is defined and optionalHeadline is not empty %}
+            <h2 class="optionalHeadline">{{ optionalHeadline }}</h2>
+        {% endif %}
+    </div>
+    <div class="grid-teaser text-image-wrapper">
+        <div class="text-wrapper">
+            {% if headline is defined and headline is not empty %}
+                {% include "../elements/headline.twig" with headline %}
+            {% endif %}
+            {% if tags is defined and tags is not empty %}
+                <div class="tag-wrapper">
+                    {% include "../elements/tag.twig" with {
+                        tagShow: tagShow,
+                        tags: tags,
+                    } %}
+                </div>
+            {% endif %}
+            {% if link is defined and link is not empty %}
+                {% include '../elements/link.twig' with link %}
+            {% endif %}
+            {% if socialMediaIcons is defined and socialMediaIcons is not empty %}
+                {% include "../components/social-media-icons.twig" with socialMediaIcons %}
+            {% endif %}
+        </div>
+        {% if image is defined and image is not empty %}
+            <div class="image-wrapper">
+                {% include "../elements/image.twig" with {
+                    images: image,
+                } %}
+            </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,1557 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    <section class="grid-full-width grid-inherit">
+        <div class="grid-teaser">
+            <ul>
+                <a href="homepage"><li>Homepage</li></a>
+                <a href="focus-area-list"><li>Focus Area List</li></a>
+                <a href="focus-area-detail"><li>Focus Area Detail</li></a>
+                <a href="news-list"><li>News List</li></a>
+                <a href="news-detail"><li>News Detail</li></a>
+                <a href="team-list"><li>Team List</li></a>
+                <a href="team-profile"><li>Team Profile</li></a>
+                <a href="projects-list"><li>Projects List</li></a>
+                <a href="project-detail"><li>Project Detail</li></a>
+                <a href="events-list"><li>Events List</li></a>
+                <a href="event-detail"><li>Event Detail</li></a>
+                <a href="publications-list"><li>Publications List</li></a>
+                <a href="search-results"><li>Search Results Page</li></a>
+                <a href="methods-list"><li>Methods List</li></a>
+                <a href="methods-detail"><li>Methods Detail</li></a>
+                <a href="service-list"><li>Service List</li></a>
+                <a href="service-detail"><li>Service Detail</li></a>
+                <a href="jobs-list"><li>Jobs List</li></a>
+                <a href="jobs-detail"><li>Jobs Detail</li></a>
+                <a href="about-us"><li>About Us</li></a>
+                <a href="strukturen-bereiche"><li>Strukturen und Bereiche des ZSI</li></a>
+                <a href="grundsaetze-prinzipien"><li>Strategische Grundsätze und ethhische Prinzipien</li></a>
+                <a href="results-list"><li>Results List</li></a>
+                <a href="results-detail"><li>Results Detail</li></a>
+                <a href="fakten"><li>Fakten auf einen Blick</li></a>
+            </ul>
+        </div>
+    </section>
+    {% include "templates/modules/hero-swiper.twig" with {
+        slides: [
+            {
+                headline: 'hgeadline 1',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                    {
+                        src: 'media/test.png',
+                        alt: 'Person Image',
+                        imageRatio: '1-33x1'
+                    },
+                ],
+            },
+            {
+                headline: 'All innovation are socially relevant 2',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },
+            {
+                headline: 'All innovation are socially relevant 3',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                {
+                    src: 'media/test.png',
+                    alt: 'Person Image',
+                    imageRatio: '1-33x1'
+                },
+            ],
+            },            {
+                headline: 'All innovation are socially relevant 4',
+                text: 'ZSI implements research and application projects to meet global challenges.',
+                ctaLink: {
+                    type: 'a',
+                    icon: 'arrow-right',
+                    iconPosition: 'right',
+                    href: '#',
+                    target: '_blank',
+                    buttonText:'About ZSI',
+                },
+                image: [
+                    {
+                        src: 'media/test.png',
+                        alt: 'Person Image',
+                        imageRatio: '1-33x1'
+                    },
+                ],
+            },
+        ],
+        endtext: 'Scroll down',
+    } %}
+    {% include "templates/modules/article-details.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle News'
+        },
+        date: '09 - 13 April 2024',
+        dateLocation: {
+            date: '09 - 13 April 2024',
+            location: 'Vienna'
+        },
+        optionalHeadline: 'Resist',
+        headline: {
+            type: 'h1',
+            text: 'Western balkans steering platforms supported by zsi-coordinated project',
+            class: 'headline'
+        },
+        tagShow: '2',
+        tags: [
+            {
+                tag: 'Science, technology & innovation policy aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                color: 'white',
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: true,
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: false,
+            },
+        ],
+        link: {
+            href: '#',
+            target: '_blank',
+            text:'Official Website',
+            icon: 'external-link',
+        },
+        image: [
+            {
+                src: 'media/test.png',
+                alt: 'Person Image',
+                imageRatio: '4x3'
+            },
+        ],
+    } %}
+    {% include "templates/modules/team-member-detail.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle Mitarbeitenden'
+        },
+        titleBefore: 'Mag. Dr.',
+        name: 'Josef Hochgerner',
+        titleFollowing: 'PhD. MSc',
+        tasks: 'Management & projektübergreifende Tätigkeiten',
+        contactItems: [
+            {
+                text:'workgang@zsi.at',
+                icon:'email',
+                href: 'mailto:workgang@zsi.at'
+            },
+            {
+                text:'0660 321654',
+                icon:'phone',
+                href: 'tel:0660321654'
+            },
+            {
+                text:'+43 NNNNNNNNNN',
+                icon:'mobile',
+                href: 'tel:0043NNNNNNNNNN'
+            },
+            {
+                text:'+43 NNNNNNNNNN',
+                icon:'orcid',
+                href: 'tel:0043NNNNNNNNNN'
+            },
+        ],
+        socialMediaIcons : [
+            {
+                href: 'https://facebook.com',
+                icon: 'facebook',
+                text: 'Facebook'
+            },
+            {
+                href: 'https://linked.com',
+                icon: 'linkedIn',
+                text: 'LinkedIn'
+            },
+            {
+                href: 'https://twitter.com',
+                icon: 'x-twitter',
+                text: 'X'
+            },
+        ],
+        image: [
+            {
+                src: 'media/josef.png',
+                alt: 'Person Image',
+                imageRatio: '3x4'
+            },
+        ],
+    } %}
+    {% include "templates/modules/article-details.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle News'
+        },
+        date: '09 - 13 April 2024',
+        dateLocation: {
+            date: '09 - 13 April 2024',
+            location: 'Vienna'
+        },
+        optionalHeadline: 'Resist',
+        headline: {
+            type: 'h1',
+            text: 'Western balkans steering platforms supported by zsi-coordinated project',
+            class: 'headline'
+        },
+        tagShow: '2',
+        tags: [
+            {
+                tag: 'Science, technology & innovation policy aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                color: 'white',
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: true,
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: false,
+            },
+        ],
+        officialLink: '/',
+        image: [
+            {
+                src: 'media/test.png',
+                alt: 'Person Image',
+                imageRatio: '4x3'
+            },
+        ],
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        infoBox: {
+            infoBoxText: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                },
+                {
+                    label: 'Funding',
+                    content: 'European Comission, Horizon Europe',
+                },
+                {
+                    label: 'Koordination',
+                    content: 'xxx',
+                },
+            ],
+            infoBoxLink: [
+                {
+                    label: 'Official Website',
+                    url: '#',
+                    color: 'blue',
+                }
+            ],
+            infoBoxCardHeadline: 'Kontakt',
+            infoBoxCards: [
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Person Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+            ],
+        },
+        preHeadline: 'Overview',
+        headline: 'Trust in robots?',
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+                content: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+            },
+        ]
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        preHeadline: 'Overview',
+        headline: 'Trust in robots?',
+        content: [
+            {
+                question: "Jesse, you've been at ZSI since 2023. What was your path until then and how did you come to ZSI?",
+                answer: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                addContent: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+            },
+            {
+                question: "Jesse, you've been at ZSI since 2023. What was your path until then and how did you come to ZSI?",
+                answer: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                addContent: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+            },
+            {
+                question: "Jesse, you've been at ZSI since 2023. What was your path until then and how did you come to ZSI?",
+                answer: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                addContent: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+            },
+        ],
+    } %}
+    {% include "/templates/modules/grid-four-columns.twig" with {
+        headline: 'Qualitative research methods',
+        cards: [
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+        ]
+    } %}
+    {% include "/templates/modules/grid-four-columns.twig" with {
+        headline: 'Qualitative research methods',
+        iconCards: [
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+        ]
+    } %}
+    {% include "/templates/modules/text-accordion.twig" with {
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+                content: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/card-accordion.twig" with {
+        headline: "Project's team members",
+        infoBox: {
+            infoBoxCards: [
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Person Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Person Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+            ],
+        },
+    } %}
+    {% include "/templates/modules/grid-three-columns.twig" with {
+        eventCards: [
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '1',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                    iconContent2: 'icon-download',
+                    content2: 'Div Citation Download',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+    {% include "templates/modules/grid-bento-box.twig" with {
+        bentoBoxes: [
+            {
+                span: '2',
+                preHeadline: 'Projekte am ZSI',
+                layout: {
+                headlineL: 'Forschende am ZSI',
+                contentL: 'NN',
+                headlineR: 'Forschende am ZSI',
+                contentR: 'NN',
+            },
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: 'N.NNN+',
+                content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: 'N.NNN+',
+                content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+            },
+            {
+                span: '2',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+                content: 'Frauenanteil 75%',
+                pieChart: 75,
+            },
+            {
+                subgrid: [
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+            ],
+            },
+            {
+                subgrid: [
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+            ],
+            },
+        ],
+    } %}
+    {% include "templates/modules/facts-animated.twig" with {
+        headline: {
+            text: 'Our Success Story.',
+            type: 'h2',
+        },
+        link : {
+            href: '#',
+            target: '_blank',
+            text:'More about our achievements',
+        },
+        factItems: [
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+            {
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                duration: '400',
+                text: 'Aktiv seit',
+            },{
+                digits: [
+                    {
+                        value: '1',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '9',
+                    },
+                    {
+                        value: '0',
+                    },
+                ],
+                showPlus: true,
+                duration: '400',
+                text: 'Aktiv seit',
+            },
+        ]
+    } %}
+    {% include "templates/components/filter.twig" with {
+        searchPlaceholder: 'Search',
+        detailText: 'Erweiterte Suche',
+        dropdownPlaceholder: 'Select',
+        dropdowns: [
+            {
+                label: "Program",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Type",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Focus Area",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Methods",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Contributors",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+        ],
+        checkboxText: 'Abgeschlossen',
+        buttonFilterText: 'Apply filters',
+        clearText: 'Clear all',
+        filterTags: [
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+        ],
+        resultCount: 123,
+        resultText: 'Projekte',
+        popoverPlaceholder: 'Sortieren nach',
+        popoverHeader: 'Sortieren nach',
+        popoverListItem: [
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/image-gallery.twig" with {
+        images: [
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide5.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide6.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide1.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide2.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+        ]
+    } %}
+    {% include "/templates/modules/tabs-centered.twig" with {
+        posts: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                ],
+                sideContent: [
+                    {
+                        image: [
+                        {
+                            src: 'media/Slide4.png',
+                            alt: 'Slide 1',
+                            imageRatio: '4x3',
+                        },
+                    ],
+                    }
+                ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                ],
+                sideContent: [
+                    {
+                        image: [
+                        {
+                            src: 'media/Slide4.png',
+                            alt: 'Slide 1',
+                            imageRatio: '4x3',
+                        },
+                    ],
+                    }
+                ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                    {
+                        tag: 'Science, Technologie & Innovation Policy',
+                    },
+                    {
+                        tag: 'Soziale Inklusion (inkl. Migration)',
+                    },
+                ],
+                sideContent: [
+                    {
+                        image: [
+                        {
+                            src: 'media/Slide4.png',
+                            alt: 'Slide 1',
+                            imageRatio: '4x3',
+                        },
+                    ],
+                    }
+                ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

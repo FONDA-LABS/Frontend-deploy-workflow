@@ -1,0 +1,28 @@
+{% if cards is defined and cards is not empty %}
+    <section class="grid-three-columns-side grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+        <div class="grid-teaser">
+            <div class="grid-layout">
+                {% if headline is defined and headline is not empty %}
+                    <div class="headline-container">
+                        <h2 class="headline">{{ headline }}</h2>
+                    </div>
+                {% endif %}
+                <div class="grid-container">
+                    {% for card in cards %}
+                        {% include "../components/image-card.twig" with {
+                            url: card.url,
+                            profileLinkText: card.profileLinkText,
+                            img: card.img,
+                            precedingTitle: card.precedingTitle,
+                            name: card.name,
+                            lastName: card.lastName,
+                            followingTitle: card.followingTitle,
+                            content: card.content,
+                        } %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+

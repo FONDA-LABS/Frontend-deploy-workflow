@@ -1,0 +1,9 @@
+{% if socialMediaIcons is defined and socialMediaIcons is not empty %}
+    <div class="social-media-list">
+        {% for icon in socialMediaIcons %}
+            <div class="social-media-list-item">
+                {% include "../elements/social-media-icon.twig" with icon %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

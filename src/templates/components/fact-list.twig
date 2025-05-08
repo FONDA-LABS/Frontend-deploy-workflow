@@ -1,0 +1,5 @@
+{% if factItems is defined and factItems is not empty %}
+    {% for factItem in factItems %}
+        {% include '../elements/fact-item.twig' with factItem %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,107 @@
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacingxxs;
+
+    .tag {
+        background-color: transparent;
+        color: var(--color-black);
+        border-radius: pxToRem(100px);
+        border: pxToRem(1px) solid var(--color-blue-05);
+        padding: pxToRem(6px) pxToRem(16px);
+        display: inline-flex;
+        align-items: center;
+        font-size: pxToRem(12px);
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+        max-width: 100%;
+        width: fit-content;
+
+        &:hover {
+            @include media(lg) {
+                border: pxToRem(1px) solid transparent;
+                background-color: var(--color-blue-05);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-blue-05);
+            border: pxToRem(1px) solid transparent;
+        }
+
+        &:focus-visible {
+            @include media(lg) {
+                background-color: var(--color-blue-15);
+                border: pxToRem(1px) solid var(--color-blue-09);
+            }
+        }
+
+        span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-white {
+            color: var(--color-white);
+        }
+
+        &-hidden {
+            display: none;
+        }
+
+        &-show {
+            display: inline-flex;
+        }
+
+        &-no-border {
+            border: pxToRem(1px) solid transparent;
+            cursor: pointer;
+            text-decoration: underline;
+
+            &:active {
+                background-color: transparent !important;
+
+                @include media(lg) {
+                    background-color: transparent !important;
+                }
+            }
+
+            &:hover {
+                border: pxToRem(1px) solid transparent;
+                color: var(--color-blue-10);
+                background-color: transparent !important;
+
+                @include media(lg) {
+                    background-color: transparent !important;
+                }
+            }
+
+            &:focus-visible {
+                background-color: transparent !important;
+
+                @include media(lg) {
+                    background-color: transparent !important;
+                }
+            }
+        }
+
+        &-show {
+            &-more {
+                cursor: pointer;
+            }
+
+            &-less-content {
+                display: none;
+            }
+        }
+    }
+
+    .break-text {
+        span {
+            white-space: normal;
+            text-overflow: unset;
+            width: fit-content;
+        }
+    }
+}

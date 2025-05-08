@@ -1,0 +1,31 @@
+<div class="accordion-item content-accordion-item">
+    {% if excerpt is defined and excerpt is not empty %}
+        <div class="content content-area">
+            {{ excerpt }}
+        </div>
+    {% endif %}
+
+    {% if content is defined and content is not empty %}
+        {% set randomAccordionItemId = random(10, 1000) %}
+        <div id="collapse-{{ accordionId ?? randomAccordionItemId }}"
+             class="accordion-content content-accordion-item-content"
+             role="region"
+             aria-hidden="{% if collapsed is defined and collapsed == true %}false{% else %}true{% endif %}"
+             {% if collapsed is defined and collapsed == true %}{% else %}hidden{% endif %}
+             aria-labelledby="heading-{{ accordionId ?? randomAccordionItemId }}">
+            <div class="accordion-content-inner content-area content-accordion-item-content-inner">
+                {{ content }}
+            </div>
+        </div>
+        <button id="heading-{{ accordionId ?? randomAccordionItemId }}" type="button"
+                class="accordion-header button-transparent content-accordion-item-title"
+                aria-controls="collapse-{{ accordionId ?? randomAccordionItemId }}"
+                aria-selected="{% if collapsed is defined and collapsed == true %}true{% else %}false{% endif %}"
+                aria-expanded="{% if collapsed is defined and collapsed == true %}true{% else %}false{% endif %}"
+        >
+            <span class="content-accordion-item-title-open">{{ buttonOpenText ?? 'Read more' }}</span>
+            <span class="content-accordion-item-title-close">{{ buttonCloseText ?? 'Close' }}</span>
+            <span class="content-accordion-item-toggle icon-arrow-down" aria-hidden="true"></span>
+        </button>
+    {% endif %}
+</div>

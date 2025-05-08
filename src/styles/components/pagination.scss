@@ -1,0 +1,90 @@
+.pagination {
+    padding: $spacingxl 0;
+
+    @include media(lg) {
+        padding: $spacingmd 0 $spacingxl;
+    }
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: pxToRem(10px);
+    }
+
+    .page-numbers,
+    .dots {
+        background-color: var(--color-white);
+        font-family: $fontFamilyBase;
+        padding: pxToRem(12px) pxToRem(16px) pxToRem(11px);
+        border-radius: pxToRem(8px);
+        border: pxToRem(1px) solid var(--color-blue-04);
+        font-size: pxToRem(14px);
+        font-weight: 500;
+        min-width: pxToRem(44px);
+        height: pxToRem(44px);
+        color: var(--color-blue-14);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border $globalAnimationDuration $globalAnimationTimingFunction, color $globalAnimationDuration $globalAnimationTimingFunction, background-color $globalAnimationDuration $globalAnimationTimingFunction;
+
+        &.prev, &.next {
+            padding: pxToRem(8px);
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            transition: none;
+        }
+
+        &.prev {
+            margin-right: pxToRem(8px);
+
+            @include media(lg) {
+                margin-right: pxToRem(12px);
+            }
+        }
+
+        &.next {
+            margin-left: pxToRem(10px);
+
+            @include media(lg) {
+                margin-left: pxToRem(12px);
+            }
+        }
+
+        &.next:hover, &.prev:hover {
+            background-color: transparent;
+            border: 1px solid black;
+        }
+
+        &.current {
+            border: pxToRem(1px) solid var(--color-blue-09);
+            background-color: var(--color-white);
+
+            @include hover {
+                background-color: var(--color-white);
+            }
+        }
+
+        @include hover {
+            background-color: var(--color-blue-02);
+            border: pxToRem(1px) solid var(--color-blue-06);
+            color: var(--color-blue-12);
+
+            [class^="icon-"], [class*=" icon-"] {
+                color: var(--color-blue-12) !important;
+            }
+        }
+    }
+
+    .dots {
+        background-color: var(--color-white);
+
+        @include hover {
+            border: pxToRem(1px) solid var(--color-blue-04);
+            background-color: var(--color-white);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.back-navigation {
+  a {
+    .back-navigation-text {
+      color: $colorBlack;
+      font-size: $fontSizeButton;
+      font-weight: $fontWeightSemiBold;
+      line-height: $lineHeightButton;
+      letter-spacing: $letterSpacingButton;
+      margin-left: 8px;
+      position: relative;
+      @include animated-underline();
+    }
+
+    .white {
+      color: var(--color-white);
+    }
+
+    .back-arrow {
+      &.back-arrow-white {
+        color: var(--color-white);
+      }
+
+      &.back-arrow-blue {
+        color: var(--color-blue-09);
+      }
+    }
+  }
+}

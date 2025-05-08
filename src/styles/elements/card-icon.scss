@@ -1,0 +1,75 @@
+.card-icon {
+    padding: $spacingxs;
+    height: 100%;
+    background-color: var(--color-blue-02);
+    color: var(--color-blue-13);
+    border-radius: pxToRem(4px);
+    display: flex;
+    flex-direction: row;
+    gap: $spacingxxs;
+    align-items: center;
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+
+    @include media(lg) {
+        min-height: pxToRem(112px);
+        flex-direction: column;
+        justify-content: center;
+    }
+    @include media(xxl) {
+        min-height: pxToRem(184px);
+    }
+
+    @include hover() {
+        background-color: var(--color-blue-09);
+        color: var(--color-white);
+
+        .icon-container {
+            .icon-overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-blue {
+        background-color: var(--color-blue-09);
+    }
+
+    .icon-container {
+        width: clamp(2.5rem, 2.0856rem + 1.768vw, 3.5rem);
+        position: relative;
+
+        .icon-compass {
+            font-size: pxToRem(40px);
+        }
+
+        .icon-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0;
+            overflow: hidden;
+            transition: opacity $globalAnimationDuration $globalAnimationTimingFunction;
+        }
+    }
+
+    .card-content {
+        font-weight: $fontWeightBold;
+        line-height: $lineHeightBase;
+        letter-spacing: pxToRem(0.16px);
+        width: 90%;
+
+        @include media(lg) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .icon-arrow-right {
+        @include media(lg) {
+            display: none;
+        }
+    }
+}

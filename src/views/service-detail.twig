@@ -1,0 +1,92 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        backLink: {
+            href: '#',
+            text: 'All Services'
+        },
+        headline: 'Evaluation, reviews & impact assessments.',
+        image: [
+            {
+                src: 'media/Frame 748.png',
+                alt: 'Icon Image',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: "ZSI has a long tradition in evaluation to help customers to understand if their interventions
+                 (e.g. policies, instruments, programmes, institutional arrangements, regulations) are well designed and targeted,
+                 achieve the intended impacts, and provide value for money. The dimension of learning and improvement of processes
+                 of interventions is a core element of ZSI’s evaluative approach.  Our evaluations are based on a sound, institutionally
+                  embedded, methodological corpus. ZSI offers expert know-how on the whole extent of mixed method analysis.
+                  Experts of ZSI have been involved in evaluation and monitoring exercises within numerous national and international
+                  programmes. ZSI also hosts fteval, the Austrian Platform for Research and Technology Policy Evaluation.",
+            },
+        ],
+    } %}
+    {% include "/templates/modules/image-gallery.twig" with {
+        images: [
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide5.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide6.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide1.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide2.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+        ]
+    } %}
+{% endblock %}

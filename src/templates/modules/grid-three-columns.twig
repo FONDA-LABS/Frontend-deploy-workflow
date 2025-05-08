@@ -1,0 +1,57 @@
+<section class="grid-three-columns grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if headline is defined and headline is not empty %}
+            <div class="headline-container">
+                <h2 class="headline">{{ headline }}</h2>
+            </div>
+        {% endif %}
+        <div class="grid-container {% if eventCards is defined and eventCards is not empty%}gap-event-cards{% endif %}" id="grid-container">
+            {% for eventCard in eventCards %}
+                {% include "../components/event-card.twig" with {
+                    eventCard: eventCard,
+                } %}
+            {% endfor %}
+            {% if cards is defined and cards is not empty %}
+                {% for card in cards %}
+                    {% include "../elements/card.twig" with {
+                        content: card.content,
+                        background: card.background,
+                    } %}
+                {% endfor %}
+            {% endif %}
+            {% if imageCard is defined and imageCard is not empty %}
+                {% for card in imageCard %}
+                    {% include "../components/image-card.twig" with {
+                        img: card.img,
+                        headline: card.headline,
+                        content: card.content,
+                    } %}
+                {% endfor %}
+            {% endif %}
+            {% if iconCards is defined and iconCards is not empty %}
+                {% for card in iconCards %}
+                    {% include "../elements/card-icon.twig" with {
+                        url: card.url,
+                        icon: card.icon,
+                        content: card.content,
+                        background: card.background,
+                    } %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    {% if showPagination is defined and showPagination == true %}
+        <div class="grid-teaser grid-inherit">
+            {% include '../components/pagination.twig' %}
+        </div>
+    {% endif %}
+    {% if postButton is defined and postButton is not empty %}
+        <div class="cta-buttons grid-full-width grid-inherit">
+            <div class="grid-teaser">
+                <div class="cta-buttons-container">
+                    {% include "../elements/button.twig" with postButton %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>

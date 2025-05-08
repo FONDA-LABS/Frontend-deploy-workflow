@@ -1,0 +1,13 @@
+{% if type == undefined %}
+    {% set type = 'button' %}
+{% endif %}
+
+{% if iconPosition == "right" %}
+    <{{ type }} class="button {% if buttonColor is defined and buttonColor is not empty %}button-{{ buttonColor }}{% endif %} {% if buttonClass is defined and buttonClass is not empty %}button-{{ buttonClass }}{% endif %}" {% if type == 'a' %}href="{{ href ?? '#' }}" target="{{ target ?? '_self' }}"{% endif %} {% if buttonId is defined and buttonId is not empty %} id="{{ buttonId }}"{% endif %} {% if download is defined and download is not empty %} download="{{ download }}"{% endif %}>{{ buttonText }} <span class="icomoon icon-{{ icon }}" aria-hidden="true"></span></{{ type }}>
+{% elseif iconPosition == "left" %}
+    <{{ type }} class="button {% if buttonColor is defined and buttonColor is not empty %}button-{{ buttonColor }}{% endif %} {% if buttonClass is defined and buttonClass is not empty %}button-{{ buttonClass }}{% endif %}" {% if type == 'a' %}href="{{ href ?? '#' }}" target="{{ target ?? '_self' }}"{% endif %} {% if buttonId is defined and buttonId is not empty %} id="{{ buttonId }}"{% endif %} {% if download is defined and download is not empty %} download="{{ download }}"{% endif %}><span class="icomoon icon-{{ icon }}" aria-hidden="true"></span> {{ buttonText }}</{{ type }}>
+{% elseif iconPosition == undefined and buttonText is not empty %}
+    <{{ type }} class="button button-no-icon {% if buttonColor is defined and buttonColor is not empty %}button-{{ buttonColor }}{% endif %} {% if buttonClass is defined and buttonClass is not empty %}button-{{ buttonClass }}{% endif %}" {% if type == 'a' %}href="{{ href ?? '#' }}" target="{{ target ?? '_self' }}"{% endif %} {% if buttonId is defined and buttonId is not empty %} id="{{ buttonId }}"{% endif %} {% if download is defined and download is not empty %} download="{{ download }}"{% endif %}>{{ buttonText }}</{{ type }}>
+{% elseif buttonText == undefined and icon is not empty %}
+    <{{ type }} class="button button-no-text {% if buttonColor is defined and buttonColor is not empty %}button-{{ buttonColor }}{% endif %} {% if buttonClass is defined and buttonClass is not empty %}button-{{ buttonClass }}{% endif %}" {% if type == 'a' %}href="{{ href ?? '#' }}" target="{{ target ?? '_self' }}"{% endif %} {% if buttonId is defined and buttonId is not empty %} id="{{ buttonId }}"{% endif %} {% if download is defined and download is not empty %} download="{{ download }}"{% endif %}><span class="icomoon icon-{{ icon }}" aria-hidden="true"></span></{{ type }}>
+{% endif %}

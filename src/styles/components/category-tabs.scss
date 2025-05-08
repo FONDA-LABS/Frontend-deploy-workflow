@@ -1,0 +1,49 @@
+.categories {
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        &-item {
+            flex: 1 1 0;
+            text-align: center;
+        }
+    }
+
+    &-button {
+        display: inline-block;
+        width: 100%;
+        font-family: $fontFamilyBase;
+        font-size: $fontSizeH4;
+        line-height: $lineHeightH4;
+        font-weight: $fontWeightBold;
+        color: var(--color-grey-04);
+        padding: pxToRem(10px) pxToRem(10px) pxToRem(9px) pxToRem(10px);
+        background: 0 none;
+        border: none;
+        border-bottom: pxToRem(1px) solid var(--color-grey-02);
+        cursor: pointer;
+        transition: all $globalAnimationDuration $globalAnimationTimingFunction;
+
+        @include hover {
+            color: var(--color-blue-13);
+            padding-bottom: pxToRem(6px);
+            border-bottom: pxToRem(4px) solid var(--color-blue-05);
+            background-color: var(--color-grey-01);
+        }
+
+        &[aria-selected="true"] {
+            color: var(--color-blue-13);
+            padding-bottom: pxToRem(6px);
+            border-bottom: pxToRem(4px) solid var(--color-blue-10);
+        }
+    }
+
+    &-count {
+        font-family: $fontFamilyBase;
+        font-size: $fontSizeBase;
+        line-height: $lineHeightBase;
+        font-weight: $fontWeightBase;
+        letter-spacing: $letterSpacingBase;
+    }
+}

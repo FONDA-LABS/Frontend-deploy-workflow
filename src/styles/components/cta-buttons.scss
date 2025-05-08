@@ -1,0 +1,14 @@
+.cta-buttons {
+    padding: $spacingxl 0;
+
+    @include media(lg) {
+        padding: $spacingmd 0;
+    }
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacingsm;
+    }
+}

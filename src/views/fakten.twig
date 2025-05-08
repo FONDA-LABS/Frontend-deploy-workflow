@@ -1,0 +1,97 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "templates/modules/grid-bento-box.twig" with {
+        background: 'blue-10',
+        subheadline: 'About Zsi',
+        headline: 'Fakten auf einen Blick',
+        bentoBoxes: [
+            {
+                span: '2',
+                preHeadline: 'Projekte am ZSI',
+                layout: {
+                headlineL: 'Forschende am ZSI',
+                contentL: 'NN',
+                headlineR: 'Forschende am ZSI',
+                contentR: 'NN',
+            },
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: 'N.NNN+',
+                content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+            },
+            {
+                span: '1',
+                headline: 'Forschende am ZSI',
+                contentBig: 'N.NNN+',
+                content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+            },
+            {
+                span: '2',
+                headline: 'Forschende am ZSI',
+                contentBig: '50+',
+                content: 'Frauenanteil 75%',
+                pieChart: 75,
+            },
+            {
+                subgrid: [
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: 'N.NNN+',
+                    content: 'Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.',
+                },
+            ],
+            },
+            {
+                subgrid: [
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+                {
+                    span: '1',
+                    headline: 'Forschende am ZSI',
+                    contentBig: '50+',
+                },
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

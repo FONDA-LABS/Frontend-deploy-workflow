@@ -1,0 +1,119 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle Jobs'
+        },
+        subheadline: 'Application deadline: 10, Jan. 2023',
+        headline: 'Expert for research and innovation policy',
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        content: [
+            {
+                question: 'We are looking forward to your application!',
+                answer: 'We want to strengthen our profile in the field of "Research and Innovation Policy"
+                with an expert who has very good knowledge of Austrian and European R&I policy.
+                Further knowledge and interest in e.g. higher education policy, societal and socio-ecological
+                transformation, evaluation, science diplomacy as well as European policies and programmes in these
+                fields are an advantage. Furthermore, the applicant has already gained first relevant experience in
+                applied research and has very good scientific methodological
+                skills which he/she can apply to research and evaluation projects.',
+            },
+            {
+                question: 'Work area',
+                answer: "<ul><li>Collaboration in national and international research and innovation projects in the field of R&I policy (including evaluation)</li>
+                <li>Conducting qualitative and quantitative research on national and international issues related to the design, implementation and evaluation of research policy,
+                innovation, science diplomacy and societal transformation in the context of the European Green Deal</li>
+                <li>Independent writing of project reports and scientific contributions</li>
+                <li>Cooperation and communication with national and international project partners and clients in an interdisciplinary environment</li>
+                <li>Development of project proposals and engagement in project acquisition</li>
+                <li>Are you self-organised, a team player, committed, accurate and reliable? Are you highly interested in our fields of expertise and do you have the following skills and qualifications?</li>
+                <li>At least a Master's degree in social, political or economic sciences, or social ecology, environmental economics, environmental sociology or similar</li>
+                <li>At least 3 years of experience in research</li>
+                <li>Excellent command of German and English, ability to write project reports and scientific papers independently</li>
+                <li>Robust application of empirical social science methods</li>
+                <li>Ability to work independently and accurately</li></ul><br>
+                Then you have come to the right place!<br>
+                We offer exciting projects, the opportunity to shape things, a flexible and international working environment,
+                a committed and collegial team, an open working atmosphere and occasional (international) travel.",
+            },
+            {
+                question: 'Employer and place of work',
+                answer: '<strong>Place:</strong><br>
+                Zentrum für Soziale Innovation GmbH,<br>
+                1150 Vienna, <br>
+                Linke Wienzeile 246<br><br>
+                <strong>Start date:</strong><br>
+                preferably March 2022, initially limited to 1 year; thereafter an unlimited extension is possible (can be negotiated)<br><br>
+                <strong>Working hours:</strong><br>
+                full-time or part-time (at least 20 hours per week)<br><br>
+                <strong>Minimum gross salary:</strong><br>
+                3,231.35 gross at 40h/week with at least three creditable years of professional experience; additional payment possible based on actual classification
+                according to creditable previous years of service and assignment group according to the ZSI salary scheme. If you already have many years of experience in the advertised field,
+                please do not hesitate to apply as well. Details can be clarified in the interview.<br><br>
+                Please send your complete application with cover letter and CV as well as any references in German or English by 15 January 2023 by eMail to Klaus Schuch (schuch@zsi.at).',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/image-gallery.twig" with {
+        images: [
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide5.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide6.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide1.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide2.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+        ]
+    } %}
+{% endblock %}

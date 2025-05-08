@@ -1,0 +1,5 @@
+{% if relatedListItems is defined and relatedListItems is not empty %}
+    {% for relatedListItem in relatedListItems %}
+        {% include "../modules/project-cards.twig" with relatedListItem %}
+    {% endfor %}
+{% endif %}

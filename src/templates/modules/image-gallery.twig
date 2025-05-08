@@ -1,0 +1,29 @@
+{% if images is defined and images is not empty %}
+    <div class="image-gallery grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+        <div class="grid-teaser">
+            <div class="imageGallerySwiper">
+                <div class="swiper-wrapper">
+                    {% for img in images %}
+                        <div class="swiper-slide">
+                            {% include "../elements/image.twig" with {
+                                images: img.image,
+                            } %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next">
+                    <button class="button button-no-text button-transparent">
+                        <span class="icomoon icon-arrow-right" aria-hidden="true"></span>
+                        <span class="sr-only">{{ previousText ?? 'Previous' }}</span>
+                    </button>
+                </div>
+                <div class="swiper-button-prev">
+                    <button class="button button-no-text button-transparent">
+                        <span class="icomoon icon-arrow-left" aria-hidden="true"></span>
+                        <span class="sr-only">{{ nextText ?? 'Next' }}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

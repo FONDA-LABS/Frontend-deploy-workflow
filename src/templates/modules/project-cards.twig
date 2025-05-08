@@ -1,0 +1,58 @@
+{% if projectCards is defined and projectCards is not empty %}
+<section class="project-cards grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if headline is defined and headline is not empty %}
+            <div class="headline-container">
+                <h2 class="h1 headline">{{ headline }}</h2>
+            </div>
+        {% endif %}
+        {% if linkContent is defined and linkContent is not empty %}
+            <div class="link-container">
+                <a href="{{ linkhref }}" class="link-content">
+                    {{ linkContent }}
+                    <span class="icon-arrow-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        {% endif %}
+        <div class="card-container cardSwiper">
+            <div class="swiper-wrapper">
+                {% for projectCard in projectCards %}
+                    <div class="swiper-slide">
+                        {% include "../components/project-card.twig" with {
+                            projectCard: projectCard,
+                        } %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swipe-button-container">
+                <div class="swiper-button-next">
+                    {% include "../elements/button.twig" with {
+                        icon: 'arrow-right',
+                        buttonColor: 'transparent',
+                    } %}
+                </div>
+                <div class="swiper-button-prev">
+                    {% include "../elements/button.twig" with {
+                        icon: 'arrow-left',
+                        buttonColor: 'transparent',
+                    } %}
+                </div>
+            </div>
+        </div>
+        {% if buttonContent is defined and buttonContent is not empty %}
+            <div class="button-container">
+                {% include "../elements/button.twig" with {
+                    buttonText: buttonContent,
+                    iconPosition: "right",
+                    icon: 'arrow-right',
+                } %}
+            </div>
+        {% endif %}
+    </div>
+    {% if showPagination is defined and showPagination == true %}
+        <div class="grid-teaser grid-inherit">
+            {% include '../components/pagination.twig' %}
+        </div>
+    {% endif %}
+</section>
+{% endif %}

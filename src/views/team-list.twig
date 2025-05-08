@@ -1,0 +1,154 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "templates/modules/background-headline.twig" with {
+        headline: 'Our Team',
+    } %}
+
+    {% include "templates/modules/team-filter.twig" with {
+        crossButtonAriaLabel: 'Delete search input',
+        searchIconAriaLabel: 'Search team members',
+        filter: {
+            formAction: '/team-list',
+            filterOptions: 'hidden',
+            searchInput: {
+                searchPlaceholder: 'Search team',
+            }
+        },
+        contacts: [
+            {
+                isHighlight: true,
+                headline: 'Management',
+                cardContent: [
+                    {
+                        img: [
+                            {
+                                src: 'media/image 9.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                ],
+            },
+            {
+                color: 'blue-16',
+                headline: 'Team',
+                cardContent: [
+                    {
+                        img: [
+                            {
+                                src: 'media/image 9.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                    {
+                        img: [
+                            {
+                                src: 'media/josef.png',
+                                alt: 'josef hochgerner',
+                            },
+                        ],
+                        url: '#',
+                        profileLinkText: 'See Profile',
+                        precedingTitle: 'Univ. Prof. Mag. Dr.',
+                        name: 'Josef',
+                        lastName: 'Hochgerner',
+                        followingTitle: 'PhD. MSc',
+                        content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+                    },
+                ],
+            },
+        ],
+    } %}
+{% endblock %}

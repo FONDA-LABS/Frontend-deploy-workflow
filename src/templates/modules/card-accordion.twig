@@ -1,0 +1,19 @@
+<section class="card-accordion grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        <div class="accordion-card">
+            {% if headline is defined and headline is not empty %}
+                <div class="card-headline-container">
+                    <h3 class="card-headline">{{ headline }}</h3>
+                    <span class="icon-arrow-down" aria-hidden="true"></span>
+                </div>
+            {% endif %}
+            {% if infoBox is defined and infoBox is not empty %}
+                <div class="accordion-content">
+                    {% include "../components/infobox.twig" with {
+                        infoBoxCards: infoBox.infoBoxCards,
+                    } %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

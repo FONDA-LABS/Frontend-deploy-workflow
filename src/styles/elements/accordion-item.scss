@@ -1,0 +1,27 @@
+.accordion-header {
+    list-style-type: none;
+    background-color: unset;
+    border: unset;
+    text-align: left;
+    cursor: pointer;
+
+    &[aria-expanded="true"] {
+    }
+}
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows $globalAnimationDuration $globalAnimationTimingFunction, visibility $globalAnimationDuration $globalAnimationTimingFunction;
+
+    &[hidden] {
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    &-inner {
+        min-height: 0;
+    }
+}

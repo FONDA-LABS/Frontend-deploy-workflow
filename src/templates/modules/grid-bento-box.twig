@@ -1,0 +1,33 @@
+{% if bentoBoxes is defined and bentoBoxes is not empty %}
+<section class="bento-box-grid grid-full-width grid-inherit {% if background is defined and background is not empty %}{{ background }}{% endif %}"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if subheadline is defined and subheadline is not empty %}
+            <div class="subheadline-container">
+                <h3 class="subheadline">{{ subheadline }}</h3>
+            </div>
+        {% endif %}
+        {% if headline is defined and headline is not empty %}
+            <div class="headline-container">
+                <h2 class="headline">{{ headline }}</h2>
+            </div>
+        {% endif %}
+        <div class="grid-container">
+            {% for bento in bentoBoxes %}
+                {% if bento.subgrid is not empty %}
+                    <div class="subgrid-container col-span-fw">
+                        {% for bentoBox in bento.subgrid %}
+                            {% include "../elements/bento-box-card.twig" with {
+                                bentoBox: bentoBox,
+                            } %}
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {% include "../elements/bento-box-card.twig" with {
+                            bentoBox: bento,
+                        } %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,19 @@
+<section class="facts-animated grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        <div class="facts-animated-wrapper">
+            <div class="facts-animated-headline">
+                <div class="headline">
+                    {% if headline is defined and headline is not empty %}
+                    <{{ headline.type ?? 'h2' }} class="h2">{{ headline.text }}</{{ headline.type ?? 'h2' }}>
+                {% endif %}
+            </div>
+            {% if link is defined and link is not empty %}
+                {% include '../elements/link.twig' with link %}
+            {% endif %}
+        </div>
+        <div class="facts-animated-list">
+            {% include '../components/fact-list.twig' %}
+        </div>
+    </div>
+    </div>
+</section>

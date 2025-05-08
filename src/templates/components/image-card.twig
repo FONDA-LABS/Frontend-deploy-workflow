@@ -1,0 +1,36 @@
+<div class="image-card">
+    {% if img is defined and img is not empty %}
+        <div class="image-container">
+            {% include "../elements/image.twig" with {
+                images: img,
+            } %}
+            {% if url is defined and url is not empty and profileLinkText is defined and profileLinkText is not empty %}
+                <div class="animation-layer"></div>
+                <span class="profile-link profile-link-abs">
+                    <a href="{{ url }}" tabindex="0">{{ profileLinkText ?? 'See Profile' }}</a>
+                </span>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="text-container">
+        {% if name is defined and name is not empty and lastName is defined and lastName is not empty %}
+            <div class="headline-container">
+                <div class="content-area">
+                    <h3 class="h4 headline">{% if precedingTitle is defined and precedingTitle is not empty %}<span class="title">{{ precedingTitle }}</span> {% endif %}<span class="name">{{ name }}</span> <span class="lastName">{{ lastName }}</span>{% if followingTitle is defined and followingTitle is not empty %} <span class="title">{{ followingTitle }}</span>{% endif %}</h3>
+                </div>
+            </div>
+        {% endif %}
+        {% if content is defined and content is not empty %}
+            <div class="content-container">
+                <div class="content-area">
+                    <span class="content">{{ content }}</span>
+                </div>
+            </div>
+        {% endif %}
+        {% if url is defined and url is not empty and profileLinkText is defined and profileLinkText is not empty %}
+            <span class="profile-link hover-underline">
+                <a href="{{ url }}">{{ profileLinkText ?? 'See Profile' }}</a>
+            </span>
+        {% endif %}
+    </div>
+</div>

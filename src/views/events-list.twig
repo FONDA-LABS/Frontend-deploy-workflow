@@ -1,0 +1,226 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Events',
+    } %}
+    {% include "/templates/modules/grid-three-columns.twig" with {
+        showPagination : true,
+        pagination : {
+            pages : [
+                {
+                    title: '1',
+                    link: '#',
+                    class: 'page-number page-numbers',
+                },
+                {
+                    title: '2',
+                    link: '#',
+                    class: 'page-number page-numbers',
+                },
+                {
+                    title: '3',
+                    class: 'page-number page-numbers current',
+                },
+            ],
+            prev : {
+                text: 'Vorherige Seite',
+                link: '/page/1/',
+            },
+            next : {
+                text: 'Nächste Seite',
+                link: '/3/',
+            },
+        },
+        eventCards: [
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tagShow: '2',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+            {
+                event: '24. Mai 2024',
+                img: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Event Card Image',
+                },
+            ],
+                subheadline: '09 Okt. 2024',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                link: '#',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

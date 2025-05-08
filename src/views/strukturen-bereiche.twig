@@ -1,0 +1,59 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Strukturen und Bereiche',
+        content: '<strong>The ZSI is divided into three areas:</strong><br><br>
+        <ul><li>Labour & Equal Opportunities</li><li>Research Policy & Development</li><li>Technology & Knowledge Transfer</li></ul><br>
+        The management team is responsible for the strategic and operational direction of ZSI. This team is made up of as follows:',
+    } %}
+    {% include "/templates/modules/grid-four-columns.twig" with {
+        imageCard: [
+            {
+                img: [
+                {
+                    src: 'media/josef.png',
+                    alt: 'josef hochgerner',
+                },
+            ],
+                headline: '<strong>Univ. Prof. Mag. Dr. Josef Hochgerner</strong>',
+                content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+            },
+            {
+                img: [
+                {
+                    src: 'media/josef.png',
+                    alt: 'josef hochgerner',
+                },
+            ],
+                headline: '<strong>Univ. Prof. Mag. Dr. Josef Hochgerner</strong>',
+                content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+            },
+            {
+                img: [
+                {
+                    src: 'media/josef.png',
+                    alt: 'josef hochgerner',
+                },
+            ],
+                headline: '<strong>Univ. Prof. Mag. Dr. Josef Hochgerner</strong>',
+                content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+            },
+            {
+                img: [
+                {
+                    src: 'media/josef.png',
+                    alt: 'josef hochgerner',
+                },
+            ],
+                headline: '<strong>Univ. Prof. Mag. Dr. Josef Hochgerner</strong>',
+                content: 'Lorem ipsum dolor sit amet consectetur. Viverra.',
+            },
+        ],
+        postButton: {
+            text: 'Gesamtes Team',
+            link: '#',
+        },
+    } %}
+{% endblock %}

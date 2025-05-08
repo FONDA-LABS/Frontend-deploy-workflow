@@ -1,0 +1,487 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "templates/modules/team-member-detail.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle Mitarbeitenden'
+        },
+        titleBefore: 'Mag. Dr.',
+        name: 'Josef Hochgerner',
+        titleFollowing: 'PhD. MSc',
+        tasks: 'Management & projektübergreifende Tätigkeiten',
+        contactItems: [
+            {
+                text:'workgang@zsi.at',
+                icon:'email',
+                href: 'mailto:workgang@zsi.at'
+            },
+            {
+                text:'0660 321654',
+                icon:'phone',
+                href: 'tel:0660321654'
+            },
+            {
+                text:'+43 NNNNNNNNNN',
+                icon:'mobile',
+                href: 'tel:0043NNNNNNNNNN'
+            },
+            {
+                text:'XXXX-XXXX-XXXX-XXXX',
+                icon:'orcid',
+                href: 'https://orcid.org/XXXX-XXXX-XXXX-XXXX'
+            },
+        ],
+        socialMediaIcons : [
+            {
+                href: 'https://facebook.com',
+                icon: 'facebook',
+                text: 'Facebook'
+            },
+            {
+                href: 'https://linked.com',
+                icon: 'linkedIn',
+                text: 'LinkedIn'
+            },
+            {
+                href: 'https://twitter.com',
+                icon: 'x-twitter',
+                text: 'X'
+            },
+        ],
+        image: [
+            {
+                src: 'media/josef.png',
+                alt: 'Person Image',
+                imageRatio: '3x4'
+            },
+        ],
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        headline: 'Arbeits- und Forschungschwerpunkte',
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: "<p>Elke is a senior expert on science and innovation policy, internationalisation and science diplomacy. She joined ZSI in 2003 and has been representing ZSI in Brussels since February 2018.
+                Between 2007 and 2016 she was Head of Unit “Research Policy and Development” and Board Member at ZSI. From October 2016 to February 2018,
+                she acted as Policy Officer with a focus on Stakeholder Engagement at the COST Administration...</p>",
+                content: "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '1',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                publication: {
+                authors: [
+                    {
+                        name: 'Wolter',
+                        internal: true,
+                        link: '#',
+                    },
+                    {
+                        name: 'S.',
+                        internal: true,
+                    },
+                    {
+                        name: 'Birgit Sauer',
+                        internal: true,
+                    },
+                ],
+                year: '2024',
+                title: 'Through the eyes of a child: the meaning and negotiation of integration from the perspective of pupils in Vienna.',
+                source: 'Spanish Journal of Sociology, 33(2), a216.',
+            },
+                link: 'https://doi.org/10.22325/fes/res.2024.216',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                },
+            ],
+            },
+            {
+                publication: {
+                authors: [
+                    {
+                        name: 'Wolter',
+                        internal: true,
+                    },
+                    {
+                        name: 'S.',
+                        internal: false,
+                    },
+                    {
+                        name: 'Birgit Sauer',
+                        internal: true,
+                    },
+                ],
+                year: '2024',
+                title: 'Through the eyes of a child: the meaning and negotiation of integration from the perspective of pupils in Vienna.',
+                source: 'Spanish Journal of Sociology, 33(2), a216.',
+            },
+                link: 'https://doi.org/10.22325/fes/res.2024.216',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                },
+            ],
+            },
+            {
+                publication: {
+                authors: [
+                    {
+                        name: 'Wolter',
+                        internal: true,
+                        link: '#',
+                    },
+                    {
+                        name: 'S.',
+                        internal: true,
+                    },
+                    {
+                        name: 'Birgit Sauer',
+                        internal: false,
+                    },
+                ],
+                year: '2024',
+                title: 'Through the eyes of a child: the meaning and negotiation of integration from the perspective of pupils in Vienna.',
+                source: 'Spanish Journal of Sociology, 33(2), a216.',
+            },
+                link: 'https://doi.org/10.22325/fes/res.2024.216',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                },
+            ],
+            },
+            {
+                publication: {
+                authors: [
+                    {
+                        name: 'Wolter',
+                        internal: false,
+                        link: '#',
+                    },
+                    {
+                        name: 'S.',
+                        internal: false,
+                    },
+                    {
+                        name: 'Birgit Sauer',
+                        internal: false,
+                    },
+                ],
+                year: '2024',
+                title: 'Through the eyes of a child: the meaning and negotiation of integration from the perspective of pupils in Vienna.',
+                source: 'Spanish Journal of Sociology, 33(2), a216.',
+            },
+                link: 'https://doi.org/10.22325/fes/res.2024.216',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                },
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+{% endblock %}

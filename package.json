@@ -1,0 +1,36 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vituum build",
+    "build:headless": "vituum headless",
+    "preview": "vite preview",
+    "cleanup": "vituum cleanup",
+    "stylelint": "stylelint \"./src/**/*.scss\"",
+    "stylelint:fix": "stylelint \"./src/**/*.scss\" --fix --formatter",
+    "eslint": "eslint \"./src/**/*.js\"",
+    "eslint:fix": "eslint \"./src/**/*.js\" --fix",
+    "post-build": "node post-build.js"
+  },
+  "devDependencies": {
+    "@vituum/twig": "^0.1.1",
+    "cssnano": "^5.1.14",
+    "eslint": "^8.35.0",
+    "fast-glob": "^3.2.12",
+    "sass": "^1.57.1",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "twig": "^1.15.4",
+    "vite": "^4.0.0",
+    "vituum": "^0.0.38"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "container-query-polyfill": "^1.0.2",
+    "swiper": "^11.1.15",
+    "tom-select": "^2.3.1"
+  }
+}

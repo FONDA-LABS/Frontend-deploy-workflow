@@ -1,0 +1,3 @@
+{% if text is defined %}
+    <{{ type ?? 'h2' }}{% if class is defined %} class="{{ class }}"{% endif %}>{{ text }}</{{ type ?? 'h2' }}>
+{% endif %}

@@ -1,0 +1,33 @@
+<div class="tag-container">
+    {% if tagShow is empty %}
+        {% for tag in tags %}
+            <a href="{{ tag.link }}">
+                <div class="tag{% if tag.color is defined and tag.color is not empty %} tag-{{ tag.color }}{% endif %}">
+                    <span>{{ tag.tag }}</span>
+                </div>
+            </a>
+        {% endfor %}
+    {% elseif tagShow is not empty %}
+        {% set i = 0 %}
+        {% for tag in tags %}
+            {% if i >= tagShow %}
+                <a href="{{ tag.link }}" class="tag-hidden">
+                    <div class="tag{% if tag.color is defined and tag.color is not empty %} tag-{{ tag.color }}{% endif %} tag-hidden">
+                        <span>{{ tag.tag }}</span>
+                    </div>
+                </a>
+            {% else %}
+                <a href="{{ tag.link }}">
+                    <div class="tag{% if tag.color is defined and tag.color is not empty %} tag-{{ tag.color }}{% endif %}">
+                        <span>{{ tag.tag }}</span>
+                    </div>
+                </a>
+            {% endif %}
+            {% set i = i + 1 %}
+        {% endfor %}
+        <button type="button" class="tag{% if tags[0].color is defined and tags[0].color is not empty %} tag-{{ tags[0].color }}{% endif %} tag-show-more" aria-label="{{ tagShowLabel ?? 'Show more' }}" data-label-show="{{ tagShowLabel ?? 'Show more' }}" data-label-hide="{{ tagHideText ?? 'See less' }}">
+            <span class="tag-show-more-content" aria-hidden="true">...</span>
+            <span class="tag-show-less-content" aria-hidden="true">{{ tagHideText ?? 'See less'  }}</span>
+        </button>
+    {% endif %}
+</div>

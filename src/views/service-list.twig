@@ -1,0 +1,30 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Services',
+    } %}
+    {% include "/templates/modules/grid-three-columns.twig" with {
+        iconCards: [
+            {
+                content: 'Evaluation, reviews & impact assessments',
+            },
+            {
+                content: 'Consultancy & exploitation',
+            },
+            {
+                content: 'Platform coordination & network development',
+            },
+            {
+                content: 'Public engagement & science communication',
+            },
+            {
+                content: 'Trainings',
+            },
+            {
+                content: 'Results',
+            },
+        ],
+    } %}
+{% endblock %}

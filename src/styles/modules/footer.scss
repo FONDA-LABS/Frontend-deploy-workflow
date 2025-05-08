@@ -1,0 +1,325 @@
+.footer {
+    .grid-full-width {
+        background-color: var(--color-grey-07);
+        padding: $spacingsm pxToRem(20px) $spacingmd;
+        @include media(xl){
+            padding: $spacingsm $spacingmd $spacingmd;
+        }
+        @include media(xxl){
+            padding: pxToRem(50px) $spacingxl $spacingmd;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+
+            &-stretching {
+                justify-content: space-between;
+            }
+        }
+
+        .logo-to-top-wrapper {
+            display: block;
+            @include media(md) {
+                display: flex;
+            }
+            flex-wrap: wrap;
+            margin-bottom: $spacingsm;
+            @include media(xl) {
+                margin-bottom: $spacingsm + $spacingmd;
+            }
+            @include media(xxl) {
+                margin-bottom: $spacingsm + $spacingxl;
+            }
+
+            .logo-text {
+                width: 100%;
+                @include media(md) {
+                    width: unset;
+                }
+                margin: pxToRem(16px) 0;
+                @include media(xl) {
+                    margin: pxToRem(20px) 0;
+                }
+            }
+
+            .mobile-border {
+                height: pxToRem(1px);
+                width: 100%;
+                background-color: var(--color-blue-04);
+                @include media(md) {
+                    display: none;
+                }
+
+                &-top {
+                    margin-top: $spacingmd;
+                    height: pxToRem(1px);
+                    width: 100%;
+                    background-color: var(--color-blue-04);
+                    @include media(md) {
+                        display: none;
+                    }
+                }
+            }
+
+            .back-to-top-wrapper {
+                &-button {
+                    background: none;
+                    border: 0 none;
+                    font-family: $fontFamilyBase;
+                    font-size: $fontSizeBase;
+                    font-weight: $fontWeightBase;
+                    color: var(--color-black);
+                    margin: pxToRem(24px) 0 pxToRem(24px) calc(50% - (106.51px / 2));
+                    display: flex;
+                    gap: pxToRem(8px);
+                    align-items: center;
+                    cursor: pointer;
+
+                    @include media(md) {
+                        margin: 0;
+                    }
+
+                    @include media(xxl) {
+                        margin-right: pxToRem(calc(380px - 109.51px));
+                    }
+
+                    .top-text {
+                        font-size: pxToRem(16px);
+                        font-weight: 600;
+                        font-style: normal;
+                        line-height: 120%;
+                        letter-spacing: pxToRem(0.32px);
+                        @include animated-underline($height: 1px,);
+                    }
+                }
+            }
+        }
+
+        .main-content-wrapper {
+            flex-wrap: wrap;
+            flex-direction: column;
+            @include media(md) {
+                flex-direction: row;
+            }
+            margin-bottom: $spacingmd;
+            @include media(xl) {
+                margin-bottom: $spacingxl;
+            }
+            @include media(xxl) {
+                margin-bottom: $spacingxxl;
+            }
+            align-items: unset;
+            height: fit-content;
+            @include media(xl) {
+                margin-top: $spacingmd;
+                margin-bottom: $spacingxl;
+            }
+            @include media(xxl) {
+                margin-top: $spacinglg;
+                margin-bottom: $spacingxxl;
+            }
+
+            .imprint {
+                font-size: pxToRem(16px);
+                font-style: normal;
+                font-weight: 700;
+                line-height: 140%;
+                letter-spacing: pxToRem(0.16px);
+                color: var(--color-blue-13);
+
+                &-light {
+                    font-size: pxToRem(16px);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    letter-spacing: pxToRem(0.16px);
+                }
+            }
+
+            .text-maps-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .maps-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: pxToRem(8px);
+
+                    .maps-icon {
+                        width: pxToRem(24px);
+                        height: pxToRem(24px);
+                    }
+
+                    .maps-text {
+                        font-size: pxToRem(14px);
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 120%;
+                        letter-spacing: pxToRem(0.28px);
+                        @include animated-underline();
+                    }
+                }
+            }
+
+            .contact-wrapper {
+                [class^="icon-"], [class*=" icon-"] {
+                    color: var(--color-blue-10);
+                    font-size: pxToRem(22px);
+                }
+
+                width: fit-content;
+                margin-top: $spacingmd;
+                @include media(md) {
+                    width: pxToRem(260px);
+                    margin-top: 0;
+                }
+
+                a {
+                    display: block;
+
+                    .contact-icon-text-wrapper {
+                        gap: pxToRem(10px);
+
+                        .contact-text {
+                            font-size: pxToRem(14px);
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 120%;
+                            letter-spacing: pxToRem(0.28px);
+                            @include animated-underline();
+                        }
+
+                        margin-bottom: pxToRem(24px);
+                    }
+                }
+
+                :last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .headline-button-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: $spacingmd;
+                @include media(lg) {
+                    width: unset;
+                    display: block;
+                    margin-top: 0;
+                }
+
+                .headline-wrapper {
+                    margin-bottom: pxToRem(32px);
+
+                    div {
+                        max-width: pxToRem(320px);
+                        text-align: center;
+                        @include media(lg) {
+                            text-align: left;
+                        }
+                        @include media(xxl) {
+                            max-width: pxToRem(380px);
+                        }
+
+                        .footer-headline {
+                            font-size: pxToRem(30px);
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 130%;
+                            letter-spacing: pxToRem(0.3px);
+                            color: var(--color-blue-14);
+                            margin-bottom: pxToRem(32px);
+                        }
+                    }
+                }
+
+                .button {
+                    height: pxToRem(64px);
+                    max-width: pxToRem(263px);
+                    font-size: pxToRem(14px);
+                    font-weight: 600;
+
+                    [class^="icon-"], [class*=" icon-"] {
+                        color: var(--color-blue-05);
+                        font-size: pxToRem(22px);
+                    }
+                }
+            }
+        }
+
+        .border {
+            width: 100%;
+            height: pxToRem(1px);
+            background-color: var(--color-blue-04);
+            margin-bottom: $spacingmd;
+        }
+
+        .social-media-login-imprint-wrapper {
+            flex-wrap: wrap;
+
+            .follow-wrapper {
+                width: 100%;
+                @include media(md) {
+                    width: unset;
+                }
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                @include media(md) {
+                    flex-direction: row;
+                }
+                gap: pxToRem(24px);
+
+                .follow-text {
+                    font-size: pxToRem(12px);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 130%;
+                    letter-spacing: pxToRem(0.36px);
+                    text-transform: uppercase;
+                }
+            }
+
+            .login-imprint-wrapper {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                @include media(md) {
+                    flex-direction: row;
+                }
+                justify-content: space-between;
+                width: 100%;
+                @include media(md) {
+                    width: pxToRem(300px);
+                }
+                @include media(lg) {
+                    width: pxToRem(386px);
+                }
+
+                .login-wrapper {
+                    gap: pxToRem(8px);
+                    margin: $spacingmd 0;
+                    @include media(md) {
+                        margin: 0;
+                    }
+                    display: flex;
+                    align-items: center;
+                }
+
+                .imprint-text {
+                    span {
+                        font-size: pxToRem(14px);
+                        font-weight: 600;
+                        line-height: 120%;
+                        letter-spacing: pxToRem(0.28px);
+                        @include animated-underline();
+                    }
+                }
+            }
+        }
+    }
+}

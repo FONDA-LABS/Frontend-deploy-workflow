@@ -1,0 +1,35 @@
+.card {
+    padding: $spacingxs;
+    background-color: var(--color-blue-10);
+    color: var(--color-white);
+    border-radius: pxToRem(4px);
+    display: flex;
+    flex-direction: row;
+    gap: $spacingxs;
+    align-items: center;
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    height: 100%;
+    @include media(lg) {
+        min-height: pxToRem(112px);
+    }
+    @include media(xxl) {
+        min-height: pxToRem(184px);
+    }
+    &-dark {
+        background-color: var(--color-blue-14);
+    }
+    .card-content {
+        font-weight: $fontWeightBold;
+        line-height: $lineHeightBase;
+        letter-spacing: pxToRem(0.16px);
+        width: 95%;
+        @include media(lg) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+.card:hover {
+    background-color: var(--color-blue-03);
+    color: var(--color-black);
+}

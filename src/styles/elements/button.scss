@@ -1,0 +1,78 @@
+.button {
+    font-family: $fontFamilyBase;
+    font-size: $fontSizeButton;
+    line-height: $lineHeightButton;
+    min-height: pxToRem(44px);
+    min-width: pxToRem(109px);
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: pxToRem(10px);
+    background-color: var(--color-blue-12);
+    padding: pxToRem(10px) pxToRem(20px);
+    color: var(--color-white);
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    border: pxToRem(3px) solid var(--color-blue-12);
+    border-radius: pxToRem(6px);
+    cursor: pointer;
+    @include word-wrap();
+
+    &:hover {
+        background-color: var(--color-blue-06);
+        border: pxToRem(3px) solid var(--color-blue-06);
+        color: var(--color-black);
+        [class^="icon-"], [class*=" icon-"] {
+            color: var(--color-black) !important;
+        }
+    }
+
+    &:focus-visible {
+        background-color: var(--color-blue-02);
+        border: pxToRem(3px) solid var(--color-blue-09);
+        color: var(--color-blue-10);
+        [class^="icon-"], [class*=" icon-"] {
+            color: var(--color-blue-10) !important;
+        }
+    }
+
+    @include media(lg) {
+        padding: pxToRem(12px) pxToRem(24px);
+    }
+    @include media(xl) {
+        padding: pxToRem(15px) $spacingsm;
+    }
+
+    &-no-icon {
+        background-color: var(--color-blue-03);
+        border: pxToRem(3px) solid var(--color-blue-03);
+        color: var(--color-black);
+    }
+    &-no-icon:hover {
+        background-color: var(--color-blue-06);
+        border: pxToRem(3px) solid var(--color-blue-06);
+    }
+    &-no-icon:active {
+        background-color: var(--color-blue-04);
+        border: pxToRem(3px) solid var(--color-blue-04);
+    }
+    &-no-icon:focus {
+        background-color: var(--color-blue-12);
+        border: pxToRem(3px) solid var(--color-blue-04);
+        color: var(--color-white);
+    }
+
+    &-no-text {
+        border-radius: pxToRem(8px);
+        min-width: pxToRem(44px);
+        padding: pxToRem(10px);
+        justify-content: center;
+        align-items: center;
+        border: pxToRem(3px) solid var(--color-blue-12);
+    }
+
+    &-transparent {
+        background-color: transparent;
+        border: pxToRem(1px) solid var(--color-blue-12);
+        color: var(--color-blue-14);
+    }
+}

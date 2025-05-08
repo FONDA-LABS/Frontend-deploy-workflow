@@ -1,0 +1,26 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Jobs',
+    } %}
+    {% include "/templates/modules/content-full-width.twig" with {
+        content: [
+            {
+                headlineType: 'h4',
+                subheadline: 'Application deadline: 10. Jan. 2023',
+                headline: 'Expert for research and innovation policy',
+                content: 'We are looking forward to your application!<br>
+                We want to strengthen our profile in the field of "Research and Innovation Policy"
+                with an expert who has very good knowledge of Austrian and European R&I policy. Further knowledge and interest...',
+            },
+            {
+                headlineType: 'h4',
+                subheadline: 'Application deadline: 21. Dec 2022',
+                headline: 'Wissenschaftliche*r Mitarbeiter*in',
+                content: 'Wir suchen eine*n wissenschaftliche*n Mitarbeiter*in mit Schwerpunkt quantitativen Methoden (15-25 WoStd.) ab Feb 2023.',
+            }
+        ],
+    } %}
+{% endblock %}

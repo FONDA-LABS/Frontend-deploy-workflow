@@ -1,0 +1,51 @@
+<div class="bento-item {% if bentoBox.span is defined and bentoBox.span is not empty %}col-span-{{ bentoBox.span }}{% endif%} {% if bentoBox.layout is not empty %}bento-item-column{% endif %}{% if bentoBox.pieChart is not empty %}bento-item-chart{% endif %}">
+    {% if bentoBox.preHeadline is not empty %}
+        <div class="preheadline-container">
+            <span class="pre-headline">{{ bentoBox.preHeadline }}</span>
+        </div>
+    {% endif %}
+
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+            {% if bentoBox.headline is not empty %}
+                <div class="headline-container-bento">
+                    <h2 class="headline">{{ bentoBox.headline }}</h2>
+                </div>
+            {% endif %}
+
+            {% if bentoBox.contentBig is not empty %}
+                <div class="content-big-container">
+                    <h4 class="card-content-big">{{ bentoBox.contentBig }}{% if bentoBox.plus is defined and bentoBox.plus is not empty %}+{% endif %}</h4>
+                </div>
+            {% endif %}
+        </div>
+        {% if bentoBox.content is not empty %}
+            <div class="content-container">
+                <p class="content">{{ bentoBox.content }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if bentoBox.pieChart is defined and bentoBox.pieChart is not empty %}
+        <div class="chart-container">
+            <div class="pie no-round" style="--p:{{ bentoBox.pieChart }};"></div>
+        </div>
+    {% endif %}
+
+    {% if bentoBox.layout is not empty %}
+        <div class="flex-layout">
+            <div class="content-big-container layout-container">
+                <div class="card-headline-container">
+                    <h3 class="card-headline">{{ bentoBox.layout.headlineL }}</h3>
+                </div>
+                <h4 class="card-content-big">{{ bentoBox.layout.contentL }}{% if bentoBox.layout.plusL is defined and bentoBox.layout.plusL is not empty %}+{% endif %}</h4>
+            </div>
+            <div class="content-big-container layout-container">
+                <div class="card-headline-container">
+                    <h3 class="card-headline">{{ bentoBox.layout.headlineR }}</h3>
+                </div>
+                <h4 class="card-content-big">{{ bentoBox.layout.contentR }}{% if bentoBox.layout.plusR is defined and bentoBox.layout.plusR is not empty %}+{% endif %}</h4>
+            </div>
+        </div>
+    {% endif %}
+</div>

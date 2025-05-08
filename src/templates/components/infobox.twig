@@ -1,0 +1,50 @@
+<div class="infobox">
+    {% if infoBoxText is defined and infoBoxText is not empty %}
+        <div class="infobox-text">
+            {% for text in infoBoxText %}
+                <h2 class="infobox-label uppercase">{{ text.label }}</h2>
+                <h3 class="infobox-content">{{ text.content }}</h3>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if infoBoxIcons is defined and infoBoxIcons is not empty %}
+        <div class="infobox-icons">
+            <h2 class="infobox-label uppercase">{{ infoBoxIcons.headline }}</h2>
+            {% for icons in infoBoxIcons.icons %}
+                <div class="icon-container" aria-hidden="true">
+                    <span class="icon-{{ icons.icon }}" aria-hidden="true"></span><h3 class="infobox-content">{{ icons.content }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if infoBoxLink is defined and infoBoxLink is not empty %}
+        {% for link in infoBoxLink %}
+            {% include "../elements/website-link.twig" with link %}
+        {% endfor %}
+    {% endif %}
+    {% if infoBoxCards is defined and infoBoxCards is not empty %}
+        <div class="infobox-card-container">
+            {% if infoBoxCardHeadline is defined and infoBoxCardHeadline is not empty %}
+                <h2 class="infobox-label uppercase">{{ infoBoxCardHeadline }}</h2>
+            {% endif %}
+            {% for card in infoBoxCards %}
+                <div class="infobox-card">
+                    <div class="infobox-card-image">
+                        {% if card.image is defined and card.image is not empty %}
+                            {% include "../elements/image.twig" with {
+                                images: card.image,
+                            } %}
+                        {% endif %}
+                    </div>
+                    <div class="infobox-card-content">
+                        <h3 class="infobox-card-headline">{% if card.title_before is defined and card.title_before is not empty %}{{ card.title_before }} {% endif%}{{ card.headline }} {% if card.title_after is defined
+                                and card.title_after is not empty %}{{ card.title_after }}{% endif %}</h3>
+                        <a href="{{ card.link }}" class="infobox-card-link">
+                            <span class="h4 infobox-card-link-headline">{{ card.linkText }}</span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,161 @@
+.swiper-two-columns {
+    overflow: hidden;
+    padding-top: 0;
+    @include media(lg) {
+        padding-top: $spacingxs;
+        padding-bottom: $spacingxs;
+    }
+    .grid-teaser {
+        grid-column: full-width;
+        @include media(lg) {
+            grid-column: teaser;
+        }
+    }
+    .columnCardSwiper {
+        @include media(lg) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    .column-container {
+        display: flex;
+        flex-direction: column;
+        @include media(lg) {
+            padding-bottom: $spacingxs;
+            flex-direction: row;
+            gap: pxToRem(40px);
+        }
+    }
+    .module-headline-container {
+        margin-bottom: $spacingsm;
+        @include media(lg) {
+            padding: $spacingxxs 0;
+            margin-bottom: pxToRem(10px);
+        }
+    }
+    .swiper-arrow-container {
+        position: relative;
+        height: pxToRem(44px);
+        margin-top: $spacingsm;
+
+        .swiper-button-prev {
+            right: 64px;
+            left: unset;
+            @include media(lg)  {
+                right: 94px;
+            }
+        }
+        .swiper-button-next {
+            @include media(lg) {
+                right: 40px;
+            }
+        }
+    }
+    .event-headline-container {
+        display: none;
+        @include media(lg) {
+            display: block;
+            margin-bottom: pxToRem(10px);
+        }
+
+        .event-headline {
+            font-size: pxToRem(12px);
+            font-style: normal;
+            font-weight: $fontWeightBase;
+            line-height: $lineHeightBase;
+            letter-spacing: 0.36px;
+        }
+    }
+    .column-one {
+        order: 2;
+        padding: $spacingsm clamp(1.25rem, 0.732rem + 2.21vw, 2.5rem) 0;
+        @include media(lg) {
+            padding: 0;
+            order: 0;
+            width: calc(65% - 40px);
+            overflow: hidden;
+        }
+        @include media(xxl) {
+            width: calc(70% - 40px);
+        }
+        .event-card {
+            padding: $spacingxs $spacingxs $spacingxs 0;
+            max-width: unset;
+            @include media(lg) {
+                padding-right: pxToRem(40px);
+            }
+            @include media(xxl) {
+                padding: $spacingxs pxToRem(40px) $spacingxs $spacingxs;
+            }
+        }
+        .event-card:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            right: 0;
+            width: 1px;
+            background-color: var(--color-blue-04);
+        }
+    }
+    .one-column {
+        order: 2;
+        padding: $spacingsm clamp(1.25rem, 0.732rem + 2.21vw, 2.5rem) 0;
+        @include media(lg) {
+            padding: 0;
+            order: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .event-card {
+            padding: $spacingxs $spacingxs $spacingxs 0;
+            max-width: unset;
+            @include media(lg) {
+                padding-right: pxToRem(40px);
+            }
+            @include media(xxl) {
+                padding: $spacingxs pxToRem(40px) $spacingxs $spacingxs;
+            }
+        }
+        .event-card:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            right: 0;
+            width: 1px;
+            background-color: var(--color-blue-04);
+        }
+    }
+    .column-two {
+        order: 1;
+        @include media(lg) {
+            width: 35%;
+        }
+        @include media(xxl) {
+            width: 30%;
+        }
+        .event-card {
+            padding: $spacingsm clamp(1.25rem, 0.732rem + 2.21vw, 2.5rem);
+            max-width: unset;
+            @include media(lg){
+                padding: $spacingxs;
+                height: 100%;
+            }
+        }
+        .button {
+            display: none;
+            width: fit-content;
+            @include media(lg) {
+                display: flex;
+                margin-top: $spacingxs;
+            }
+            @include media(xxl) {
+                margin-top: $spacingsm;
+            }
+        }
+    }
+}

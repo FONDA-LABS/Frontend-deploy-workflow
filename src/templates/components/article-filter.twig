@@ -1,0 +1,9 @@
+{% if tabs is defined and tabs is not empty %}
+<div class="article-filter" id="article-filter">
+    {% for option in tabs %}
+        <div class="filter-option-wrapper {% if option.selected == "true" %}selected{% endif %}">
+            <span>{{ option.text }}{% if option.number is not empty %}<span class="option-number">{{ option.number }}</span>{% endif %}</span>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

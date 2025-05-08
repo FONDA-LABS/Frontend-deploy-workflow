@@ -1,0 +1,24 @@
+{% if buttons is defined and buttons is not empty %}
+    <section class="download-buttons grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+        <div class="grid-teaser">
+            {% if headline is defined and headline is not empty %}
+                <div class="headline-container">
+                    <h2 class="headline uppercase">{{ headline }}</h2>
+                </div>
+            {% endif %}
+            <div class="button-container">
+                {% for btn in buttons %}
+                    {% include "../elements/button.twig" with {
+                        type: 'a',
+                        href: btn.href,
+                        download: btn.download,
+                        buttonText: btn.buttonText,
+                        iconPosition: "left",
+                        icon: 'download',
+                        buttonColor: 'transparent',
+                    } %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

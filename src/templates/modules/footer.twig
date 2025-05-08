@@ -1,0 +1,118 @@
+<footer class="footer grid-area">
+    <div class="grid-full-width grid-inherit">
+        <div class="grid-teaser">
+            <div class="logo-to-top-wrapper flex-stretching">
+                {% if logo is defined and logo is not empty %}
+                    <a href="{{ logo.href ?? '/' }}">
+                        <img src="{{ logo.src }}" class="logo-text" alt="{{ logo.alt ?? 'ZSI Logo' }}">
+                    </a>
+                    <div class="mobile-border-top"></div>
+                {% endif %}
+                {% if backToTop is defined and backToTop is not empty %}
+                    <div class="back-to-top-wrapper">
+                        <button class="back-to-top-wrapper-button" type="button">
+                            <span class="top-text">{{ backToTop }}</span>
+                            <span class="icon-arrow-up" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="mobile-border"></div>
+                {% endif %}
+            </div>
+            <div class="main-content-wrapper flex flex-stretching">
+                <div class="text-maps-wrapper">
+                    {% if companyContact is defined and companyContact is not empty %}
+                        <p class="imprint">
+                            {% if companyContact.name is defined and companyContact.name is not empty %}
+                                {{ companyContact.name }}
+                            {% endif %}
+                            {% if companyContact.address is defined and companyContact.address is not empty %}
+                                <br>
+                                <span class="imprint-light">{{ companyContact.address }}</span>
+                            {% endif %}
+                        </p>
+                    {% endif %}
+                    {% if googleMaps is defined and googleMaps is not empty %}
+                        <a href="{{ googleMaps.href ?? '/' }}" class="maps-wrapper" target="_blank">
+                            {% if googleMaps.icon is defined and googleMaps.icon is not empty %}
+                                <span aria-hidden="true"><img src="{{ googleMaps.icon }}" class="maps-icon" alt=""></span>
+                            {% endif %}
+                            <span class="maps-text">{{ googleMaps.text ?? 'Find us on Google Maps' }}</span>
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="contact-wrapper">
+                    {% if contactMail is defined and contactMail is not empty %}
+                        <a href="{{ contactMail.href }}">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-email" aria-hidden="true"></span>
+                                <span class="contact-text">{{ contactMail.text }}</span>
+                            </div>
+                        </a>
+                    {% endif %}
+                    {% if contactPhone is defined and contactPhone is not empty %}
+                        <a href="{{ contactPhone.href }}">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-phone" aria-hidden="true"></span>
+                                <span class="contact-text">{{ contactPhone.text }}</span>
+                            </div>
+                        </a>
+                    {% endif %}
+                    {% if contactDirections is defined and contactDirections is not empty %}
+                        <a href="{{ contactDirections.href }}">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-compass" aria-hidden="true"></span>
+                                <span class="contact-text">{{ contactDirections.text }}</span>
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+                {% if newsletterCta is defined and newsletterCta is not empty %}
+                    <div class="headline-button-wrapper">
+                        {% if newsletterCta.headline is defined and newsletterCta.headline is not empty %}
+                            <div class="headline-wrapper">
+                                <div>
+                                    <span class="footer-headline">{{ newsletterCta.headline }}</span>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% include "../elements/button.twig" with {
+                            iconPosition: 'left',
+                            buttonText: newsletterCta.buttonTitle ?? 'Subscribe to Newsletter',
+                            type: 'a',
+                            href: newsletterCta.buttonUrl ?? '/',
+                            icon: 'newsletter'
+                        } %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="border"></div>
+            <div class="social-media-login-imprint-wrapper flex flex-stretching">
+                {% if socialMedia is defined and socialMedia is not empty %}
+                    <div class="follow-wrapper">
+                        {% if socialMedia.headline is defined and socialMedia.headline is not empty %}
+                            <span class="follow-text">{{ socialMedia.headline }}</span>
+                        {% endif %}
+                        {% if socialMedia.icons is defined and socialMedia.icons is not empty %}
+                            {% include "../components/social-media-icons.twig" with {
+                                socialMediaIcons: socialMedia.icons
+                            } %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <div class="login-imprint-wrapper">
+                    {% if login is defined and login is not empty %}
+                        <a href="{{ login.href ?? '/wp-login.php' }}" class="login-wrapper">
+                            <span class="icon-profile" aria-hidden="true"></span>
+                            <span class="imprint-text login-text"><span>{{ login.text ?? 'Log in' }}</span></span>
+                        </a>
+                    {% endif %}
+                    {% if imprint is defined and imprint is not empty %}
+                        <a href="{{ imprint.href }}" class="imprint-text">
+                            <span>{{ imprint.text }}</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

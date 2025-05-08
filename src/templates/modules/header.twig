@@ -1,0 +1,202 @@
+<header class="header grid-area">
+    <div class="pre-header grid-full-width grid-inherit">
+        <div class="pre-header-wrapper grid-teaser">
+            <div class="flex-container">
+                {% if specialNav is defined and specialNav is not empty %}
+                    <nav>
+                        <ul class="pre-nav">
+                            {% for navElement in specialNav %}
+                                <li><a href="{{ navElement.link }}" class="white" target="{{ navElement.target ?? '_self' }}">{{ navElement.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% endif %}
+                {% if languageLink is defined and languageLink is not empty %}
+                    <a href="{{ languageLink.href }}" class="language-wrapper">
+                        <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                        <span class="selected-language">{{ languageLink.language }}</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="grid-full-width grid-inherit main-header-area-wrapper">
+        <div class="main-header-area grid-teaser" id="main-header-area">
+            <a href="{{ landingpageURL }}">
+                <img src="{{ headerLogoPath }}" class="header-icon" alt="{{ logoAlt }}">
+            </a>
+            {% if navElements is defined and navElements is not empty %}
+                <nav class="navigation">
+                    <ul class="custom-list">
+                        {% for navElement in navElements %}
+                            <li class="popover-container">
+                                <a class="list-button" {% if navElement.categorieElements|length < 1 %} href="{{ navElement.link }}" target="{{ navElement.target ?? '_self' }}" {% else %} aria-describedby="popover-{{ navElement.categoryId }}" href="javascript:void(0);"{% endif %}>
+                                    {{ navElement.categorie }}
+                                    {% if navElement.categorieElements|length > 0  %}
+                                        <span class="icon-arrow-down" aria-hidden="true"></span>
+                                    {% endif %}
+                                </a>
+                                {% if navElement.categorieElements|length > 0  %}
+                                    <div id="popover-{{ navElement.categoryId }}" class="popover-content">
+                                        <ul>
+                                            {% for categorieElement in navElement.categorieElements %}
+                                                <li>
+                                                    <a href="{{ categorieElement.href }}" target="{{ categorieElement.target ?? '_self' }}">{{ categorieElement.text }}</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% endif %}
+            <div class="search-burger-wrapper">
+                <button class="search-container">
+                    <span class="search-text">{{ searchText }}</span>
+                    <span class="icon-search" aria-hidden="true"></span>
+                </button>
+                <button class="burger-menu" aria-label="{{ mobileMenuLabel }}">
+                    <span class="burger-wrapper" aria-hidden="true">
+                        <span class="burger-line"></span>
+                    </span>
+                </button>
+                <div class="mobile-popover">
+                    <div class="mobile-interaction-wrapper">
+                        <form action="{{ formActionURL }}" method="get">
+                            <div class="mobile-search-container" id="mobile-search-container">
+                                <label for="mobile-search"><span class="sr-only">{{ mobileSearchPlaceholder }}</span></label>
+                                <input type="text" id="mobile-search" class="mobile-search" autocomplete="false" name="s" placeholder="{{ mobileSearchPlaceholder }}"{% if searchQuery is defined and searchQuery is not empty %} value="{{ searchQuery }}"{% endif %}>
+                                <span id="mobile-search-icon" class="icon-search mobile-search-icon" aria-hidden="true"></span>
+                                <div id="space-vector" class="space-vector"></div>
+                            </div>
+                            <div id="mobile-popover-close-wrapper" class="button-wrapper">
+                                <button type="button" id="mobile-popover-close" class="mobile-popover-close" aria-label="{{ mobilePopoverAriaLabel }}">
+                                    <span class="icon-close mobile-popover-close-icon" id="mobile-popover-close-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <nav>
+                        <ul class="mobile-nav-list">
+                            {% if navElements is defined and navElements is not empty %}
+                                {% for navElement in navElements %}
+                                    {% if navElement.link is defined and navElement.link is not empty %}
+                                        <li>
+                                            <a href="{{ navElement.link }}" class="nav-link" target="{{ navElement.target ?? '_self' }}">
+                                                {{ navElement.categorie }}
+                                                <span class="icon-arrow-right" aria-hidden="true"></span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li id="mobile-nav-element-{{ loop.index }}" class="popover-trigger">
+                                            <span>{{ navElement.categorie }}</span>
+                                            <span class="icon-arrow-right" aria-hidden="true"></span>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <div class="mobile-footer">
+                        {% if specialNav is defined and specialNav is not empty %}
+                            <nav>
+                                <ul class="mobile-footer-special-nav">
+                                    {% for navElement in specialNav %}
+                                        <li><a href="{{ navElement.link }}" class="white" target="{{ navElement.target ?? '_self' }}">{{ navElement.text }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                        {% if languageLink is defined and languageLink is not empty %}
+                            <a href="{{ languageLink.href }}" class="mobile-language-wrapper">
+                                <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                                <span class="selected-language">{{ languageLink.language }}</span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="mobile-popover-navigation">
+                    <div class="mobile-interaction-wrapper">
+                        <form action="{{ formActionURL }}" method="get">
+                            <div class="mobile-search-container" id="mobile-search-container-detailed">
+                                <label for="mobile-search-detailed"><span class="sr-only">{{ mobileDetailedSearchPlaceholder }}</span></label>
+                                <input type="text" id="mobile-search-detailed" class="mobile-search" autocomplete="false" name="s" placeholder="{{ mobileDetailedSearchPlaceholder }}"{% if searchQuery is defined and searchQuery is not empty %} value="{{ searchQuery }}"{% endif %}>
+                                <span class="icon-search mobile-search-icon" id="mobile-search-icon-detailed" aria-hidden="true"></span>
+                                <div id="space-vector-detailed" class="space-vector" aria-hidden="true"></div>
+                            </div>
+                            <div id="mobile-navigation-popover-close-wrapper" class="button-wrapper">
+                                <button type="button" id="mobile-navigation-popover-close" class="mobile-popover-close" aria-label="{{ mobilePopoverAriaLabel }}">
+                                    <span class="icon-close mobile-popover-close-icon" id="mobile-popover-detailed-close-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    {% if navElements is defined and navElements is not empty %}
+                        <div class="mobile-detail-lists-wrapper">
+                            <div class="back-navigation-wrapper">
+                                <div class="back-navigation">
+                                    <span class="icon-back-arrow" aria-hidden="true"></span>
+                                    <span>{{ backText }}</span>
+                                </div>
+                            </div>
+                            {% for navElement in navElements %}
+                                <div class="list-wrapper" id="list-wrapper-{{ loop.index }}">
+                                    <ul>
+                                        {% if navElement.categorieElements is defined and navElement.categorieElements is not empty %}
+                                            {% for categorieElement in navElement.categorieElements %}
+                                                <li class="" id="">
+                                                    <a href="{{ categorieElement.href }}" target="{{ categorieElement.target ?? '_self' }}">{{ categorieElement.text }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <div class="mobile-footer">
+                        <nav>
+                            <ul class="mobile-footer-special-nav">
+                                {% if specialNav is defined and specialNav is not empty %}
+                                    {% for navElement in specialNav %}
+                                        <li><a href="{{ navElement.link }}" target="{{ navElement.target ?? '_self' }}">{{ navElement.text }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% if languageLink is defined and languageLink is not empty %}
+                            <a href="{{ languageLink.href }}" class="mobile-language-wrapper" id="mobile-language-wrapper-detailed">
+                                <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                                <span class="selected-language">{{ languageLink.language }}</span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header-area2 grid-full-width">
+            <div class="popover-wrapper">
+                <div class="desktop-popover">
+                    <form action="{{ formActionURL }}" method="get">
+                        <label for="desktop-search-input"><span class="sr-only">{{ desktopSearchInput }}</span></label>
+                        <input type="text" id="desktop-search-input" class="desktop-search-input" autocomplete="false" name="s" placeholder="{{ desktopSearchInput }}"{% if searchQuery is defined and searchQuery is not empty %} value="{{ searchQuery }}"{% endif %}>
+                        <div class="desktop-search-button-wrapper">
+                            <div class="desktop-search-input-delete" tabindex="0">
+                                <span class="icon-close" aria-hidden="true"></span>
+                            </div>
+                            <div class="desktop-search-spacer"></div>
+                            <button type="submit" id="desktop-search-submit" class="desktop-search-submit">
+                                <span class="sr-only">{{ searchText ?? 'Search' }}</span>
+                                <span class="icon-search" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-dark-layer" aria-hidden="true"></div>
+</header>

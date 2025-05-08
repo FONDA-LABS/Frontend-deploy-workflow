@@ -1,0 +1,77 @@
+.card-accordion {
+    overflow-x: hidden;
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    background-color: var(--color-blue-02);
+    padding: pxToRem(40px) 0;
+
+    &:has(.accordion-header[aria-expanded="true"]) {
+        background-color: var(--color-blue-03);
+    }
+
+    .accordion-card {
+        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+
+        .card-headline-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            align-items: center;
+
+            .card-headline {
+                font-size: pxToRem(20px);
+                color: var(--color-blue-13);
+            }
+
+            &[aria-expanded="true"] {
+                .content-accordion-item-toggle {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .accordion-content {
+            padding-bottom: $spacingxl;
+
+            &[hidden] {
+                padding-bottom: 0;
+            }
+
+            .infobox-card-container {
+                margin-top: $spacingmd;
+
+                @include media(lg) {
+                    padding: 0 pxToRem(97px);
+                    margin: $spacingxl auto 0;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: $spacinglg;
+                }
+
+                @include media(xl) {
+                    padding: 0 pxToRem(205px);
+                }
+
+                .infobox-card {
+                    background-color: var(--color-blue-03);
+
+                    &:hover {
+                        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+                        background-color: var(--color-blue-10);
+
+                        .infobox-card-headline,
+                        .infobox-card-link,
+                        .infobox-card-link-headline {
+                            transition: $globalAnimationDuration $globalAnimationTimingFunction;
+                            color: var(--color-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: var(--color-blue-03);
+    }
+}

@@ -1,0 +1,48 @@
+<section class="team-member-detail grid-full-width grid-inherit background"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if backLink is defined and backLink is not empty %}
+            <div class="back-navigation-wrapper">
+                {% include "../elements/back-navigation.twig" with {
+                    backLink: backLink,
+                    backIconColor: 'blue',
+                    backTextColor: 'black',
+                } %}
+            </div>
+        {% endif %}
+        <div class="grid-teaser text-image-wrapper">
+            <div class="text-wrapper">
+                <div class="text-wrapper-title">
+                    {% if name is defined and name is not empty %}
+                        <h2 class="headline-name">{{ titleBefore }} <span class="name-bold">{{ name }}</span> {{ titleFollowing }}</h2>
+                    {% endif %}
+                    {% if tasks is defined and tasks is not empty %}
+                        <h3 class="headline-tasks">{{ tasks }}</h3>
+                    {% endif %}
+                </div>
+                {% if contactItems is defined and contactItems is not empty %}
+                    <div class="contact-wrapper">
+                        {% for contactItem in contactItems %}
+                            <div class="text-icon-wrapper">
+                                <a href="{{ contactItem.href }}" target="_blank">
+                                    <span class="icomoon icon-{{ contactItem.icon }} contact-icon"
+                                          aria-hidden="true"></span>
+                                    <span class="contact-text">{{ contactItem.text }}</span>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if socialMediaIcons is defined and socialMediaIcons is not empty %}
+                    {% include "../components/social-media-icons.twig" with socialMediaIcons %}
+                {% endif %}
+            </div>
+            {% if image is defined and image is not empty %}
+                <div class="image-wrapper">
+                    {% include "../elements/image.twig" with {
+                        images: image,
+                    } %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

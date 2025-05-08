@@ -1,0 +1,29 @@
+{% if pagination.pages|length > 0 %}
+    <div class="pagination grid-full-width grid-inherit">
+        <div class="grid-teaser">
+            <nav class="pagination-container">
+                {% if pagination.prev %}
+                    <a class="prev page-numbers {{ pagination.prev.link|length ? '' : 'invisible' }}"
+                       href="{{ pagination.prev.link }}">
+                        <span class="sr-only">{{ pagination.prev.text }}</span>
+                        <span class="icomoon icon-arrow-left" aria-hidden="true"></span>
+                    </a>
+                {% endif %}
+                {% for page in pagination.pages %}
+                    {% if page.link %}
+                        <a class="{{ page.class }}" href="{{ page.link }}">{{ page.title }}</a>
+                    {% else %}
+                        <span aria-current="page" class="{{ page.class }}">{{ page.title }}</span>
+                    {% endif %}
+                {% endfor %}
+                {% if pagination.next %}
+                    <a class="next page-numbers {{ pagination.next.link|length ? '' : 'invisible' }}"
+                       href="{{ pagination.next.link }}">
+                        <span class="sr-only">{{ pagination.next.text }}</span>
+                        <span class="icomoon icon-arrow-right" aria-hidden="true"></span>
+                    </a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+{% endif %}

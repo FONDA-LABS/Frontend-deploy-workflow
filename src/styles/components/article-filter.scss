@@ -1,0 +1,44 @@
+.article-filter {
+  display: none;
+  justify-content: space-around;
+  width: 100%;
+  @include media(lg) {
+    display: flex;
+  }
+  .filter-option-wrapper {
+    border-bottom: 1px solid #CDCDCD;
+    width: 100%;
+    min-width: 170px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    cursor: pointer;
+    span {
+      color: #3A3A3A;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 130%;
+      span {
+        color: #243A5B;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.16px;
+      }
+    }
+    &:hover {
+      border-bottom: 4px solid var(--color-blue-10);
+    }
+  }
+  .filter-option-container {
+    width: 100%;
+    text-align: center;
+  }
+  .option-number {
+    margin-left: pxToRem(10px);
+  }
+  .selected {
+    border-bottom: 4px solid var(--color-blue-10);
+  }
+}

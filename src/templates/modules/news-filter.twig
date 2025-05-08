@@ -1,0 +1,24 @@
+<div class="news-filter grid-three-columns grid-full-width grid-inherit block-padding"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if filter is defined and filter is not empty %}
+            {% include "../components/filter.twig" with {
+                dropdowns: filter,
+                searchInput: searchInput,
+            } %}
+        {% endif %}
+        {% if eventCards is defined and eventCards is not empty %}
+            <div class="grid-container">
+                {% for eventCard in eventCards %}
+                    {% include "../components/event-card.twig" with {
+                        eventCard: eventCard,
+                    } %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    {% if showPagination is defined and showPagination == true %}
+        <div class="grid-teaser grid-inherit">
+            {% include '../components/pagination.twig' %}
+        </div>
+    {% endif %}
+</div>

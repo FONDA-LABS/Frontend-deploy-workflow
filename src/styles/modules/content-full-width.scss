@@ -1,0 +1,27 @@
+.content-full-width {
+    .content-container {
+        padding: $spacingsm 0;
+        border-bottom: 1px solid var(--color-grey-01);
+        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+        @include media(lg) {
+            padding: $spacingsm $spacingxs;
+        }
+
+        &:hover {
+            background-color: var(--color-blue-02);
+
+            .headline {
+                color: var(--color-blue-14);
+            }
+        }
+    }
+    .subheadline-container {
+        padding-bottom: $spacingxxs;
+    }
+    .headline-container {
+        padding-bottom: $spacingxs;
+    }
+    a {
+        display: inline-block;
+    }
+}

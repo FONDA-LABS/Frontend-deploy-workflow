@@ -1,0 +1,47 @@
+{% if eventCardsColumnOne is defined and eventCardsColumnOne is not empty %}
+    <section class="swiper-two-columns grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+        <div class="grid-teaser">
+            <div class="column-container">
+                <div class="{% if eventCardsColumnTwo is defined and eventCardsColumnTwo is not empty %}column-one{% else %}one-column{% endif %}">
+                    {% if headline is defined and headline is not empty %}
+                        <div class="module-headline-container">
+                            <h2 class="headline">{{ headline }}</h2>
+                        </div>
+                    {% endif %}
+                    <div class="columnCardSwiper">
+                        <div class="swiper-wrapper">
+                            {% for eventCard in eventCardsColumnOne %}
+                                <div class="swiper-slide">
+                                    {% include "../components/event-card.twig" with {
+                                        eventCard: eventCard,
+                                    } %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-arrow-container">
+                            <div class="swiper-button-next">
+                                {% include "../elements/button.twig" with {
+                                    icon: 'arrow-right',
+                                    buttonColor: 'transparent',
+                                } %}
+                            </div>
+                            <div class="swiper-button-prev">
+                                {% include "../elements/button.twig" with {
+                                    icon: 'arrow-left',
+                                    buttonColor: 'transparent',
+                                } %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if eventCardsColumnTwo is defined and eventCardsColumnTwo is not empty %}
+                    <div class="column-two">
+                        {% include "../components/event-card.twig" with {
+                            eventCard: eventCardsColumnTwo,
+                        } %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

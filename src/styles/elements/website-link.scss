@@ -1,0 +1,39 @@
+.website-link-container {
+    padding-bottom: $spacingsm;
+    @include media(lg) {
+        padding-bottom: $spacingmd;
+    }
+    a {
+        .label {
+            color: var(--color-black);
+            padding-bottom: 0;
+            font-size: pxToRem(14px);
+            font-weight: 500;
+            line-height: 120%;
+            letter-spacing: pxToRem(0.14px);
+            @include media(xl){
+                font-weight: 600;
+                letter-spacing: pxToRem(0.28px);
+            }
+            @include media(xxl){
+                font-size: pxToRem(16px);
+                letter-spacing: pxToRem(0.32px);
+            }
+        }
+    }
+    .website-link {
+        display: flex;
+        gap: pxToRem(8px);
+        align-items: center;
+        width: fit-content;
+    }
+    .website-link:hover, .website-link:focus-visible {
+        .hover-underline::after {
+            opacity: 1;
+        }
+    }
+    .label {
+        padding-bottom: 0;
+        transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    }
+}

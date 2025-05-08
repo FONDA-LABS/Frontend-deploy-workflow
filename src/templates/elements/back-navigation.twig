@@ -1,0 +1,6 @@
+<div class="back-navigation">
+    <a href="{{ backLink.href }}">
+        <span class="icomoon icon-back-arrow back-arrow {% if backIconColor == 'white' %} back-arrow-white {% endif %} {% if backIconColor == 'blue' %} back-arrow-blue {% endif %}"></span>
+        <span class="back-navigation-text {% if backTextColor is defined and backTextColor is not empty %}{{ backTextColor }}{% endif %}">{{ backLink.text }}</span>
+    </a>
+</div>

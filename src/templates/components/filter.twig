@@ -1,0 +1,116 @@
+<div class="filter">
+    <div class="filter-container">
+        <form action="{{ filter.formAction }}" method="get">
+            {% if searchInput is defined and searchInput is not empty %}
+                <div class="search-container" id="search-container">
+                    <label class="sr-only" for="{{ searchInput.searchName ?? 'search' }}">{{ searchInput.searchPlaceholder ?? 'Search' }}</label>
+                    <input type="text" id="{{ searchInput.searchName ?? 'search' }}" name="{{ searchInput.searchName ?? 'search' }}" autocomplete="false" class="search"
+                           placeholder="{{ searchInput.searchPlaceholder ?? 'Search' }}"{% if searchInput.searchQuery is defined and searchInput.searchQuery is not empty %} value="{{ searchInput.searchQuery }}"{% endif %}>
+                    <button class="cross-button" type="button" aria-label="{{ crossButtonAriaLabel }}">
+                        <span class="icon-close" aria-hidden="true"></span>
+                    </button>
+                    <div class="form-search-icon-container">
+                        <button class="search-icon-container" type="submit" aria-label="{{ searchIconAriaLabel }}">
+                            <span class="icon-search" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div id="space-vector" class="space-vector" aria-hidden="true"></div>
+                </div>
+            {% endif %}
+            {% if showFilter == true %}
+                <div class="advanced-search-container">
+                    <div class="advanced-search">
+                        <button class="button-transparent show-button" data-target="content-{{ loop.index }}" type="button">
+                            <img src="{{ imageControls }}" id="control-icon"
+                                 class="control-icon" alt="Search Icon">
+                            {{ advancedSearch ?? 'Erweiterte Suche' }} <span class="icon-arrow-down" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="filters">
+                        <ul class="filter-dropdown">
+                            {% for dropdowns in filter.formSelect %}
+                                <li class="filter-popover-container">
+                                    <label for="{{ dropdowns.name }}"><span class="sr-only">{{ dropdowns.placeholder ?? 'Select' }}</span></label>
+                                    <select class="filter-dropdown-button" id="{{ dropdowns.name }}" name="{{ dropdowns.name }}" autocomplete="off">
+                                        <option value="" hidden selected>{{ dropdowns.placeholder ?? 'Select' }}</option>
+                                        {% for selection in dropdowns.options %}
+                                            <option class="filter-popover-list-item"{% if selection.selected is defined and selection.selected == true %} selected {% endif %} value="{{ selection.value }}">{{ selection.text }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <span class="filter-dropdown-content">{{ dropdowns.label }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {% if checkboxTextShow is defined and checkboxTextShow == true and checkboxText is defined and checkboxText is not empty %}
+                            <div class="filter-checkbox">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="complete" value="true" class="checkbox"{% if checkboxChecked is defined and checkboxChecked == true %} checked{% endif %}>
+                                    <span class="checkmark" aria-hidden="true"></span>
+                                    {{ checkboxText }}
+                                </label>
+                            </div>
+                        {% endif %}
+                        {% if buttonFilterText is defined and buttonFilterText is not empty %}
+                            <div class="filter-button-container">
+                                {% include "../elements/button.twig" with {
+                                    iconPosition: 'right',
+                                    icon: 'arrow-right',
+                                    buttonText: buttonFilterText,
+                                    buttonClass: 'filters',
+                                } %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if filterTags is defined and filterTags is not empty %}
+                        <div class="filter-tag-container tagSwiper">
+                            <div class="swiper-wrapper">
+                                {% for filtertag in filterTags %}
+                                    <div class="swiper-slide">
+                                        <button class="filter-tag" data-filter-value="{{ filtertag.href }}">
+                                            <span class="icon-close" aria-hidden="true"></span>
+                                            {{ filtertag.tag }}
+                                        </button>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="clear-swiper-container">
+                                <div class="filter-clear-container">
+                                    <span class="clear-content hover-underline-reverse">{{ clearText ?? 'Clear all' }}</span>
+                                </div>
+                                <div class="swiper-arrows">
+                                    <div class="swiper-button-next">
+                                        {% include "../elements/button.twig" with {
+                                            icon: 'arrow-right',
+                                            buttonColor: 'transparent',
+                                        } %}
+                                    </div>
+                                    <div class="swiper-button-prev">
+                                        {% include "../elements/button.twig" with {
+                                            icon: 'arrow-left',
+                                            buttonColor: 'transparent',
+                                        } %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="results-container">
+                    <div class="result-text-container">
+                        <h2 class="h3"><span class="result-count">{{ results ?? 0 }}</span> {{ resultText ?? 'Projekte' }}</h2>
+                    </div>
+                    <div class="result-dropdown-container">
+                        <label for="filter-select"><span class="sr-only">{{ sortButtonPlaceholder ?? 'Sortieren nach' }}</span></label>
+                        <select class="filter-dropdown-button" id="filter-select" name="filter-sort" autocomplete="off">
+                            <option value="" hidden selected>{{ sortButtonPlaceholder ?? 'Sortieren nach' }} <span class="icon-arrow-down" aria-hidden="true"></span></option>
+                            {% for popover in sortButtonOptions %}
+                                <option class="filter-popover-list-item" value="{{ loop.index }}">{{ popover.text ?? 'Sortieren nach' }}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="filter-dropdown-content">{{ sortButtonPlaceholder ?? 'Sortieren nach' }}</span>
+                    </div>
+                </div>
+            {% endif %}
+        </form>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="project-card">
+    <div class="card-content-container">
+        {% if projectCard.information is defined and projectCard.information is not empty %}
+            <div class="additional-information">
+                <span class="label">{{ projectCard.information }}</span>
+            </div>
+        {% endif %}
+        {% if projectCard.subheadline is defined and projectCard.subheadline is not empty %}
+            <div class="subheadline-container">
+                <span class="subheadline">{{ projectCard.subheadline }}</span>
+            </div>
+        {% endif %}
+        {% if projectCard.event is defined and projectCard.event is not empty %}
+            <div class="event-container">
+                <span class="icon-calendar" aria-hidden="true"></span>{{ projectCard.event }}
+            </div>
+        {% endif %}
+        {% if projectCard.headline is defined and projectCard.headline is not empty %}
+            <div class="headline-container-card">
+                {% if projectCard.url is defined and projectCard.url is not empty %}
+                <a href="{{ projectCard.url }}">
+                    {% endif %}
+                    <h3 class="h4 headline">{{ projectCard.headline }}</h3>
+                    {% if projectCard.url is defined and projectCard.url is not empty %}
+                </a>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if projectCard.content is defined and projectCard.content is not empty %}
+            <div class="content-container content-area">
+                <p>{{ projectCard.content }}</p>
+            </div>
+        {% endif %}
+        {% if projectCard.publication is defined and projectCard.publication is not empty %}
+            <div class="project-card-link-container">
+                <div class="publication-container">
+                    <p>
+                        {% if projectCard.publication.authors is defined and projectCard.publication.authors is not empty %}
+                            {% for author in projectCard.publication.authors %}
+                                {% if author.internal == true %}<a href="{{ author.link }}">
+                                    <u>{% endif %}<span>{{ author.name }}{% if author.internal == true %}</u>{% endif %}{% if not loop.last %}, {% endif %}{% if loop.last %} {% endif %}</span>
+                                {% if author.internal == true %}</a>{% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if projectCard.publication.year is defined and projectCard.publication.year is not empty %}({{ projectCard.publication.year }}). {% endif %}
+                        {% if projectCard.publication.title is defined and projectCard.publication.title is not empty %}<b>{{ projectCard.publication.title }}</b> {% endif %}
+                        {% if projectCard.publication.source is defined and projectCard.publication.source is not empty %}{{ projectCard.publication.source }}{% endif %}
+                    </p>
+                </div>
+                {% if projectCard.link is defined and projectCard.link is not empty %}<u><a href="{{ projectCard.link }}" target="_blank">{{ projectCard.link }}</a></u>{% endif %}
+            </div>
+        {% endif %}
+        {% if projectCard.tags is defined and projectCard.tags is not empty %}
+            {% include "../elements/tag.twig" with {
+                tagShow: projectCard.tagShow,
+                tags: projectCard.tags
+            } %}
+        {% endif %}
+    </div>
+    {% if projectCard.sideContent is defined and projectCard.sideContent is not empty %}
+        <div class="side-content-container">
+            {% for sideContent in projectCard.sideContent %}
+                <div class="side-content-container-item">
+                    {% if sideContent.label is not empty %}
+                        <h4 class="side-label uppercase">{{ sideContent.label }}</h4>
+                    {% endif %}
+                    {% if sideContent.content is not empty %}
+                        {% if sideContent.iconContent is not empty %}
+                            {% if sideContent.iconContent == "icon-download" %}
+                                <a href="{{ sideContent.url }}" class="download-link" target="_blank">
+                            {% endif %}
+                            <span class="download-link-content">
+                            <span class="{{ sideContent.iconContent }}" aria-hidden="true"></span>
+                        {% endif %}
+                        <p class="side-content {% if sideContent.iconContent == "icon-download" %} side-content-underlined {% endif %} ">{{ sideContent.content }}</p>
+                    {% if sideContent.iconContent is not empty %}
+                        </span>
+                    {% endif %}
+                        {% if sideContent.iconContent == "icon-download" %}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                    {% if sideContent.content2 is not empty %}
+                        {% if sideContent.iconContent2 is not empty %}
+                            {% if sideContent.iconContent2 == "icon-download" %}
+                                <a href="{{ sideContent.url2 }}" class="download-link" target="_blank">
+                            {% endif %}
+                            <span class="download-link-content">
+                            <span class="{{ sideContent.iconContent2 }}"></span>
+                        {% endif %}
+                        <p class="side-content side-content-underlined">{{ sideContent.content2 }}</p>
+                    {% if sideContent.iconContent2 is not empty %}
+                        </span>
+                    {% endif %}
+                        {% if sideContent.iconContent2 == "icon-download" %}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                    {% if sideContent.linkLabel is not empty %}
+                        <h4 class="side-label uppercase">{{ sideContent.linkLabel }}</h4>
+                    {% endif %}
+                    {% if sideContent.linkContent is not empty %}
+                        {% include "../elements/website-link.twig" with {
+                            url: sideContent.url,
+                            label: sideContent.linkContent,
+                            color: sideContent.linkColor,
+                        } %}
+                    {% endif %}
+                    {% if sideContent.image is not empty %}
+                        {% include "../elements/image.twig" with {
+                            images: sideContent.image,
+                        } %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

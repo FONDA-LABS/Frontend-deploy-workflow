@@ -1,0 +1,333 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "templates/modules/article-details.twig" with {
+        backLink: {
+            href: '#',
+            text: 'Alle News'
+        },
+        date: '09 - 13 April 2024',
+        dateLocation: {
+            date: '09 - 13 April 2024',
+            location: 'Vienna'
+        },
+        optionalHeadline: 'Resist',
+        headline: {
+            type: 'h1',
+            text: 'Western balkans steering platforms supported by zsi-coordinated project',
+            class: 'headline'
+        },
+        tags: [
+            {
+                tag: 'Science, technology & innovation policy',
+                color: 'white',
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: true,
+            },
+            {
+                tag: 'Entwicklung der Plattform und Netzwerkkoordination',
+                color: 'white',
+                lineBreak: false,
+            },
+        ],
+        image: [
+            {
+                src: 'media/test.png',
+                alt: 'Person Image',
+                imageRatio: '4x3'
+            },
+        ],
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        infoBox: {
+            infoBoxText: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                },
+            ],
+            infoBoxIcons: {
+                headline: 'Meeting Information',
+                icons: [
+                    {
+                        icon: 'calendar',
+                        content: '09 - 13 April 2024',
+                    },
+                    {
+                        icon: 'time',
+                        content: '11:00 A.M, Brussels time',
+                    },
+                    {
+                        icon: 'pin',
+                        content: 'Vienna',
+                    },
+                ],
+            },
+            infoBoxLink: [
+                {
+                    label: 'Official Website',
+                    url: '#',
+                    color: 'blue',
+                }
+            ],
+            infoBoxCardHeadline: 'Kontakt',
+            infoBoxCards: [
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Person Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+            ],
+        },
+        headline: 'Barbara Kieslinger and Katharina Koller present first results from the GREAT project at the ECSA 2024.',
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: "<p>This year's European Citizen Science Conference ECSA2024 took place in Vienna, Austria, from the 3rd to the 6th of April 2024. The motto of the conference was
+                Change and people from across the globe came together to discuss different perspectives and the role of citizen science in times of change.<br>
+                Katharina and Barbara presented first results from GREAT's participatory game-based approach to climate action. The poster informed about GREAT's elaborate research cycle,
+                the opportunities of participatory activities throughout the cycle, and experiences from piloting different workshop formats.<br>
+                Game-based approaches have been part of citizen science for many years. One of the most famous examples is Foldit, an online game where citizens engage in protein research and
+                thereby contribute to cutting-edge bioengineering work. <br><br>
+                Surprisingly, at the ECSA2024 conference only two posters with a focus on citizen science in the context of games were presented. Nimisha Parashar and colleagues
+                from the University of Nottingham spoke about the role of gamification and behavior change in transforming citizen science engagement. It was great to exchange experiences with
+                this research group as their topic is also related to climate change. Thus, we had a great opportunity to dive into some of the experiences they had and established a connection to build on in the future.<br><br>
+                The GREAT poster, presented by the ZSI team, had a lot of visitors and raised interest across the citizen science community. Katharina and Barbara were busy
+                answering questions about the project during the 1,5-hour poster session on Thursday, 4th of April 2024. <br>
+                A PDF of the poster can be downloaded below.</p>",
+                content: '<h2>Meeting information:</h2><p><u>Zoom link</u><br>
+                Meeting-ID: 835 7702 6569<br>
+                Password: 537558</p>',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/image-gallery.twig" with {
+        images: [
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide5.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide6.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide1.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide2.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+            {
+                image: [
+                {
+                    src: 'media/Slide4.png',
+                    alt: 'Slide 1',
+                    imageRatio: '4x3',
+                },
+            ],
+            },
+        ]
+    } %}
+    {% include "/templates/modules/download-buttons.twig" with {
+        headline: 'Download Files',
+        buttons : [
+            {
+                buttonText: '0_FINAL_ECSA_poster (pdf,2,64Mb)',
+            },
+            {
+                buttonText: '0_FINAL_ECSA_poster (pdf,2,64Mb)',
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '1',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                    iconContent2: 'icon-download',
+                    content2: 'Div Citation Download',
+                },
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

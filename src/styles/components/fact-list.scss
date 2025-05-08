@@ -1,0 +1,28 @@
+.facts-animated-list {
+    display: grid;
+    gap:  pxToRem(30px);
+    row-gap: $spacingmd;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media(md) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: pxToRem(30px);
+        row-gap: $spacinglg;
+    }
+
+    @include media(lg) {
+        flex: 0 0 66.66%;
+        max-width: 66.66%;
+    }
+
+    .fact-item {
+        &-counter-number {
+            font-size: $fontSizeBig;
+            line-height: $lineHeightBig;
+        }
+    }
+}

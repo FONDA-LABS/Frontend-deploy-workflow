@@ -1,0 +1,100 @@
+{% if slides is defined and slides is not empty %}
+    <section
+            class="timer-swiper grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+        <div class="grid-teaser">
+            {% if headline is not empty %}
+                <div class="headline-flex-container">
+                    {% if headline is defined and headline is not empty %}
+                        <div class="headline-container">
+                            {% include "../elements/headline.twig" with {
+                                text: headline.text,
+                                type: headline.type,
+                            } %}
+                        </div>
+                    {% endif %}
+                    {% if link is not empty %}
+                        <div class="link-container">
+                            <div class="content-link-container">
+                                {% include '../elements/link.twig' with link %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="grid-full-width">
+            <div class="flex-container">
+                <div class="text-navigation-wrapper">
+                    <div class="text-wrapper">
+                        <div class="swiper-container text-swiper-timer">
+                            <div class="swiper-wrapper">
+                                {% for slide in slides %}
+                                    <div class="swiper-slide">
+                                        <h3 class="slide-header">{{ slide.headline }}</h3>
+                                        <p class="slide-text">{{ slide.text }}</p>
+                                        {% if slide.button is defined and slide.button is not empty %}
+                                            {% include "../elements/button.twig" with slide.button %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% if slides|length > 1 %}
+                        <div class="navigation-wrapper">
+                            <div class="timer-wrapper" aria-hidden="true">
+                                <div class="circle-container" id="circle-container-timer" aria-hidden="true">
+                                    <svg class="progress-circle progress-circle-progress" width="46" height="46">
+                                        <circle cx="23" cy="23" r="20" stroke-width="5" fill="none" stroke="#2B466E"
+                                                id="circle-timer"></circle>
+                                    </svg>
+                                    <svg class="progress-circle" width="46" height="46" aria-hidden="true">
+                                        <circle cx="23" cy="23" r="20" stroke-width="1" fill="none"
+                                                stroke="#7FA0D7"></circle>
+                                    </svg>
+                                    <span class="icon-pause" aria-hidden="true" id="play-image-timer"></span>
+                                </div>
+                                <div class="counter-wrapper">
+                                    <div class="swiper-index-wrapper-timer">
+                                        <div class="number-container-timer">
+                                            <div class="number current">1</div>
+                                            <div class="number next"></div>
+                                        </div>
+                                    </div>
+                                    <span>/ {{ slides|length }}</span>
+                                </div>
+                            </div>
+                            <div class="arrow-wrapper">
+                                <button class="button button-no-text button-transparent button-swiper-button" id="prev-button-timer">
+                                    <span class="icomoon icon-arrow-left" aria-hidden="true"></span>
+                                    <span class="sr-only">{{ previousText ?? 'Previous' }}</span>
+                                </button>
+                                <button class="button button-no-text button-transparent button-swiper-button" id="next-button-timer">
+                                    <span class="icomoon icon-arrow-right" aria-hidden="true"></span>
+                                    <span class="sr-only">{{ nextText ?? 'Next' }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="image-scroll-wrapper">
+                    <div class="image-wrapper">
+                        <div class="swiper-container image-swiper-timer">
+                            <div class="swiper-wrapper">
+                                {% for slide in slides %}
+                                    <div class="swiper-slide">
+                                        {% if slide.image is defined and slide.image is not empty %}
+                                            {% include "../elements/image.twig" with {
+                                                images: slide.image,
+                                            } %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

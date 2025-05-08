@@ -1,0 +1,34 @@
+<section class="text-infobox grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if infoBox is defined and infoBox is not empty %}
+        <div class="module-infobox-container">
+            <div class="infobox-container">
+                {% include "../components/infobox.twig" with infoBox %}
+            </div>
+            {% endif %}
+            <div class="centered-container">
+                <div class="{% if infoBox is not defined and infoBox is empty %}module-container{% endif %} {% if infoBox is defined and infoBox is not empty %}infobox-module-container {% endif %}">
+                    <div class="text-button-container">
+                        {% if preHeadline is defined and preHeadline is not empty %}
+                            <div class="label uppercase">{{ preHeadline }}</div>
+                        {% endif %}
+                        {% if headline is defined and headline is not empty %}
+                            <h2 class="headline">{{ headline }}</h2>
+                        {% endif %}
+                        {% if accordionItems is defined and accordionItems is not empty %}
+                            <div class="text-accordion accordion-infobox-container">
+                                <div class="accordion-text-container">
+                                    {% for accordionItem in accordionItems %}
+                                        {% include '../elements/content-accordion-item.twig' with accordionItem %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if infoBox is defined and infoBox is not empty %}
+        </div>
+        {% endif %}
+    </div>
+</section>

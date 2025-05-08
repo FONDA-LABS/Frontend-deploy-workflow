@@ -1,0 +1,15 @@
+<div class="navigation-list grid-full-width grid-inherit">
+    <div class="grid-teaser">
+        <nav class="nav-list">
+            <ul>
+                {% for link in links %}
+                    <li>
+                        <a {% if link.isActive %} class="active" {% endif %} href="{{ link.href }}">
+                            {{ link.text }} {% if link.number is defined and link.number is not empty %}<span class="number">({{ link.number }})</span>{% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Focus Areas',
+    } %}
+    {% include "/templates/modules/grid-four-columns.twig" with {
+        iconCards: [
+            {
+                href: '#',
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                href: '#',
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                href: '#',
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                href: '#',
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+            {
+                content: 'Constructive Technology Assessment',
+            },
+        ]
+    } %}
+{% endblock %}

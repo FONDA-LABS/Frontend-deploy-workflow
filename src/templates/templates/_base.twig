@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% include '../templates/_tracking.twig' with tracking_codes ?? [] %}
+        {% include '../templates/_cookie-info.twig' with cookie_consent ?? [] %}
+        {% include '../templates/_head.twig' %}
+    </head>
+    <body class="{{ bodyClass }}">
+        {% block header %}
+            {% include "../modules/header.twig" with {
+                landingpageURL: '/',
+                logoAlt: 'Dies ist der Alternativtext für das Icon.',
+                specialNav: [
+                    {
+                        text: 'Jobs',
+                        link: 'youtube.com'
+                    },
+                    {
+                        text: 'Presse',
+                        link: 'youtube.com'
+                    },
+                ],
+                languageLink: {
+                    language: 'English',
+                    href: '/',
+                },
+                searchText: 'Search',
+                mobileSearchPlaceholder: 'Search',
+                mobileDetailedSearchPlaceholder: 'Search',
+                desktopSearchInput: 'Nach Projekten, Mitwirkenden und Projektakronymen durchsuchen',
+                backText: 'Back',
+                mobilePopoverAriaLabel: 'Close',
+                mobileMenuLabel: 'Menu öffnen',
+                formActionURL: '/',
+                headerLogoPath: 'media/Header-mobile.svg',
+                navElements: [
+                    {
+                        categorie: 'Research',
+                        categoryId: 'research',
+                        categorieElements: [
+                        {
+                            href: '/',
+                            text: 'Focus Area'
+                        },
+                        {
+                            href: '/',
+                            text: 'Projects'
+                        },
+                        {
+                            href: '/',
+                            text: 'Methods'
+                        },
+                        {
+                            href: '/',
+                            text: 'Publications'
+                        },
+                    ]
+                    },
+                    {
+                        categorie: 'Services',
+                        link: '/',
+                    },
+                    {
+                        categorie: 'News & Events',
+                        categoryId: 'news-events',
+                        categorieElements: [
+                        {
+                            href: '/',
+                            text: 'Evaluation'
+                        },
+                        {
+                            href: '/',
+                            text: 'Platform coordination & designer development'
+                        },
+                        {
+                            href: '/',
+                            text: 'Methods'
+                        },
+                        {
+                            href: '/',
+                            text: 'Publications'
+                        },
+                    ]
+                    },
+                    {
+                        categorie: 'About ZSI',
+                        categoryId: 'about-zsi',
+                        categorieElements: [
+                        {
+                            href: '/',
+                            text: 'Consultancy & exploitation'
+                        },
+                        {
+                            href: '/',
+                            text: 'Sport Network'
+                        },
+                        {
+                            href: '/',
+                            text: 'Methods'
+                        },
+                    ]
+                    },
+                ],
+            } %}
+        {% endblock %}
+
+        <main class="grid-area">
+            {% block main %}
+            {% endblock %}
+        </main>
+
+        {% block footer %}
+            {% include "../modules/footer.twig" with {
+                logo: {
+                    href: '/',
+                    src: 'media/logo-text.svg',
+                    alt: 'Logo Alternative Text'
+                },
+                backToTop: 'Back to top',
+                companyContact : {
+                    name: 'ZSI<br>Centre for Social Innovation Ltd.',
+                    address: 'Linke Wienzeile 246<br>A-1150 Wien'
+                },
+                googleMaps : {
+                    href: 'https://www.google.at/maps/place/Linke+Wienzeile+246,+1150+Wien/@48.1841596,16.3285794,17z/data=!3m1!4b1!4m6!3m5!1s0x476da8170dadc953:0xe1a224b52228af32!8m2!3d48.1841561!4d16.3311597!16s%2Fg%2F11c2fp5dyj?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D',
+                    icon: 'media/google-maps.svg',
+                    text: 'Find us on Google Maps'
+                },
+                contactMail : {
+                    href: 'mailto:institut@zsi.at',
+                    text: 'institut@zsi.at'
+                },
+                contactPhone : {
+                    href: 'tel:0043129504420',
+                    text: '+43 129504420'
+                },
+                contactDirections : {
+                    href: '/about',
+                    text: 'Directions & accomodations'
+                },
+                newsletterCta : {
+                    headline : 'All innovations are socially relevant',
+                    buttonTitle: 'Subscribe to Newsletter',
+                    buttonUrl: '/'
+                },
+                socialMedia : {
+                    headline : 'FOLLOW US ON',
+                    icons : [
+                        {
+                            href: 'https://facebook.com',
+                            icon: 'facebook',
+                            text: 'Facebook'
+                        },
+                        {
+                            href: 'https://linked.com',
+                            icon: 'linkedIn',
+                            text: 'LinkedIn'
+                        },
+                        {
+                            href: 'https://twitter.com',
+                            icon: 'x-twitter',
+                            text: 'X'
+                        },
+                    ],
+                },
+                login : {
+                    href : 'https://www.zsi.at/wp-admin',
+                    text: 'Log in',
+                },
+                imprint : {
+                    href : '/',
+                    text: 'Impressum & Datenschutz',
+                },
+            }%}
+        {% endblock %}
+
+        {% block modals %}
+        {% endblock %}
+
+        {% block scripts %}
+            <script type="module" src="/src/scripts/index.js"></script>
+        {% endblock %}
+    </body>
+</html>

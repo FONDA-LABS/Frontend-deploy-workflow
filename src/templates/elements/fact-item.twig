@@ -1,0 +1,19 @@
+<div class="fact-item">
+    {% if digits is defined and digits is not empty %}
+        <span class="fact-item-counter-wrapper">
+            <span class="fact-item-counter-number">
+                  {% for digit in digits %}
+                      <span class="digit">{{ digit.value }}</span>
+                  {% endfor %}
+                {% if showPlus is defined and showPlus == true %}
+                    <span class="plus-icon digit">+</span>
+                {% endif %}
+            </span>
+        </span>
+    {% endif %}
+    {% if text is defined and text is not empty %}
+        <div class="fact-item-text">
+            {{ text }}
+        </div>
+    {% endif %}
+</div>

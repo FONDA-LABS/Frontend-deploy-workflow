@@ -1,0 +1,47 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: $fontFamilyBase;
+    font-size: $fontSizeBase;
+    font-weight: $fontWeightBase;
+    color: var(--color-black);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: $fontFamilyBase;
+    font-weight: $fontWeightBold;
+    color: var(--color-black);
+}
+
+h1, .h1 {
+    font-size: $fontSizeH1;
+    letter-spacing: $letterSpacingH1;
+    line-height: $lineHeightH1;
+}
+
+h2, .h2 {
+    font-size: $fontSizeH2;
+    letter-spacing: $letterSpacingH2;
+    line-height: $lineHeightH2;
+}
+
+h3, .h3 {
+    font-size: $fontSizeH3;
+    letter-spacing: $letterSpacingH3;
+    line-height: $lineHeightH3;
+}
+
+h4, .h4 {
+    font-size: $fontSizeH4;
+    letter-spacing: $letterSpacingH4;
+    line-height: $lineHeightH4;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+ul > li {
+    list-style: none; /* Standard-Aufzählungszeichen entfernen */
+}

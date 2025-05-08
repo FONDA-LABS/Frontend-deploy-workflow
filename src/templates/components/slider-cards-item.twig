@@ -1,0 +1,17 @@
+<div class="card-container{% if isSwiper is defined and isSwiper == true %} cardSwiper{% endif %}">
+    <div class="swiper-wrapper">
+        {% for post in posts %}
+            <div class="swiper-slide">
+                {% include '../components/project-card.twig' with {
+                    projectCard: post,
+                } %}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if posts|length > 1 and isSwiper is defined and isSwiper == true %}
+        {% include "../elements/swiper-navigation.twig" with {
+            navigationClass: 'swiper-cards'
+        } %}
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+{% if href is defined and text is defined %}
+    <a class="link link-{{ color ?? 'red' }}{% if isInline is defined and isInline == true %} link-inline{% endif %}" href="{{ href }}"
+       target="{{ target ?? '_self' }}"
+       {{ attributes }}
+    >
+        <span>{{ text }}</span>
+        {% if icon is defined and icon is not empty %}
+            <span class="icomoon icon-{{ icon }}" aria-hidden="true"></span>
+        {% else %}
+            <span class="icomoon icon-arrow-right" aria-hidden="true"></span>
+        {% endif %}
+    </a>
+{% endif %}

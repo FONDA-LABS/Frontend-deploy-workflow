@@ -1,0 +1,571 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        backLink: {
+            href: '#',
+            text: 'All Focus Areas'
+        },
+        headline: 'Strategische Grundsätze und ethische Prinzipien',
+        content: 'Das Zentrum für Soziale Innovation (ZSI) ist ein privates non-profit Institut für
+        angewandte Sozialwissenschaften und ein Exzellenzzentrum für soziale Innovation mit Sitz in Wien (Österreich).',
+        image: [
+            {
+                src: 'media/Frame 748.png',
+                alt: 'Icon Image',
+            },
+        ],
+        breadCrumbs: [
+            {
+                text: 'Overview',
+                link: '#',
+            },
+            {
+                text: 'Relevant Projects',
+                link: '#',
+            },
+            {
+                text: 'Relevant News',
+                link: '#',
+            },
+            {
+                text: 'Relevant Publications',
+                link: '#',
+            },
+        ],
+    } %}
+    {% include "/templates/modules/text-infobox.twig" with {
+        infoBox: {
+            infoBoxCardHeadline: 'Kontakt',
+            infoBoxCards: [
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Person Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+                {
+                    image: [
+                    {
+                        src: 'media/image 8.png',
+                        alt: 'Hero Image',
+                    },
+                ],
+                    headline: 'Univ. Prof. Mag. Dr. Josef Hochgerner',
+                },
+            ],
+        },
+        preHeadline: 'Overview',
+        headline: 'Trust in robots?',
+        accordionItems: [
+            {
+                accordionId: 345,
+                buttonOpenText: 'Read more',
+                buttonCloseText: 'Close',
+                excerpt: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+                content: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. </p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod mor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '1',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                event: "09 - 13 April 2024",
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Download Files',
+                    iconContent: 'icon-download',
+                    content: 'Bibtex download',
+                    iconContent2: 'icon-download',
+                    content2: 'Div Citation Download',
+                },
+            ],
+            },
+            {
+                event: "09 - 13 April 2024",
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    image: [
+                    {
+                        src: 'media/Slide4.png',
+                        alt: 'Slide 1',
+                        imageRatio: '4x3',
+                    },
+                ],
+                }
+            ],
+            },
+        ],
+        buttonContent: 'See all projects',
+    } %}
+{% endblock %}

@@ -1,0 +1,93 @@
+.grid-four-columns {
+    overflow-x: hidden;
+    padding: $spacingmd 0;
+    .headline-container {
+        padding-bottom: $spacingsm;
+    }
+    .blue-16 {
+        color: var(--color-blue-16);
+    }
+    .grid-container {
+        display: grid;
+        gap: $spacingxxs;
+        @include media(md) {
+            grid-template-columns: 1fr 1fr;
+            row-gap: $spacinglg;
+        }
+        @include media(lg) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: pxToRem(20px);
+        }
+        @include media(xxl) {
+            column-gap: pxToRem(40px);
+            row-gap: $spacingsm;
+        }
+    }
+    .grid-cards {
+        grid-template-columns: 1fr;
+        gap: pxToRem(10px);
+        @include media(md) {
+            grid-template-columns: 1fr 1fr;
+            gap: pxToRem(20px);
+        }
+        @include media(lg) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include media(xxl) {
+            column-gap: pxToRem(40px);
+            row-gap: $spacingsm;
+        }
+        a {
+            .card {
+                background-color: var(--color-blue-10) !important;
+            }
+            .card:hover {
+                background-color: var(--color-blue-04) !important;
+            }
+        }
+        .gradient1 {
+            .card {
+                background-color: var(--color-blue-10) !important;
+            }
+        }
+        .gradient2 {
+            .card {
+                background-color: var(--color-blue-11) !important;
+            }
+        }
+        .gradient3 {
+            .card {
+                background-color: var(--color-blue-12) !important;
+            }
+        }
+        .gradient4 {
+            .card {
+                background-color: var(--color-blue-13) !important;
+            }
+        }
+    }
+    .grid-space-cards {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: pxToRem(60px);
+        @include media(lg) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: pxToRem(20px);
+        }
+        @include media(xxl) {
+            column-gap: pxToRem(40px);
+            row-gap: $spacingsm;
+        }
+    }
+    .button-container {
+        padding-top: pxToRem(80px);
+        padding-bottom: pxToRem(40px);
+
+        .button {
+            margin: 0 auto;
+        }
+
+        a {
+            width: fit-content;
+        }
+    }
+}

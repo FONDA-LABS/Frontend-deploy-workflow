@@ -1,0 +1,20 @@
+<a href="{{ url }}" {% if target is defined and target is not empty %} target="{{ target }}"{% endif %}>
+    <div class="card-icon">
+        {% if icon is defined and icon is not empty %}
+            <div class="icon-container" aria-hidden="true">
+                {% include "../elements/image.twig" with {
+                    images: icon,
+                } %}
+                {% if hoverIcon is defined and hoverIcon is not empty %}
+                    <div class="icon-overlay" aria-hidden="true">
+                        {% include "../elements/image.twig" with {
+                            images: hoverIcon,
+                        } %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        <span class="card-content">{{ content }}</span>
+        <span class="icon-{{ arrow }}" aria-hidden="true"></span>
+    </div>
+</a>

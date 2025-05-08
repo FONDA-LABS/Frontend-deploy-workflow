@@ -1,0 +1,126 @@
+.event-card {
+    transition: $globalAnimationDuration $globalAnimationTimingFunction;
+    padding: pxToRem(20px);
+    max-width: pxToRem(410px);
+    @include media(xl) {
+        padding: $spacingxs pxToRem(32px);
+    }
+    .event-container {
+        margin-bottom: $spacingxs;
+    }
+    .event-header {
+        font-size: pxToRem(12px);
+    }
+    .event {
+        padding-top: pxToRem(10px);
+        display: flex;
+        align-items: center;
+        gap: pxToRem(10px);
+        font-size: pxToRem(16px);
+        font-weight: $fontWeightBold;
+        span {
+            color: var(--color-blue-12);
+        }
+    }
+    .img-container {
+        margin-bottom: $spacingxs;
+    }
+    .image {
+        img {
+            border-radius: pxToRem(4px);
+            @include media(lg) {
+                border-radius: pxToRem(5.75px);
+            }
+        }
+    }
+    .img-side {
+        display: none;
+        @include media(lg) {
+            display: block;
+        }
+    }
+    .additional-information {
+        margin-bottom: $spacingxs;
+    }
+    .subheadline-container {
+        margin-bottom: pxToRem(10px);
+        .subheadline {
+            color: var(--color-blue-14);
+            font-size: pxToRem(16px);
+        }
+    }
+    .headline-container {
+        margin-bottom: $spacingxs;
+        .headline {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow:hidden;
+            @include media(lg) {
+                text-overflow: unset;
+                white-space: unset;
+                overflow: unset;
+            }
+        }
+    }
+    .content-container {
+        margin-bottom: $spacingxs;
+    }
+}
+.event-card:hover {
+    .img-container {
+        overflow: hidden;
+        border-radius: pxToRem(4.88px);
+        picture {
+            img {
+                transition: $globalAnimationDuration $globalAnimationTimingFunction;
+                transform: scale(1);
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+.card-side {
+    @include media(lg) {
+        max-width: unset;
+        display: flex;
+        gap: $spacingxxl;
+        padding: $spacingsm $spacingxs;
+    }
+    @include media(xl) {
+        gap: unset;
+        justify-content: space-between;
+    }
+    .card-content-container {
+        @include media(lg) {
+            width: 56%;
+        }
+        @include media(xl) {
+            width: unset;
+            max-width: 80%;
+        }
+    }
+    .img-container {
+        @include media(lg) {
+            width: 40%;
+        }
+        @include media(xl) {
+            width: unset;
+        }
+    }
+    .image {
+        img {
+            @include media(xl) {
+                max-width: pxToRem(386px);
+                max-height: pxToRem(289.5px);
+            }
+        }
+    }
+}
+.card-side:hover {
+    background-color: var(--color-blue-02);
+}
+.hide {
+    display: none;
+}

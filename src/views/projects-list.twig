@@ -1,0 +1,479 @@
+{% extends "templates/templates/_base.twig" %}
+{% set bodyClass = '' %}
+
+{% block main %}
+    {% include "/templates/modules/background-headline.twig" with {
+        headline: 'Projekte',
+    } %}
+    {% include "templates/components/filter.twig" with {
+        searchPlaceholder: 'Search',
+        detailText: 'Erweiterte Suche',
+        dropdownPlaceholder: 'Select',
+        dropdowns: [
+            {
+                label: "Program",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Type",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Focus Area",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Methods",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+            {
+                label: "Contributors",
+                options: [
+                {
+                    select: "Interviews",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Document analysis & literature reviews",
+                },
+                {
+                    select: "Qualitative analytical procedures",
+                },
+                {
+                    select: "Observations",
+                },
+                {
+                    select: "Artefact-analysis & visual sociology",
+                },
+                {
+                    select: "Case studies",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+                {
+                    select: "Focus groups",
+                },
+            ],
+            },
+        ],
+        checkboxText: 'Abgeschlossen',
+        buttonFilterText: 'Apply filters',
+        filterTags: [
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+            {
+                tag: 'Focus group',
+            },
+        ],
+        resultCount: 123,
+        resultText: 'Projekte',
+        popoverPlaceholder: 'Sortieren nach',
+        popoverHeader: 'Sortieren nach',
+        popoverListItem: [
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+            {
+                text: 'Sortieren nach',
+            },
+        ],
+    } %}
+    {% include "templates/modules/project-cards.twig" with {
+        headline: 'Projekte',
+        linkContent: 'See all',
+        showPagination : true,
+        pagination : {
+            pages : [
+                {
+                    title: '1',
+                    link: '#',
+                    class: 'page-number page-numbers',
+                },
+                {
+                    title: '2',
+                    link: '#',
+                    class: 'page-number page-numbers',
+                },
+                {
+                    title: '3',
+                    class: 'page-number page-numbers current',
+                },
+            ],
+            prev : {
+                text: 'Vorherige Seite',
+                link: '/page/1/',
+            },
+            next : {
+                text: 'Nächste Seite',
+                link: '/3/',
+            },
+        },
+        swiper: true,
+        projectCards: [
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '3',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tagShow: '1',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+            {
+                subheadline: 'Akronym',
+                headline: 'Regionen für Widerstandsfähigkeit gegenüber dem Klimawandel durch Innovation, Wissenschaft und Technologie.',
+                tags: [
+                {
+                    tag: 'Science, Technologie & Innovation Policy',
+                },
+                {
+                    tag: 'Soziale Inklusion (inkl. Migration)',
+                },
+            ],
+                sideContent: [
+                {
+                    label: 'Laufzeit',
+                    content: '01/2023 — 12/2027',
+                    linkLabel: 'Funding',
+                    linkContent: 'Horizon Innovation Action',
+                    linkColor: 'blue',
+                },
+            ],
+            },
+        ],
+    } %}
+{% endblock %}

@@ -1,0 +1,221 @@
+.bento-item {
+    background-color: var(--color-blue-13);
+    padding: $spacingsm pxToRem(20px);
+    border-radius: pxToRem(4px);
+
+    @include media(lg) {
+        padding: $spacingmd;
+        display: flex;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+    &-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-chart {
+        @include media(lg) {
+            gap: $spacingsm;
+
+            .bento-content-container {
+                width: calc(50% - $spacingsm);
+            }
+
+            .chart-container {
+                width: 50%;
+            }
+        }
+    }
+
+    .preheadline-container {
+        padding-bottom: pxToRem(40px);
+
+        @include media(lg) {
+            padding-bottom: $spacingsm;
+        }
+
+        @include media(xxl) {
+            padding-bottom: pxToRem(42px);
+        }
+
+        .pre-headline {
+            font-size: pxToRem(12px);
+            letter-spacing: $letterSpacingTag;
+            line-height: $lineHeightTag;
+            color: var(--color-white);
+            text-transform: uppercase;
+        }
+    }
+
+    .bento-content-container {
+        @include media(lg) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    .headline-container-bento {
+        padding-bottom: pxToRem(10px);
+
+        @include media(lg) {
+            padding-bottom: $spacingxxs;
+        }
+
+        @include media(xxl) {
+            padding-bottom: pxToRem(14px);
+        }
+
+        .headline {
+            color: var(--color-white);
+            font-size: pxToRem(16px);
+            font-weight: $fontWeightBold;
+            line-height: $lineHeightBase;
+        }
+    }
+
+    .content-big-container {
+        @include media(lg) {
+            padding-bottom: $spacingsm;
+        }
+
+        @include media(xxl) {
+            padding-bottom: pxToRem(42px);
+        }
+    }
+
+    .card-content-big {
+        color: var(--color-blue-04);
+        font-size: pxToRem(44px);
+        line-height: $lineHeightH1;
+        word-wrap: break-word;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+
+        &.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @include media(xl) {
+            font-size: clamp(2.75rem, 0.5rem + 2.813vw, 3.875rem);
+        }
+    }
+
+    .content-container {
+        padding-top: pxToRem(40px);
+
+        @include media(lg) {
+            padding-top: 0;
+        }
+
+        .content {
+            color: var(--color-white);
+        }
+    }
+
+    .chart-container {
+        padding-top: pxToRem(40px);
+        display: flex;
+        justify-content: center;
+
+        @include media(lg) {
+            padding-top: 0;
+        }
+
+        .pie {
+            --p:20;
+            --b:22px;
+            --c: var(--color-blue-08);
+            --w:100%;
+
+            width:var(--w);
+            aspect-ratio:1;
+            position:relative;
+            display:inline-grid;
+            margin:5px;
+            place-content:center;
+            font-size:25px;
+            font-weight:bold;
+            font-family:sans-serif;
+        }
+
+        .pie:before,
+        .pie:after {
+            content:"";
+            position:absolute;
+            border-radius:50%;
+        }
+
+        .pie:before {
+            inset:0;
+            background:
+                radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+                conic-gradient(white 0%, white calc(100% - var(--p)*1%), var(--c) 0);
+            -webkit-mask:radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+        }
+
+        .pie:after {
+            inset:calc(50% - var(--b)/2);
+            background:var(--c);
+            transform:rotate(calc(360deg - var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+        }
+
+        .no-round:before {
+            background-size:0 0,auto;
+        }
+
+        .no-round:after {
+            content:none;
+        }
+    }
+
+    .flex-layout {
+        display: flex;
+        gap: pxToRem(40px);
+        align-items: stretch;
+
+        @include media(lg) {
+            gap: $spacingsm;
+        }
+
+        @include media(xxl) {
+            gap: pxToRem(42px);
+        }
+
+        .layout-container {
+            @include media(lg) {
+                width: calc(50% - $spacingsm);
+            }
+
+            &:last-child {
+                @include media(lg) {
+                    width: 50%;
+                }
+            }
+        }
+        .card-headline-container {
+            padding-bottom: pxToRem(10px);
+
+            @include media(lg) {
+                padding-bottom: $spacingxxs;
+            }
+
+            @include media(xxl) {
+                padding-bottom: pxToRem(14px);
+            }
+
+            .card-headline {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+

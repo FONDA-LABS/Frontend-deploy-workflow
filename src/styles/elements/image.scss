@@ -1,0 +1,41 @@
+.image {
+    display: block;
+
+    img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+
+        &[class*="aspect-ratio"] {
+            object-fit: cover;
+        }
+    }
+}
+
+.aspect-ratio {
+    &__1x1 {
+        aspect-ratio: 1/1;
+    }
+    &__1x2 {
+        aspect-ratio: 1/2;
+    }
+    &__3x2 {
+        aspect-ratio: 3/2;
+    }
+    &__4x3 {
+        aspect-ratio: 4/3;
+    }
+    &__6x4 {
+        aspect-ratio: 6/4;
+    }
+    &__16x9 {
+        aspect-ratio: 16/9;
+    }
+    &__1x1-33 {
+        aspect-ratio: 1/1.33;
+    }
+    &__1-33x1 {
+        aspect-ratio: 1.33/1;
+    }
+}

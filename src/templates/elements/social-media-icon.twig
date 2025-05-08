@@ -1,0 +1,5 @@
+{% if href is defined and icon is defined %}
+    <a href="{{ href }}" class="social-link" title="{{ title }}" target="_blank">
+        <span class="icomoon icon-{{ icon }}" aria-hidden="true"></span>
+    </a>
+{% endif %}

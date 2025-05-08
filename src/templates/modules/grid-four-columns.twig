@@ -1,0 +1,40 @@
+<section class="grid-four-columns grid-full-width grid-inherit {% if background is not empty %} {{ background }} {% endif %}"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if headline is defined and headline is not empty %}
+            <div class="headline-container">
+                {% include "../elements/headline.twig" with headline %}
+            </div>
+        {% endif %}
+        <div class="grid-container {% if imageCard is defined and imageCard is not empty %}grid-space-cards{% endif %} {% if cards is not empty or iconCards is not empty %}grid-cards{% endif %}">
+            {% if cards is defined and cards is not empty %}
+                {% for card in cards %}
+                    <a href="{{ card.href }}" class="">
+                        {% include "../elements/card.twig" with {
+                            content: card.content,
+                            background: card.background,
+                        } %}
+                    </a>
+                {% endfor %}
+            {% endif %}
+            {% if imageCard is defined and imageCard is not empty %}
+                {% for card in imageCard %}
+                    {% include "../components/image-card.twig" with {
+                        img: card.img,
+                        precedingTitle: card.precedingTitle,
+                        name: card.name,
+                        lastName: card.lastName,
+                        followingTitle: card.followingTitle,
+                        content: card.content,
+                        url: card.url,
+                        profileLinkText: card.profileLinkText,
+                    } %}
+                {% endfor %}
+            {% endif %}
+            {% if iconCards is defined and iconCards is not empty %}
+                {% for card in iconCards %}
+                    {% include "../elements/card-icon.twig" with card %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>

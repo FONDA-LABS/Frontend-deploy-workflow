@@ -1,0 +1,141 @@
+.infobox {
+    overflow-x: hidden;
+
+    .infobox-text {
+        padding-bottom: $spacingsm;
+        @include media(lg) {
+            padding-bottom: $spacingmd;
+        }
+    }
+
+    .infobox-label {
+        font-size: $fontSizeTag;
+        letter-spacing: $letterSpacingTag;
+        line-height: $lineHeightTag;
+        padding-bottom: 0;
+        color: var(--color-grey-05);
+    }
+
+    .infobox-content {
+        font-size: pxToRem(16px);
+        font-weight: $fontWeightBold;
+        line-height: $lineHeightBase;
+        letter-spacing: pxToRem(0.16px);
+        padding-bottom: pxToRem(20px);
+    }
+
+    .infobox-content:last-child {
+        padding-bottom: 0;
+    }
+
+    .infobox-icons {
+        padding-bottom: $spacingmd;
+
+        .icon-container {
+            padding-top: $spacingxxs;
+            display: flex;
+            align-items: center;
+            gap: pxToRem(10px);
+
+            .icon-calendar, .icon-time, .icon-pin {
+                color: var(--color-blue-12);
+            }
+        }
+    }
+
+    .infobox-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacingxxs;
+        flex-direction: column;
+
+        .infobox-card {
+            display: flex;
+            background-color: var(--color-blue-03);
+            border-radius: pxToRem(4px);
+            gap: pxToRem(20px);
+            min-height: pxToRem(110px);
+            transition: $globalAnimationDuration $globalAnimationTimingFunction;
+            width: 100%;
+
+            @include media(lg) {
+                border-radius: pxToRem(5.75px);
+                max-width: pxToRem(295px);
+            }
+            @include media(xl) {
+                max-width: unset;
+                width: 100%;
+            }
+
+            &-image {
+                overflow: hidden;
+                border-top-left-radius: pxToRem(4px);
+                border-bottom-left-radius: pxToRem(4px);
+                width: 25%;
+
+                @include media(md) {
+                    width: 15%;
+                }
+
+                @include media(lg) {
+                    min-width: pxToRem(82px);
+                    border-top-left-radius: pxToRem(5.75px);
+                    border-bottom-left-radius: pxToRem(5.75px);
+                }
+
+                img {
+                    min-height: pxToRem(110px);
+                    min-width: pxToRem(82px);
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: all 0.5s;
+                }
+            }
+
+            &:hover {
+                background-color: var(--color-blue-09) !important;
+
+                .infobox-card-headline,
+                .infobox-card-link,
+                .infobox-card-link-headline {
+                    color: var(--color-white);
+                }
+
+                .image {
+                    img {
+                        scale: 1.1;
+                    }
+                }
+            }
+        }
+
+        .infobox-card-content {
+            width: 75%;
+            padding: pxToRem(15px) pxToRem(24px) pxToRem(15px) 0;
+            display: flex;
+            flex-direction: column;
+            gap: $spacingxxs;
+            justify-content: space-between;
+
+            @include media(md) {
+                width: 85%;
+            }
+        }
+
+        .infobox-card-headline {
+            font-size: pxToRem(16px);
+        }
+
+        .infobox-card-link {
+            text-decoration: underline;
+            width: fit-content;
+        }
+
+        .infobox-card-link-headline {
+            font-size: $fontSizeTag;
+            letter-spacing: $letterSpacingTag;
+            line-height: $lineHeightTag;
+        }
+    }
+}

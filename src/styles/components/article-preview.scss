@@ -1,0 +1,40 @@
+.article-preview {
+  padding: $spacingsm $spacingmd;
+  display: flex;
+  .text-wrapper {
+    .date {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0.16px;
+      margin-bottom: 10px;
+    }
+    .article-header {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 130%;
+      margin-bottom: $spacingxs;
+    }
+    .text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0.16px;
+      margin-bottom: $spacingxs;
+    }
+    .tag-wrapper {
+
+    }
+  }
+  .image-wrapper {
+
+    width: 285px;
+    margin-left: $spacingxxl;
+    picture {
+      width: 100%;
+      img {
+        border-radius: 4.88px;
+      }
+    }
+  }
+}

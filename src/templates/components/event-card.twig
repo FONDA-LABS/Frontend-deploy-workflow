@@ -1,0 +1,89 @@
+{% if eventCard.direction == "side" %}
+    <div class="event-card card-side {% if eventCard.background is not empty %}{{ eventCard.background }}{% endif %}">
+        <div class="card-content-container">
+            {% if eventCard.information is defined and eventCard.information is not empty %}
+                <div class="additional-information">
+                    <span class="label">{{ eventCard.information }}</span>
+                </div>
+            {% endif %}
+            {% if eventCard.subheadline is defined and eventCard.subheadline is not empty %}
+                <div class="subheadline-container">
+                    <span class="subheadline">{{ eventCard.subheadline }}</span>
+                </div>
+            {% endif %}
+            {% if eventCard.headline is defined and eventCard.headline is not empty %}
+                <a href="{{ eventCard.link }}">
+                    <div class="headline-container">
+                        <h4 class="headline">{{ eventCard.headline }}</h4>
+                    </div>
+                </a>
+            {% endif %}
+            {% if eventCard.content is defined and eventCard.content is not empty %}
+                <div class="content-container">
+                    <p>{{ eventCard.content }}</p>
+                </div>
+            {% endif %}
+            {% if eventCard.tags is defined and eventCard.tags is not empty %}
+                {% include "../elements/tag.twig" with {
+                    tags: eventCard.tags
+                } %}
+            {% endif %}
+        </div>
+        {% if eventCard.img is defined and eventCard.img is not empty %}
+            <div class="img-container img-side">
+                {% include "../elements/image.twig" with {
+                    images: eventCard.img,
+                } %}
+            </div>
+        {% endif %}
+    </div>
+{% else %}
+    <div class="event-card{% if eventCard.background is not empty %} {{ eventCard.background }}{% endif %}">
+        {% if eventCard.eventHeadline is defined and eventCard.eventHeadline is not empty and eventCard.event is defined and eventCard.event is not empty %}
+            <div class="event-headline-container">
+                <h3 class="event-headline">{{ eventCard.eventHeadline }}</h3>
+            </div>
+        {% endif %}
+        {% if eventCard.event is defined and eventCard.event is not empty %}
+            <div class="event-container">
+                <div class="event">
+                    <span class="icon-calendar" aria-hidden="true"></span>{{ eventCard.event }}
+                </div>
+            </div>
+        {% endif %}
+        {% if eventCard.img is defined and eventCard.img is not empty %}
+            <div class="img-container">
+                {% include "../elements/image.twig" with {
+                    images: eventCard.img,
+                } %}
+            </div>
+        {% endif %}
+        {% if eventCard.subheadline is defined and eventCard.subheadline is not empty %}
+            <div class="subheadline-container">
+                <span class="subheadline">{{ eventCard.subheadline }}</span>
+            </div>
+        {% endif %}
+        {% if eventCard.headline is defined and eventCard.headline is not empty %}
+            <a href="{{ eventCard.link }}">
+                <div class="headline-container">
+                    <h4 class="headline">{{ eventCard.headline }}</h4>
+                </div>
+            </a>
+        {% endif %}
+        {% if eventCard.tags is defined and eventCard.tags is not empty %}
+            {% include "../elements/tag.twig" with {
+                tags: eventCard.tags,
+                tagShow: eventCard.tagShow,
+            } %}
+        {% endif %}
+        {% if eventCard.button is defined and eventCard.button is not empty %}
+            {% include "../elements/button.twig" with {
+                type: 'a',
+                buttonText: eventCard.button.text,
+                href: eventCard.button.href,
+                icon: 'arrow-right',
+                iconPosition: 'right',
+            } %}
+        {% endif %}
+    </div>
+{% endif %}

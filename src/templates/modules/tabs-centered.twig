@@ -1,0 +1,43 @@
+<div class="tabs-centered block-padding grid-full-width grid-inherit"{% if anchorId is defined %} id="{{ anchorId }}"{% endif %}>
+    <div class="grid-teaser">
+        {% if categories is defined and categories is not empty %}
+            <div class="categories tabs">
+                <nav aria-label="{{ categoriesLabel ?? 'Kategorien' }}" role="tablist">
+                    <ul class="categories-list">
+                        {% for category in categories %}
+                            <li class="categories-list-item">
+                                <button class="categories-button" role="tab" aria-controls="panel-{{ loop.index }}" id="tab-{{ loop.index }}" tabindex="0" aria-selected="{{ loop.index > 1 ? 'false':'true' }}">
+                                    {{ category.title }}
+                                    {% if category.count is defined and category.count is not empty %}
+                                        <span class="categories-count">{{ category.count }}</span>
+                                    {% endif %}
+                                </button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+
+                {% for category in categories %}
+                    <div id="panel-{{ loop.index }}" role="tablist" tabindex="{{ loop.index == 1 ? '0':'-1' }}" aria-labelledby="tab-{{ loop.index }}" {{ loop.index > 1 ? 'hidden':'' }}>
+                        {% include '../components/slider-cards-item.twig' with {
+                            posts:category.posts,
+                            isSwiper: category.swiper ?? false
+                        } %}
+                        {% if category.postButton is defined and category.postButton is not empty %}
+                            <div class="button-container">
+                                {% include "../elements/button.twig" with category.postButton %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif posts is defined and posts is not empty %}
+            {% include '../components/slider-cards-item.twig' %}
+        {% endif %}
+    </div>
+    {% if showPagination is defined and showPagination == true %}
+        <div class="grid-teaser grid-inherit">
+            {% include '../components/pagination.twig' %}
+        </div>
+    {% endif %}
+</div>
