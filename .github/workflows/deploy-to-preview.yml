@@ -1,4 +1,4 @@
-name: Deploy to Preview Server
+name: Deploy Frontend to Testserver
 
 on:
   push:
@@ -10,36 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Clean install (force esbuild for Linux)
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install --force
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-      - name: Build project
-        run: |
-          npm run build || (echo "❌ Build failed"; exit 1)
+      - name: Install Dependencies
+        run: npm install --force
 
-      - name: Zeige Verzeichnisinhalt nach Build
-        run: |
-          echo "🔍 aktuelles Arbeitsverzeichnis:"
-          pwd
-          echo "📂 Inhalt im Root:"
-          ls -la
-          echo "📁 Inhalt von ./dist:"
-          ls -la ./dist || echo "❌ dist fehlt"
+      - name: Build Frontend
+        run: npm run build
+
+      - name: Debug dist folder
+        run: ls -la ./dist
 
       - name: Deploy via rsync over SSH
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.TESTSERVER_HOST }}
-          username: ${{ secrets.TESTSERVER_USER }}
-          key: ${{ secrets.TESTSERVER_SSH_KEY }}
-          script: |
-            if [ ! -d "./dist" ]; then
-              echo "❌ dist existiert nicht im Runner – Build oder Pfadfehler"
-              exit 1
-            fi
-            rsync -avzr --delete ./dist/ /var/www/twigtest/dist/
+        run: |
+          echo "$SSH_KEY" > deploy_key.pem
+          chmod 600 deploy_key.pem
+
+          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/twigtest/dist/
+        env:
+          SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
+          SSH_USER: ${{ secrets.TESTSERVER_USER }}
+          SSH_HOST: ${{ secrets.TESTSERVER_HOST }}
