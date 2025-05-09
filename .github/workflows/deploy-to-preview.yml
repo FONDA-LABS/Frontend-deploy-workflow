@@ -22,13 +22,14 @@ jobs:
         run: |
           npm run build || (echo "❌ Build failed"; exit 1)
 
-      - name: Check dist folder exists
+      - name: Zeige Verzeichnisinhalt nach Build
         run: |
-          if [ ! -d "./dist" ]; then
-            echo "❌ FEHLER: Ordner ./dist existiert nicht – Build ist fehlgeschlagen!"
-            exit 1
-          fi
-          ls -la ./dist
+          echo "🔍 aktuelles Arbeitsverzeichnis:"
+          pwd
+          echo "📂 Inhalt im Root:"
+          ls -la
+          echo "📁 Inhalt von ./dist:"
+          ls -la ./dist || echo "❌ dist fehlt"
 
       - name: Deploy via rsync over SSH
         uses: appleboy/ssh-action@v1.0.0
@@ -37,4 +38,8 @@ jobs:
           username: ${{ secrets.TESTSERVER_USER }}
           key: ${{ secrets.TESTSERVER_SSH_KEY }}
           script: |
+            if [ ! -d "./dist" ]; then
+              echo "❌ dist existiert nicht im Runner – Build oder Pfadfehler"
+              exit 1
+            fi
             rsync -avzr --delete ./dist/ /var/www/twigtest/dist/
