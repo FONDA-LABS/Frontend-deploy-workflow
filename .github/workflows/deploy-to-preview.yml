@@ -13,21 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check dist path
-        run: find . -type d -name dist
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies (force reinstallation)
+      - name: Clean install (force esbuild for Linux)
         run: |
           rm -rf node_modules package-lock.json
           npm install --force
 
       - name: Build project
-        run: npm run build
+        run: |
+          npm run build || (echo "❌ Build failed"; exit 1)
+
+      - name: Check dist folder exists
+        run: |
+          if [ ! -d "./dist" ]; then
+            echo "❌ FEHLER: Ordner ./dist existiert nicht – Build ist fehlgeschlagen!"
+            exit 1
+          fi
+          ls -la ./dist
 
       - name: Deploy via rsync over SSH
         uses: appleboy/ssh-action@v1.0.0
