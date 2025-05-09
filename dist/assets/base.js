@@ -1,0 +1,1 @@
+var l=Object.defineProperty;var e=(t,n,i)=>n in t?l(t,n,{enumerable:!0,configurable:!0,writable:!0,value:i}):t[n]=i;var s=(t,n,i)=>(e(t,typeof n!="symbol"?n+"":n,i),i);const c=class c{constructor(){c._instance==null&&(c._instance=this)}_init(){}_onPageChanged(){}};s(c,"_instance",null);let a=c;export{a as B};

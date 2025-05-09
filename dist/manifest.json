@@ -1,0 +1,248 @@
+{
+  "_keyboard.js": {
+    "css": [
+      "assets/keyboard.css"
+    ],
+    "file": "assets/keyboard.js"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Italic.eot": {
+    "file": "assets/HankenGrotesk-Italic.eot",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Italic.eot"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Italic.svg": {
+    "file": "assets/HankenGrotesk-Italic.svg",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Italic.svg"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Italic.ttf": {
+    "file": "assets/HankenGrotesk-Italic.ttf",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Italic.ttf"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Italic.woff": {
+    "file": "assets/HankenGrotesk-Italic.woff",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Italic.woff"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Italic.woff2": {
+    "file": "assets/HankenGrotesk-Italic.woff2",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Italic.woff2"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Regular.eot": {
+    "file": "assets/HankenGrotesk-Regular.eot",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Regular.eot"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Regular.svg": {
+    "file": "assets/HankenGrotesk-Regular.svg",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Regular.svg"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Regular.ttf": {
+    "file": "assets/HankenGrotesk-Regular.ttf",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Regular.ttf"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Regular.woff": {
+    "file": "assets/HankenGrotesk-Regular.woff",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Regular.woff"
+  },
+  "fonts/HankenGrotesk/HankenGrotesk-Regular.woff2": {
+    "file": "assets/HankenGrotesk-Regular.woff2",
+    "src": "fonts/HankenGrotesk/HankenGrotesk-Regular.woff2"
+  },
+  "fonts/iconfont/icomoon.eot": {
+    "file": "assets/icomoon.eot",
+    "src": "fonts/iconfont/icomoon.eot"
+  },
+  "fonts/iconfont/icomoon.svg": {
+    "file": "assets/icomoon.svg",
+    "src": "fonts/iconfont/icomoon.svg"
+  },
+  "fonts/iconfont/icomoon.ttf": {
+    "file": "assets/icomoon.ttf",
+    "src": "fonts/iconfont/icomoon.ttf"
+  },
+  "fonts/iconfont/icomoon.woff": {
+    "file": "assets/icomoon.woff",
+    "src": "fonts/iconfont/icomoon.woff"
+  },
+  "fonts/iconfont/icomoon.woff2": {
+    "file": "assets/icomoon.woff2",
+    "src": "fonts/iconfont/icomoon.woff2"
+  },
+  "keyboard.css": {
+    "file": "assets/keyboard.css",
+    "src": "keyboard.css"
+  },
+  "media/backgrounds/background-xl.svg": {
+    "file": "assets/background-xl.svg",
+    "src": "media/backgrounds/background-xl.svg"
+  },
+  "scripts/akkordion-tag.js": {
+    "file": "assets/akkordion-tag.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/akkordion-tag.js"
+  },
+  "scripts/app.js": {
+    "file": "assets/app.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/app.js"
+  },
+  "scripts/base.js": {
+    "file": "assets/base.js",
+    "isEntry": true,
+    "src": "scripts/base.js"
+  },
+  "scripts/bento-box.js": {
+    "file": "assets/bento-box.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/bento-box.js"
+  },
+  "scripts/breadcrumb-swiper.js": {
+    "file": "assets/breadcrumb-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/breadcrumb-swiper.js"
+  },
+  "scripts/card-swiper.js": {
+    "file": "assets/card-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/card-swiper.js"
+  },
+  "scripts/column-card-swiper.js": {
+    "file": "assets/column-card-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/column-card-swiper.js"
+  },
+  "scripts/facts-animated.js": {
+    "file": "assets/facts-animated.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/facts-animated.js"
+  },
+  "scripts/filter.js": {
+    "file": "assets/filter.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/filter.js"
+  },
+  "scripts/gallery-swiper.js": {
+    "file": "assets/gallery-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/gallery-swiper.js"
+  },
+  "scripts/header.js": {
+    "file": "assets/header.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/header.js"
+  },
+  "scripts/hero-swiper.js": {
+    "file": "assets/hero-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/hero-swiper.js"
+  },
+  "scripts/index.css": {
+    "file": "assets/index.css",
+    "src": "scripts/index.css"
+  },
+  "scripts/index.js": {
+    "assets": [
+      "assets/HankenGrotesk-Italic.eot",
+      "assets/HankenGrotesk-Italic.woff2",
+      "assets/HankenGrotesk-Italic.woff",
+      "assets/HankenGrotesk-Italic.ttf",
+      "assets/HankenGrotesk-Italic.svg",
+      "assets/HankenGrotesk-Regular.eot",
+      "assets/HankenGrotesk-Regular.woff2",
+      "assets/HankenGrotesk-Regular.woff",
+      "assets/HankenGrotesk-Regular.ttf",
+      "assets/HankenGrotesk-Regular.svg",
+      "assets/icomoon.eot",
+      "assets/icomoon.woff2",
+      "assets/icomoon.ttf",
+      "assets/icomoon.woff",
+      "assets/icomoon.svg",
+      "assets/background-xl.svg"
+    ],
+    "css": [
+      "assets/index.css"
+    ],
+    "file": "assets/index.js",
+    "imports": [
+      "scripts/app.js",
+      "scripts/gallery-swiper.js",
+      "scripts/akkordion-tag.js",
+      "scripts/filter.js",
+      "scripts/facts-animated.js",
+      "scripts/tag-swiper.js",
+      "scripts/card-swiper.js",
+      "scripts/hero-swiper.js",
+      "scripts/breadcrumb-swiper.js",
+      "scripts/timer-swiper.js",
+      "scripts/header.js",
+      "scripts/column-card-swiper.js",
+      "scripts/tabs.js",
+      "scripts/bento-box.js",
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/index.js"
+  },
+  "scripts/tabs.js": {
+    "file": "assets/tabs.js",
+    "imports": [
+      "scripts/base.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/tabs.js"
+  },
+  "scripts/tag-swiper.js": {
+    "file": "assets/tag-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/tag-swiper.js"
+  },
+  "scripts/timer-swiper.js": {
+    "file": "assets/timer-swiper.js",
+    "imports": [
+      "scripts/base.js",
+      "_keyboard.js"
+    ],
+    "isEntry": true,
+    "src": "scripts/timer-swiper.js"
+  }
+}

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="apple-touch-icon" sizes="57x57" href="./media/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./media/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./media/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./media/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./media/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./media/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./media/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./media/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./media/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./media/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./media/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./media/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./media/favicon/favicon-16x16.png">
+<link rel="manifest" href="./media/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#F1F4FB">
+<meta name="msapplication-TileImage" content="./media/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#F1F4FB">
+<meta name="msapplication-navbutton-color" content="#F1F4FB">
+<meta name="apple-mobile-web-app-status-bar-style" content="#F1F4FB">
+      <script type="module" crossorigin src="/assets/base.js"></script>
+      <script type="module" crossorigin src="/assets/app.js"></script>
+      <script type="module" crossorigin src="/assets/keyboard.js"></script>
+      <script type="module" crossorigin src="/assets/gallery-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/akkordion-tag.js"></script>
+      <script type="module" crossorigin src="/assets/filter.js"></script>
+      <script type="module" crossorigin src="/assets/facts-animated.js"></script>
+      <script type="module" crossorigin src="/assets/tag-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/card-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/hero-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/breadcrumb-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/timer-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/header.js"></script>
+      <script type="module" crossorigin src="/assets/column-card-swiper.js"></script>
+      <script type="module" crossorigin src="/assets/tabs.js"></script>
+      <script type="module" crossorigin src="/assets/bento-box.js"></script>
+      <script type="module" crossorigin src="/assets/index.js"></script>
+      <link rel="stylesheet" href="/assets/index.css">
+      <link rel="stylesheet" href="/assets/keyboard.css">
+    </head>
+    <body class="">
+                    <header class="header grid-area">
+    <div class="pre-header grid-full-width grid-inherit">
+        <div class="pre-header-wrapper grid-teaser">
+            <div class="flex-container">
+                                    <nav>
+                        <ul class="pre-nav">
+                                                            <li><a href="youtube.com" class="white" target="_self">Jobs</a></li>
+                                                            <li><a href="youtube.com" class="white" target="_self">Presse</a></li>
+                                                    </ul>
+                    </nav>
+                                                    <a href="/" class="language-wrapper">
+                        <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                        <span class="selected-language">English</span>
+                    </a>
+                            </div>
+        </div>
+    </div>
+    <div class="grid-full-width grid-inherit main-header-area-wrapper">
+        <div class="main-header-area grid-teaser" id="main-header-area">
+            <a href="/">
+                <img src="media/Header-mobile.svg" class="header-icon" alt="Dies ist der Alternativtext für das Icon.">
+            </a>
+                            <nav class="navigation">
+                    <ul class="custom-list">
+                                                    <li class="popover-container">
+                                <a class="list-button"  aria-describedby="popover-research" href="javascript:void(0);">
+                                    Research
+                                                                            <span class="icon-arrow-down" aria-hidden="true"></span>
+                                                                    </a>
+                                                                    <div id="popover-research" class="popover-content">
+                                        <ul>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Focus Area</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Projects</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Methods</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Publications</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li class="popover-container">
+                                <a class="list-button"  href="/" target="_self" >
+                                    Services
+                                                                    </a>
+                                                            </li>
+                                                    <li class="popover-container">
+                                <a class="list-button"  aria-describedby="popover-news-events" href="javascript:void(0);">
+                                    News & Events
+                                                                            <span class="icon-arrow-down" aria-hidden="true"></span>
+                                                                    </a>
+                                                                    <div id="popover-news-events" class="popover-content">
+                                        <ul>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Evaluation</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Platform coordination & designer development</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Methods</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Publications</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                                    <li class="popover-container">
+                                <a class="list-button"  aria-describedby="popover-about-zsi" href="javascript:void(0);">
+                                    About ZSI
+                                                                            <span class="icon-arrow-down" aria-hidden="true"></span>
+                                                                    </a>
+                                                                    <div id="popover-about-zsi" class="popover-content">
+                                        <ul>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Consultancy & exploitation</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Sport Network</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="/" target="_self">Methods</a>
+                                                    <span class="icon-arrow-forward" aria-hidden="true"></span>
+                                                </li>
+                                                                                    </ul>
+                                    </div>
+                                                            </li>
+                                            </ul>
+                </nav>
+                        <div class="search-burger-wrapper">
+                <button class="search-container">
+                    <span class="search-text">Search</span>
+                    <span class="icon-search" aria-hidden="true"></span>
+                </button>
+                <button class="burger-menu" aria-label="Menu öffnen">
+                    <span class="burger-wrapper" aria-hidden="true">
+                        <span class="burger-line"></span>
+                    </span>
+                </button>
+                <div class="mobile-popover">
+                    <div class="mobile-interaction-wrapper">
+                        <form action="/" method="get">
+                            <div class="mobile-search-container" id="mobile-search-container">
+                                <label for="mobile-search"><span class="sr-only">Search</span></label>
+                                <input type="text" id="mobile-search" class="mobile-search" autocomplete="false" name="s" placeholder="Search">
+                                <span id="mobile-search-icon" class="icon-search mobile-search-icon" aria-hidden="true"></span>
+                                <div id="space-vector" class="space-vector"></div>
+                            </div>
+                            <div id="mobile-popover-close-wrapper" class="button-wrapper">
+                                <button type="button" id="mobile-popover-close" class="mobile-popover-close" aria-label="Close">
+                                    <span class="icon-close mobile-popover-close-icon" id="mobile-popover-close-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <nav>
+                        <ul class="mobile-nav-list">
+                                                                                                                                        <li id="mobile-nav-element-1" class="popover-trigger">
+                                            <span>Research</span>
+                                            <span class="icon-arrow-right" aria-hidden="true"></span>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a href="/" class="nav-link" target="_self">
+                                                Services
+                                                <span class="icon-arrow-right" aria-hidden="true"></span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li id="mobile-nav-element-3" class="popover-trigger">
+                                            <span>News & Events</span>
+                                            <span class="icon-arrow-right" aria-hidden="true"></span>
+                                        </li>
+                                                                                                                                                <li id="mobile-nav-element-4" class="popover-trigger">
+                                            <span>About ZSI</span>
+                                            <span class="icon-arrow-right" aria-hidden="true"></span>
+                                        </li>
+                                                                                                                        </ul>
+                    </nav>
+                    <div class="mobile-footer">
+                                                    <nav>
+                                <ul class="mobile-footer-special-nav">
+                                                                            <li><a href="youtube.com" class="white" target="_self">Jobs</a></li>
+                                                                            <li><a href="youtube.com" class="white" target="_self">Presse</a></li>
+                                                                    </ul>
+                            </nav>
+                                                                            <a href="/" class="mobile-language-wrapper">
+                                <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                                <span class="selected-language">English</span>
+                            </a>
+                                            </div>
+                </div>
+                <div class="mobile-popover-navigation">
+                    <div class="mobile-interaction-wrapper">
+                        <form action="/" method="get">
+                            <div class="mobile-search-container" id="mobile-search-container-detailed">
+                                <label for="mobile-search-detailed"><span class="sr-only">Search</span></label>
+                                <input type="text" id="mobile-search-detailed" class="mobile-search" autocomplete="false" name="s" placeholder="Search">
+                                <span class="icon-search mobile-search-icon" id="mobile-search-icon-detailed" aria-hidden="true"></span>
+                                <div id="space-vector-detailed" class="space-vector" aria-hidden="true"></div>
+                            </div>
+                            <div id="mobile-navigation-popover-close-wrapper" class="button-wrapper">
+                                <button type="button" id="mobile-navigation-popover-close" class="mobile-popover-close" aria-label="Close">
+                                    <span class="icon-close mobile-popover-close-icon" id="mobile-popover-detailed-close-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                                            <div class="mobile-detail-lists-wrapper">
+                            <div class="back-navigation-wrapper">
+                                <div class="back-navigation">
+                                    <span class="icon-back-arrow" aria-hidden="true"></span>
+                                    <span>Back</span>
+                                </div>
+                            </div>
+                                                            <div class="list-wrapper" id="list-wrapper-1">
+                                    <ul>
+                                                                                                                                    <li class="" id="">
+                                                    <a href="/" target="_self">Focus Area</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Projects</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Methods</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Publications</a>
+                                                </li>
+                                                                                                                        </ul>
+                                </div>
+                                                            <div class="list-wrapper" id="list-wrapper-2">
+                                    <ul>
+                                                                            </ul>
+                                </div>
+                                                            <div class="list-wrapper" id="list-wrapper-3">
+                                    <ul>
+                                                                                                                                    <li class="" id="">
+                                                    <a href="/" target="_self">Evaluation</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Platform coordination & designer development</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Methods</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Publications</a>
+                                                </li>
+                                                                                                                        </ul>
+                                </div>
+                                                            <div class="list-wrapper" id="list-wrapper-4">
+                                    <ul>
+                                                                                                                                    <li class="" id="">
+                                                    <a href="/" target="_self">Consultancy & exploitation</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Sport Network</a>
+                                                </li>
+                                                                                            <li class="" id="">
+                                                    <a href="/" target="_self">Methods</a>
+                                                </li>
+                                                                                                                        </ul>
+                                </div>
+                                                    </div>
+                                        <div class="mobile-footer">
+                        <nav>
+                            <ul class="mobile-footer-special-nav">
+                                                                                                            <li><a href="youtube.com" target="_self">Jobs</a></li>
+                                                                            <li><a href="youtube.com" target="_self">Presse</a></li>
+                                                                                                </ul>
+                        </nav>
+                                                    <a href="/" class="mobile-language-wrapper" id="mobile-language-wrapper-detailed">
+                                <span class="icon-globe globe-icon" aria-hidden="true"></span>
+                                <span class="selected-language">English</span>
+                            </a>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header-area2 grid-full-width">
+            <div class="popover-wrapper">
+                <div class="desktop-popover">
+                    <form action="/" method="get">
+                        <label for="desktop-search-input"><span class="sr-only">Nach Projekten, Mitwirkenden und Projektakronymen durchsuchen</span></label>
+                        <input type="text" id="desktop-search-input" class="desktop-search-input" autocomplete="false" name="s" placeholder="Nach Projekten, Mitwirkenden und Projektakronymen durchsuchen">
+                        <div class="desktop-search-button-wrapper">
+                            <div class="desktop-search-input-delete" tabindex="0">
+                                <span class="icon-close" aria-hidden="true"></span>
+                            </div>
+                            <div class="desktop-search-spacer"></div>
+                            <button type="submit" id="desktop-search-submit" class="desktop-search-submit">
+                                <span class="sr-only">Search</span>
+                                <span class="icon-search" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-dark-layer" aria-hidden="true"></div>
+</header>
+        
+        <main class="grid-area">
+                <section class="bento-box-grid grid-full-width grid-inherit blue-10">
+    <div class="grid-teaser">
+                    <div class="subheadline-container">
+                <h3 class="subheadline">About Zsi</h3>
+            </div>
+                            <div class="headline-container">
+                <h2 class="headline">Fakten auf einen Blick</h2>
+            </div>
+                <div class="grid-container">
+                                                    <div class="bento-item col-span-2 bento-item-column">
+            <div class="preheadline-container">
+            <span class="pre-headline">Projekte am ZSI</span>
+        </div>
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+            
+                    </div>
+            </div>
+
+    
+            <div class="flex-layout">
+            <div class="content-big-container layout-container">
+                <div class="card-headline-container">
+                    <h3 class="card-headline">Forschende am ZSI</h3>
+                </div>
+                <h4 class="card-content-big">NN</h4>
+            </div>
+            <div class="content-big-container layout-container">
+                <div class="card-headline-container">
+                    <h3 class="card-headline">Forschende am ZSI</h3>
+                </div>
+                <h4 class="card-content-big">NN</h4>
+            </div>
+        </div>
+    </div>
+                                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+            </div>
+
+    
+    </div>
+                                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+            </div>
+
+    
+    </div>
+                                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">N.NNN+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.</p>
+            </div>
+            </div>
+
+    
+    </div>
+                                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">N.NNN+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.</p>
+            </div>
+            </div>
+
+    
+    </div>
+                                                                    <div class="bento-item col-span-2 bento-item-chart">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Frauenanteil 75%</p>
+            </div>
+            </div>
+
+            <div class="chart-container">
+            <div class="pie no-round" style="--p:75;"></div>
+        </div>
+    
+    </div>
+                                                                <div class="subgrid-container col-span-fw">
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">N.NNN+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.</p>
+            </div>
+            </div>
+
+    
+    </div>
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">N.NNN+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.</p>
+            </div>
+            </div>
+
+    
+    </div>
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">N.NNN+</h4>
+                </div>
+                    </div>
+                    <div class="content-container">
+                <p class="content">Lorem ipsum dolor sit amet consectetur.
+                Aliquet auctor maecenas odio purus pellentesque dictumst nibh. A amet.</p>
+            </div>
+            </div>
+
+    
+    </div>
+                                            </div>
+                                                                    <div class="subgrid-container col-span-fw">
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+            </div>
+
+    
+    </div>
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+            </div>
+
+    
+    </div>
+                                                    <div class="bento-item col-span-1 ">
+    
+    <div class="bento-content-container">
+        <div class="bento-headline-container">
+                            <div class="headline-container-bento">
+                    <h2 class="headline">Forschende am ZSI</h2>
+                </div>
+            
+                            <div class="content-big-container">
+                    <h4 class="card-content-big">50+</h4>
+                </div>
+                    </div>
+            </div>
+
+    
+    </div>
+                                            </div>
+                                        </div>
+    </div>
+</section>
+        </main>
+
+                    <footer class="footer grid-area">
+    <div class="grid-full-width grid-inherit">
+        <div class="grid-teaser">
+            <div class="logo-to-top-wrapper flex-stretching">
+                                    <a href="/">
+                        <img src="media/logo-text.svg" class="logo-text" alt="Logo Alternative Text">
+                    </a>
+                    <div class="mobile-border-top"></div>
+                                                    <div class="back-to-top-wrapper">
+                        <button class="back-to-top-wrapper-button" type="button">
+                            <span class="top-text">Back to top</span>
+                            <span class="icon-arrow-up" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="mobile-border"></div>
+                            </div>
+            <div class="main-content-wrapper flex flex-stretching">
+                <div class="text-maps-wrapper">
+                                            <p class="imprint">
+                                                            ZSI<br>Centre for Social Innovation Ltd.
+                                                                                        <br>
+                                <span class="imprint-light">Linke Wienzeile 246<br>A-1150 Wien</span>
+                                                    </p>
+                                                                <a href="https://www.google.at/maps/place/Linke+Wienzeile+246,+1150+Wien/@48.1841596,16.3285794,17z/data=!3m1!4b1!4m6!3m5!1s0x476da8170dadc953:0xe1a224b52228af32!8m2!3d48.1841561!4d16.3311597!16s%2Fg%2F11c2fp5dyj?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" class="maps-wrapper" target="_blank">
+                                                            <span aria-hidden="true"><img src="media/google-maps.svg" class="maps-icon" alt=""></span>
+                                                        <span class="maps-text">Find us on Google Maps</span>
+                        </a>
+                                    </div>
+                <div class="contact-wrapper">
+                                            <a href="mailto:institut@zsi.at">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-email" aria-hidden="true"></span>
+                                <span class="contact-text">institut@zsi.at</span>
+                            </div>
+                        </a>
+                                                                <a href="tel:0043129504420">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-phone" aria-hidden="true"></span>
+                                <span class="contact-text">+43 129504420</span>
+                            </div>
+                        </a>
+                                                                <a href="/about">
+                            <div class="flex contact-icon-text-wrapper">
+                                <span class="icon-compass" aria-hidden="true"></span>
+                                <span class="contact-text">Directions & accomodations</span>
+                            </div>
+                        </a>
+                                    </div>
+                                    <div class="headline-button-wrapper">
+                                                    <div class="headline-wrapper">
+                                <div>
+                                    <span class="footer-headline">All innovations are socially relevant</span>
+                                </div>
+                            </div>
+                                                
+    <a class="button  " href="/" target="_self"  ><span class="icomoon icon-newsletter" aria-hidden="true"></span> Subscribe to Newsletter</a>
+                    </div>
+                            </div>
+            <div class="border"></div>
+            <div class="social-media-login-imprint-wrapper flex flex-stretching">
+                                    <div class="follow-wrapper">
+                                                    <span class="follow-text">FOLLOW US ON</span>
+                                                                                <div class="social-media-list">
+                    <div class="social-media-list-item">
+                    <a href="https://facebook.com" class="social-link" title="" target="_blank">
+        <span class="icomoon icon-facebook" aria-hidden="true"></span>
+    </a>
+            </div>
+                    <div class="social-media-list-item">
+                    <a href="https://linked.com" class="social-link" title="" target="_blank">
+        <span class="icomoon icon-linkedIn" aria-hidden="true"></span>
+    </a>
+            </div>
+                    <div class="social-media-list-item">
+                    <a href="https://twitter.com" class="social-link" title="" target="_blank">
+        <span class="icomoon icon-x-twitter" aria-hidden="true"></span>
+    </a>
+            </div>
+            </div>
+                                            </div>
+                                <div class="login-imprint-wrapper">
+                                            <a href="https://www.zsi.at/wp-admin" class="login-wrapper">
+                            <span class="icon-profile" aria-hidden="true"></span>
+                            <span class="imprint-text login-text"><span>Log in</span></span>
+                        </a>
+                                                                <a href="/" class="imprint-text">
+                            <span>Impressum & Datenschutz</span>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+                
+                    
+            </body>
+</html>
