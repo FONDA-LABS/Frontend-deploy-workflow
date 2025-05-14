@@ -27,18 +27,14 @@ jobs:
       - name: Debug dist folder
         run: ls -la ./dist
 
-      - name: Deploy via rsync over SSH (preview-<reponame>)
+      - name: Deploy via rsync to /var/www/
         run: |
           echo "$SSH_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
 
-          REPO_NAME=$(basename $GITHUB_REPOSITORY)
-          TARGET_DIR="preview-$REPO_NAME"
-          echo "🔁 Deployment nach: /var/www/$TARGET_DIR/"
+          echo "🔁 Deployment nach: /var/www/"
 
-          ssh -i deploy_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "mkdir -p /var/www/$TARGET_DIR"
-
-          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/$TARGET_DIR/
+          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/
         env:
           SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
           SSH_USER: ${{ secrets.TESTSERVER_USER }}
