@@ -19,17 +19,25 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build Frontend
         run: npm run build
 
-      - name: Deploy via rsync over SSH
+      - name: Debug dist folder
+        run: ls -la ./dist
+
+      - name: Deploy via rsync over SSH (repo-based root folder)
         run: |
           echo "$SSH_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
 
-          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/twigtest/dist/
+          REPO_NAME=$(basename $GITHUB_REPOSITORY)
+          echo "🔁 Deployment nach: /var/www/$REPO_NAME/"
+
+          ssh -i deploy_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "mkdir -p /var/www/$REPO_NAME"
+
+          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/$REPO_NAME/
         env:
           SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
           SSH_USER: ${{ secrets.TESTSERVER_USER }}
