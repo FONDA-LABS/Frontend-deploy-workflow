@@ -24,9 +24,6 @@ jobs:
       - name: Build Frontend
         run: npm run build
 
-      - name: Debug dist folder
-        run: ls -la ./dist
-
       - name: Deploy via rsync over SSH
         run: |
           echo "$SSH_KEY" > deploy_key.pem
