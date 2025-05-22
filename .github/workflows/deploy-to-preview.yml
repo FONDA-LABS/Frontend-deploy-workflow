@@ -1,4 +1,4 @@
-name: pa11y tests
+name: Deploy Frontend to Testserver
 
 on:
   push:
@@ -6,48 +6,36 @@ on:
       - main
 
 jobs:
-  build:
-    name: Building site and running pa11y-ci tests
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source.
-        uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Install jekyll site dependencies.
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: 2.6
-          bundler-cache: true
+          node-version: '18'
 
-      - name: Install pa11y-ci dependencies.
-        run: npm install
+      - name: Install Dependencies
+        run: npm install --force
 
-      - name: Start up jekyll server.
-        run: npm run start-detached
+      - name: Build Frontend
+        run: npm run build
 
-      - name: Run pa11y-ci.
-        run: npm run pa11y-ci:sitemap 2>&1 | tee pa11y_output.txt
+      - name: Debug dist folder
+        run: ls -la ./dist
 
-      - name: Read pa11y_output file.
-        id: pa11y_output
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: ./pa11y_output.txt
-
-      - name: Comment on pull request.
-        uses: thollander/actions-comment-pull-request@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: '<details><summary>Pa11y testing results</summary>
-
-
-```${{ steps.pa11y_output.outputs.content }}```
-
-</details>'
-
-      - name: Check for pa11y failures.
-        if: contains(steps.pa11y_output.outputs.content, 'errno 2')
+      - name: Deploy via rsync to /var/www/
         run: |
-          echo "::error::The site is failing accessibility tests. Please review the comment in the pull request or the pa11y-ci step in the workflow for details."
-          exit 1
+          echo "$SSH_KEY" > deploy_key.pem
+          chmod 600 deploy_key.pem
+
+          echo "🔁 Deployment nach: /var/www/"
+
+          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/
+        env:
+          SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
+          SSH_USER: ${{ secrets.TESTSERVER_USER }}
+          SSH_HOST: ${{ secrets.TESTSERVER_HOST }}
