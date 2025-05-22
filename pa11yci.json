@@ -2,10 +2,7 @@
   "defaults": {
     "timeout": 30000,
     "standard": "WCAG2AA",
-    "runner": "puppeteer",
-    "chromeLaunchConfig": {
-      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
-    }
+    "runner": "puppeteer"
   },
   "urls": [
     "http://localhost:5173/",
