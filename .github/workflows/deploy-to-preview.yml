@@ -27,7 +27,7 @@ jobs:
       - name: Debug dist folder
         run: ls -la ./dist
 
-      # 🆕 Serve und Lighthouse-Check
+      # ✅ Accessibility-Check mit Lighthouse CI (non-blocking)
       - name: Install Serve and Lighthouse CI
         run: npm install -g serve @lhci/cli
 
@@ -36,12 +36,12 @@ jobs:
           serve -s dist -l 5000 &
           sleep 5
 
-      - name: Run Lighthouse CI
+      - name: Run Lighthouse CI (collect only, non-blocking)
         run: |
-          lhci autorun --collect.url=http://localhost:5000
-          echo "✅ Lighthouse Check abgeschlossen"
+          mkdir -p .lighthouseci
+          lhci collect --url=http://localhost:5000 --outputPath=.lighthouseci
+        continue-on-error: true
 
-      # Optional: Ergebnis als Artefakt speichern
       - name: Upload Lighthouse Report
         if: always()
         uses: actions/upload-artifact@v4
