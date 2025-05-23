@@ -36,10 +36,10 @@ jobs:
           serve -s dist -l 5000 &
           sleep 5
 
-      - name: Run Lighthouse CI (collect only, non-blocking)
+      - name: Run Lighthouse CI (collect + report)
         run: |
-          mkdir -p .lighthouseci
           lhci collect --url=http://localhost:5000 --outputPath=.lighthouseci
+          lhci report --outputPath=.lighthouseci
         continue-on-error: true
 
       - name: Upload Lighthouse Report
