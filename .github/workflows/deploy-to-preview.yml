@@ -27,30 +27,30 @@ jobs:
       - name: Debug dist folder
         run: ls -la ./dist
 
-      # ✅ Accessibility-Check mit Lighthouse CI (non-blocking)
-      - name: Install Serve and Lighthouse CI
-        run: npm install -g serve @lhci/cli
+      # ✅ Accessibility-Check mit Lighthouse (non-blocking)
+      - name: Install Serve and Lighthouse
+        run: npm install -g serve lighthouse
 
       - name: Start local server
         run: |
           serve -s dist -l 5000 &
           sleep 5
 
-      - name: Run Lighthouse CI (collect + report)
+      - name: Run Lighthouse and generate HTML report
         run: |
-          lhci collect --url=http://localhost:5000
-          lhci report --output .lighthouseci
+          lighthouse http://localhost:5000 \
+            --output html \
+            --output-path ./lighthouse-report.html \
+            --quiet \
+            --chrome-flags="--headless"
         continue-on-error: true
-
-      - name: Inspect report files
-        run: ls -la .lighthouseci
 
       - name: Upload Lighthouse Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
-          path: .lighthouseci
+          path: lighthouse-report.html
 
       # 🔁 Deployment
       - name: Deploy via rsync to /var/www/
