@@ -27,6 +27,29 @@ jobs:
       - name: Debug dist folder
         run: ls -la ./dist
 
+      # 🆕 Serve und Lighthouse-Check
+      - name: Install Serve and Lighthouse CI
+        run: npm install -g serve @lhci/cli
+
+      - name: Start local server
+        run: |
+          serve -s dist -l 5000 &
+          sleep 5
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --collect.url=http://localhost:5000
+          echo "✅ Lighthouse Check abgeschlossen"
+
+      # Optional: Ergebnis als Artefakt speichern
+      - name: Upload Lighthouse Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
+
+      # 🔁 Deployment
       - name: Deploy via rsync to /var/www/
         run: |
           echo "$SSH_KEY" > deploy_key.pem
