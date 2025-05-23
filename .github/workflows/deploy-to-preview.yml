@@ -38,9 +38,12 @@ jobs:
 
       - name: Run Lighthouse CI (collect + report)
         run: |
-          lhci collect --url=http://localhost:5000 --outputPath=.lighthouseci
-          lhci report --outputPath=.lighthouseci
+          lhci collect --url=http://localhost:5000
+          lhci report --output .lighthouseci
         continue-on-error: true
+
+      - name: Inspect report files
+        run: ls -la .lighthouseci
 
       - name: Upload Lighthouse Report
         if: always()
