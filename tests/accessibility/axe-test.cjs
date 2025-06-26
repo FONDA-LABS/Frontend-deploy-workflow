@@ -1,21 +1,9 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 
-// Modulstruktur absichern:
-let axe;
-try {
-    // versuchen .default
-    axe = require('@axe-core/playwright').default;
-    if (!axe?.injectAxe) throw new Error('injectAxe not found in .default');
-} catch {
-    // fallback: direkt verwenden
-    axe = require('@axe-core/playwright');
-}
-
-const injectAxe = axe.injectAxe;
-const getViolations = axe.getViolations;
-
 (async () => {
+    const { injectAxe, getViolations } = await import('@axe-core/playwright');
+
     const browser = await chromium.launch();
     const page = await browser.newPage();
 
