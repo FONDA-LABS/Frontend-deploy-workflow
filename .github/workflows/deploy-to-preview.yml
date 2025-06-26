@@ -6,8 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+
+    outputs:
+      build_path: ${{ steps.set-output.outputs.path }}
 
     steps:
       - name: Checkout Code
@@ -27,14 +30,33 @@ jobs:
       - name: Debug dist folder
         run: ls -la ./dist
 
-      # ✅ Accessibility-Check mit Lighthouse (non-blocking)
+      - name: Upload dist folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download dist folder
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
       - name: Install Serve and Lighthouse
         run: npm install -g serve lighthouse
 
       - name: Start local server
         run: |
           serve -s dist -l 5000 &
-          sleep 5
+          until curl -s http://localhost:5000 > /dev/null; do
+            echo "Waiting for server..."
+            sleep 1
+          done
 
       - name: Run Lighthouse and generate HTML report
         run: |
@@ -52,7 +74,17 @@ jobs:
           name: lighthouse-report
           path: lighthouse-report.html
 
-      # 🔁 Deployment
+  deploy:
+    needs: lighthouse
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download dist folder
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
       - name: Deploy via rsync to /var/www/
         run: |
           echo "$SSH_KEY" > deploy_key.pem
@@ -61,6 +93,8 @@ jobs:
           echo "🔁 Deployment nach: /var/www/"
 
           rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/
+
+          rm -f deploy_key.pem
         env:
           SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
           SSH_USER: ${{ secrets.TESTSERVER_USER }}
