@@ -44,10 +44,11 @@ jobs:
           name: dist
           path: dist
 
-      - name: Install Dependencies for axe-core
+      - name: Install Dependencies
         run: |
           npm install -g serve
           npm install playwright @axe-core/playwright
+          npx playwright install --with-deps
 
       - name: Start local server
         run: |
@@ -57,7 +58,7 @@ jobs:
             sleep 1
           done
 
-      - name: Run axe-core via Playwright
+      - name: Run axe-core test
         run: |
           echo "const { chromium } = require('playwright');" > axe-test.js
           echo "const { injectAxe, checkA11y } = require('@axe-core/playwright');" >> axe-test.js
@@ -70,7 +71,6 @@ jobs:
           echo "  await browser.close();" >> axe-test.js
           echo "})();" >> axe-test.js
           node axe-test.js
-        continue-on-error: true
 
   lighthouse:
     needs: axe-core
