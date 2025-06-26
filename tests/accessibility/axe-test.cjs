@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
-const axePlaywright = require('@axe-core/playwright');
+const axePlaywright = require('@axe-core/playwright').default;
 
 const injectAxe = axePlaywright.injectAxe;
 const getViolations = axePlaywright.getViolations;
@@ -17,14 +17,12 @@ const getViolations = axePlaywright.getViolations;
 
     console.log(`🚨 ${violations.length} Accessibility-Verletzungen gefunden`);
 
-    // Speichern als JSON
     const reportPath = './axe-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(violations, null, 2));
     console.log(`📄 Axe-Report gespeichert unter ${reportPath}`);
 
     await browser.close();
 
-    // Exit-Code, um Job ggf. abbrechen zu lassen
     if (violations.length > 0) {
         console.error('❌ Accessibility-Probleme vorhanden!');
         process.exit(1);
