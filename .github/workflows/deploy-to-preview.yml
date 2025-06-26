@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    outputs:
-      build_path: ${{ steps.set-output.outputs.path }}
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -36,8 +33,47 @@ jobs:
           name: dist
           path: dist/
 
-  lighthouse:
+  axe-core:
     needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download dist folder
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Install Dependencies for axe-core
+        run: |
+          npm install -g serve
+          npm install playwright @axe-core/playwright
+
+      - name: Start local server
+        run: |
+          serve -s dist -l 5000 &
+          until curl -s http://localhost:5000 > /dev/null; do
+            echo "Waiting for server..."
+            sleep 1
+          done
+
+      - name: Run axe-core via Playwright
+        run: |
+          echo "const { chromium } = require('playwright');" > axe-test.js
+          echo "const { injectAxe, checkA11y } = require('@axe-core/playwright');" >> axe-test.js
+          echo "(async () => {" >> axe-test.js
+          echo "  const browser = await chromium.launch();" >> axe-test.js
+          echo "  const page = await browser.newPage();" >> axe-test.js
+          echo "  await page.goto('http://localhost:5000');" >> axe-test.js
+          echo "  await injectAxe(page);" >> axe-test.js
+          echo "  await checkA11y(page);" >> axe-test.js
+          echo "  await browser.close();" >> axe-test.js
+          echo "})();" >> axe-test.js
+          node axe-test.js
+        continue-on-error: true
+
+  lighthouse:
+    needs: axe-core
     runs-on: ubuntu-latest
 
     steps:
