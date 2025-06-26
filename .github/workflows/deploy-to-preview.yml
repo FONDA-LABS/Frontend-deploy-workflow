@@ -62,7 +62,7 @@ jobs:
           done
 
       - name: Run axe-core test
-        run: node tests/accessibility/axe-test.js
+        run: node tests/accessibility/axe-test.cjs
 
       - name: Upload Axe Report
         if: always()
