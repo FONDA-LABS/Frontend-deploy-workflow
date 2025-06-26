@@ -44,6 +44,9 @@ jobs:
           name: dist
           path: dist
 
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
       - name: Install Dependencies
         run: |
           npm install -g serve
@@ -59,18 +62,14 @@ jobs:
           done
 
       - name: Run axe-core test
-        run: |
-          echo "const { chromium } = require('playwright');" > axe-test.js
-          echo "const { injectAxe, checkA11y } = require('@axe-core/playwright');" >> axe-test.js
-          echo "(async () => {" >> axe-test.js
-          echo "  const browser = await chromium.launch();" >> axe-test.js
-          echo "  const page = await browser.newPage();" >> axe-test.js
-          echo "  await page.goto('http://localhost:5000');" >> axe-test.js
-          echo "  await injectAxe(page);" >> axe-test.js
-          echo "  await checkA11y(page);" >> axe-test.js
-          echo "  await browser.close();" >> axe-test.js
-          echo "})();" >> axe-test.js
-          node axe-test.js
+        run: node tests/accessibility/axe-test.js
+
+      - name: Upload Axe Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: axe-report
+          path: axe-report.json
 
   lighthouse:
     needs: axe-core
