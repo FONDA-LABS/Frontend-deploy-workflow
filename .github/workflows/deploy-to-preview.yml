@@ -121,14 +121,21 @@ jobs:
           name: dist
           path: dist
 
-      - name: Deploy via rsync to /var/www/
+      - name: Deploy via rsync to /var/www/<repo>
         run: |
           echo "$SSH_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
 
-          echo "🔁 Deployment nach: /var/www/"
+          REPO_NAME="${{ github.event.repository.name }}"
+          TARGET_PATH="/var/www/$REPO_NAME"
 
-          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:/var/www/
+          echo "🔁 Deployment nach: $TARGET_PATH"
+
+          # Sync Dateien in Projekt-Ordner auf dem Server
+          rsync -avzr --delete -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./dist/ $SSH_USER@$SSH_HOST:$TARGET_PATH
+
+          # Führe remote das Setup-Skript aus
+          ssh -i deploy_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "bash /opt/setup-preview-site.sh $REPO_NAME"
 
           rm -f deploy_key.pem
         env:
