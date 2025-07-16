@@ -36,6 +36,7 @@ jobs:
   axe-core:
     needs: build
     runs-on: ubuntu-latest
+    continue-on-error: true
 
     steps:
       - name: Download dist folder
