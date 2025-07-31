@@ -140,5 +140,5 @@ jobs:
           rm -f deploy_key.pem
         env:
           SSH_KEY: ${{ secrets.TESTSERVER_SSH_KEY }}
-          SSH_USER: ${{ secrets.TESTSERVER_USER }}
-          SSH_HOST: ${{ secrets.TESTSERVER_HOST }}
+          SSH_USER: ${{ vars.TESTSERVER_USER }}
+          SSH_HOST: ${{ vars.TESTSERVER_HOST }}
